@@ -1,1 +1,21 @@
-<h1>Hello this is spotv</h1>
+<html>
+
+    <% include partials/head.ejs %>
+
+    <body>
+    
+        <div class="container text-center" >
+            <h1>당신의 키를 입력해주세요!</h1>
+            <form id="height_control">
+                <div class="form-group">
+                    <input type="number" class="form-control">
+                </div>
+                <button class="btn btn-primary" type="submit">입력!</button>
+            </form>
+
+            <div id="yourHeight"></div>
+        </div>
+        
+        <% include partials/js.ejs %> 
+    </body>
+</html>
