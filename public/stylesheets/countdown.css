@@ -4,15 +4,6 @@ body {
 }
 
 /* line 6, ../sass/style.sass */
-.wrap {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 310px;
-}
 
 /* line 15, ../sass/style.sass */
 a {
@@ -47,7 +38,6 @@ h2 strong {
 
 /* line 44, ../sass/style.sass */
 .countdown {
-  width: 720px;
   margin: 0 auto;
 }
 /* line 47, ../sass/style.sass */

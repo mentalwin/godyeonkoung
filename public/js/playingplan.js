@@ -1,3 +1,4 @@
+let countdown = require("./countdown.js").default;
 let moment = require("moment");
 (function($){
     let playingtime = [
@@ -5,6 +6,9 @@ let moment = require("moment");
         moment("2017-01-28"),
         moment("2017-02-01")
     ];
+    var toObject = function(duration){
+        return duration._data;
+    }
     var getMostRecentGame = function() {
         let now = moment();
         for(var i = 0; i < playingtime.length; i++){
@@ -13,6 +17,15 @@ let moment = require("moment");
         return false;
     }
 
-    let closestGame = getMostRecentGame().toObject();
+    let closestGame = getMostRecentGame();
+    let now = moment();
+
+    let remainingTime = moment.duration(-now.diff(closestGame));
+    let durationObj = toObject(remainingTime);
+    console.log(countdown);
+    countdown.init(durationObj.days,
+                    durationObj.hours,
+                    durationObj.minutes,
+                    durationObj.seconds)
     
 })(jQuery);

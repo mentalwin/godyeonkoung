@@ -1,4 +1,9 @@
+//
 // Create Countdown
+var pad = function(str, max) {
+    str = str.toString();
+    return str.length < max ? pad("0" + str, max) : str;
+}
 var Countdown = {
   
   // Backbone-like structure
@@ -9,8 +14,40 @@ var Countdown = {
   total_seconds     : 0,
   
   // Initialize the countdown  
-  init: function() {
-    
+  init: function(d, h, m, s) {
+    console.log(d, h, m, s)
+    var initDOM = function(el, val){
+        // set el html to val
+        // val is one length digit
+        el.find('.top').html(val);
+        el.find('.top-back').find('span').html(val)
+        el.find('.bottom').html(val);
+        el.find('.bottom-back').find('span').html(val)
+    }
+    var elList = [
+        $(".days-1") ,
+        $(".days-2") ,
+        $(".hours-1") ,
+        $(".hours-2") ,
+        $(".min-1") ,
+        $(".min-2") ,
+        $(".sec-1") ,
+        $(".sec-2") 
+    ]
+    var valList = [
+        pad(d, 2).charAt(0),
+        pad(d, 2).charAt(1),
+        pad(h, 2).charAt(0),
+        pad(h, 2).charAt(1),
+        pad(m, 2).charAt(0),
+        pad(m, 2).charAt(1),
+        pad(s, 2).charAt(0),
+        pad(s, 2).charAt(1)
+    ]
+    for(var i = 0; i < elList.length; i++) {
+        console.log(elList[i], valList[i]);
+        initDOM(elList[i], valList[i]);
+    }
     // DOM
         this.$ = {
           days : this.$el.find('.bloc-time.days .figure'),
@@ -21,17 +58,17 @@ var Countdown = {
 
     // Init countdown values
     this.values = {
-          days   : this.$.days.parent().attr('data-init-value'),
-          hours  : this.$.hours.parent().attr('data-init-value'),
-        minutes: this.$.minutes.parent().attr('data-init-value'),
-        seconds: this.$.seconds.parent().attr('data-init-value'),
+          days   : d,
+          hours  : h,
+        minutes: m,
+        seconds: s,
     };
     
     // Initialize total seconds
-    this.total_seconds = this.values.days * 60 * 60 * 24 +
-                        this.values.hours * 60 * 60 +
+    this.total_seconds = (this.values.days * 60 * 60 * 24) +
+                        (this.values.hours * 60 * 60) +
                         (this.values.minutes * 60) +
-                        this.values.seconds;
+                        (this.values.seconds);
 
     // Animate countdown to the end 
     this.count();    
@@ -154,4 +191,4 @@ var Countdown = {
 };
 
 // Let's go !
-Countdown.init();
+export default Countdown;
