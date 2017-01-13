@@ -1,5 +1,8 @@
 module.exports = {
-    entry : './playingplan.js',
+    entry : {
+        playingplan : './playingplan.js',
+        threeD : './threeD.js'
+    },
     output : {
         path : '.',
         filename : 'bundle.js'

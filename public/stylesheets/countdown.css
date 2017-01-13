@@ -39,6 +39,7 @@ h2 strong {
 /* line 44, ../sass/style.sass */
 .countdown {
   margin: 0 auto;
+  width : 85%;
 }
 /* line 47, ../sass/style.sass */
 .countdown .bloc-time {
