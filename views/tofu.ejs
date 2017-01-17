@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylesheets/global.css">
         <link rel="stylesheet" href="stylesheets/tofu.css">
     </head>
@@ -19,15 +20,31 @@
                 </div>
                 <div class="lower Roboto">
                     <p class="HANNA">당신의 키를 <br/> 입력해보세요</p>
-                    <input type="number" placeholder = "168"/> <span class="HANNA">CM</span>
+                    <form id="name_height_form" >
+                        <input id="name" type="text" placeholder = "이름"/> 
+                        <input id="height" type="number" placeholder = "키(cm)"/>
+                        <button type="submit"></button>
+                    </form>
                     <p class="first-tag"># 난 이미 글렀어<br/># 나 키 작고 놀린 놈 태그</p>
                 </div>
             </div>
         </section>
         <div id="img-container">
-            <img src="image/koung_1.png" alt="koung">  
+            <img src="images/koung_1.png" alt="koung">  
         </div>
-   
-        <script></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            var height, name;
+            var getNameHeight = function (ev){
+                ev.preventDefault();
+                height = $("#height").val();
+                name = $("#name").val();
+            }
+            $(document).ready(function(){
+                var $form = $("#name_height_form");
+                console.log($form);
+                $form.submit(getNameHeight);
+            });
+        </script> 
     </body>
 </html>

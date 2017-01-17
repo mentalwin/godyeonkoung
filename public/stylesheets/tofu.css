@@ -4,13 +4,14 @@
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
+body {
+    margin : 0px;
+    background : #5ce0b2;
+}
 .nav-container{
     padding : 10px 8px 6px 13px;
 }
 
-body{
-    background : #5ce0b2;   
-}
 #logo-img{
     width : 33px;
     height : 25px;
@@ -33,6 +34,7 @@ body{
     min-width : 320px;
 }
 .section1{
+    position : relative;
     height : 100%;
 }
 
@@ -73,4 +75,10 @@ input {
     font-family : HANNA;
     background-color: #ffffff;
     border: solid 1px #1edcb4;
+}
+
+#img-container{
+    position : absolute;
+    bottom : 0;
+    right : 0;
 }
