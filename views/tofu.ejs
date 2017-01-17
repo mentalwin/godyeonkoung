@@ -3,6 +3,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylesheets/global.css">
         <link rel="stylesheet" href="stylesheets/tofu.css">
+        <link rel="stylesheet" href="stylesheets/loading.css">
     </head>
     <body>
         <nav id="navtofu">
@@ -23,7 +24,7 @@
                     <form id="name_height_form" >
                         <input id="name" type="text" placeholder = "이름"/> 
                         <input id="height" type="number" placeholder = "키(cm)"/>
-                        <button type="submit"></button>
+                        <button type="submit">입력!</button>
                     </form>
                     <p class="first-tag"># 난 이미 글렀어<br/># 나 키 작고 놀린 놈 태그</p>
                 </div>
@@ -35,14 +36,82 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script>
             var height, name;
+            var heightData;
+            var messages = [
+                "마음의 준비...",
+                "두구두구두구두구둥둥",
+                "김연경도 어렸을 땐 작았다던데..."
+            ]
+            var getRandom = function(list) {
+                var idx = Math.floor(Math.random() * list.length);
+                return list[idx];
+            }
+            function getHeightData() {
+                return $.ajax({
+                        method : 'GET',
+                        url : 'assets/height.json'
+                    })
+            }
+            // 결과 분석하기
+            var heightAnalyzer = function(value) {
+                var returnValue;
+                for (var i = 0; i < heightData.length; i++){
+                    if (value < heightData[i].height) return i;
+                }
+                return -1;//김연경보다 키 큰 경우
+            }
+            // 페이크 로딩
+            function fakeloading() {
+                var $section1 = $(".section1");
+                $section1.css('display', 'none');
+                var message = getRandom(messages);
+                var spinner = $("<div class='spinner'>\
+                                    <img src='images/DDD1.png' alt='Duck'>\
+                                    <div class='spinner__item1'></div>\
+                                    <div class='spinner__item2'></div>\
+                                    <div class='spinner__item3'></div>\
+                                    <div class='spinner__item4'></div>\
+                                </div>");
+                $("body").append(spinner);
+                var pMessage = $("<p class='shortMessage'></p>");
+                pMessage.html(message);
+                spinner.append(pMessage);
+                setTimeout(function(){
+                    spinner.css("display", "block");
+                    // 끝나고 결과 보여주기
+                    
+                }, 6000);
+            }
+            
             var getNameHeight = function (ev){
                 ev.preventDefault();
-                height = $("#height").val();
+                height = +$("#height").val();
                 name = $("#name").val();
+                // loading 하는 척하기
+                fakeloading();
+                console.log(height);
+                var idx = heightAnalyzer(height);
+                console.log(ageAnalzyer(idx, height));
             }
+
+            // age analyzer
+            var ageAnalzyer = function(idx, value) {
+                console.log(idx, value);
+                var base = 0;
+                var compData = heightData[idx];
+                if (idx > 0) base = heightData[idx-1].height;
+                var ratio = (compData.height - value) / (compData.height - base)
+                return compData.age + Math.round(ratio * 10) / 10;
+            }
+
+            // 결과 보여주기
+            
             $(document).ready(function(){
                 var $form = $("#name_height_form");
-                console.log($form);
+                getHeightData().done(function(item){
+                    console.log(item);
+                    heightData = item.heightData;
+                });
                 $form.submit(getNameHeight);
             });
         </script> 
