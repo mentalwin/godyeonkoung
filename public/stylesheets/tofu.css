@@ -1,0 +1,31 @@
+#navtofu{
+    height : 43px;
+    background-color: rgba(0, 206, 135, 0.52);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav-container{
+    padding : 10px 8px 6px 13px;
+}
+
+body{
+    background : #5ce0b2;   
+}
+#logo-img{
+    width : 33px;
+    height : 25px;
+    object-fit : contain;
+}
+
+.section-container {
+    width : calc(100% - 50px);
+    margin : 0 auto;
+    height : 100%;
+    min-width : 320px;
+    font-family : 'HANNA';
+}
+.section1{
+    height : 100%;
+  
+}
+

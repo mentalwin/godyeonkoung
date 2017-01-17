@@ -21,7 +21,6 @@
     var height_controller = function(value) {
         var returnValue = 0;
         for(var i = 0; i < standards.length; i++){
-            console.log(i);
             if (value < standards[i].value) return standards[i];
         }
         return false;
