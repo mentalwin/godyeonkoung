@@ -1,4 +1,15 @@
 @font-face{
     font-family : 'HANNA';
-    src : url('../fonts/BM-HANNA.ttf')
+    src : url('../fonts/BM-HANNA.ttf');
+}
+@font-face{
+    font-family : 'Roboto';
+    src : url('../fonts/Roboto-Light.ttf');
+}
+body{
+    margin : 0;
+}
+
+.Roboto {
+    font-family : 'Roboto';
 }

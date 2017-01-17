@@ -17,15 +17,60 @@ body{
     object-fit : contain;
 }
 
+.HANNA {
+    font-family : 'HANNA';
+}
+.white {
+    color : white;
+}
+.lighter{
+    font-weight : lighter;
+}
 .section-container {
     width : calc(100% - 50px);
     margin : 0 auto;
     height : 100%;
     min-width : 320px;
-    font-family : 'HANNA';
 }
 .section1{
     height : 100%;
-  
 }
 
+#sub-text{
+    font-size: 10px;
+}
+#main-text {
+    font-size : 52px;
+}
+
+p{
+    margin : 10px;
+}
+.lower{
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.42;
+    letter-spacing: 3.4px;
+    color: #0c4b3e
+}
+.first-tag{
+    font-size: 11px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.91;
+    letter-spacing: 1.6px;
+    color: rgba(28, 94, 81, 0.76);
+}
+input {
+    width: 288px;
+    height: 43px;
+    border-radius: 2px;
+    opacity : 0.5;
+    font-size : 24px;
+    font-family : HANNA;
+    background-color: #ffffff;
+    border: solid 1px #1edcb4;
+}
