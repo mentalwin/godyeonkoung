@@ -7,6 +7,12 @@
     src : url('../fonts/Roboto-Light.ttf');
 }
 
+.margin-top{
+    margin-top : 30px;
+}
+.right-text{
+    text-align : right;
+}
 .Roboto {
     font-family : 'Roboto';
 }

@@ -82,3 +82,10 @@ input {
     bottom : 0;
     right : 0;
 }
+
+#user_value{
+    font-size : 42px;
+}
+#user_result{
+    font-size : 36px;
+}
