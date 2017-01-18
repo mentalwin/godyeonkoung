@@ -26,19 +26,19 @@
                     <form id="name_height_form" >
                         <input required id="name" type="text" placeholder = "이름(성 빼고)"/> 
                         <input required id="height" type="number" placeholder = "키(cm)"/>
-                        <button class="submit white" type="submit">G O</button>
+                        <button class="margin-top submit white" type="submit">G O</button>
                     </form>
                     <p class="first-tag"># 난 이미 글렀어<br/># 나 키 작다고 놀린 놈 태그</p>
                 </div>
             </div>
         </section>
         <section class="analyzed">
-            <div class="right-text margin-top">
-                <p id="user_value" class="HANNA white"></p>
+            <div class="margin-top padding">
+                <p id="user_value" class="white"></p>
                 <p id="user_result" class="HANNA"></p>
             </div>
-            <div>
-                 
+            <div class="totimeline">
+                <img src="images/right_arrow.png" alt="right_arrow">
             </div>
         </section>
         <section class="timeline">
@@ -58,18 +58,28 @@
             <img src="images/koung_1.png" alt="koung">  
         </div>
         <!-- footer 공유하기 -->
-        <footer></footer>
+        <footer>
+            <div class="foot">
+                <div class="left_footer center-text text-white">
+                    김연경 스토리 보러가기
+                </div>
+                <div class="right_footer center-text text-white">
+                    공유하기 
+                </div>
+            </div>
+        </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="slick/slick.min.js"></script>
         <script>
             var height, name;
             var heightData;
             var result;
-            var fakeloadingTime = 1000;
+            var fakeloadingTime = 2000;
             // sections
             var $section1 = $(".section1");
             var $analyzed = $(".analyzed");
             var $timeLine = $("section.timeline");
+            var $img = $("#img-container img");
             var messages = [
                 "마음의 준비...",
                 "두구두구두구두구둥둥",
@@ -93,6 +103,10 @@
                 }
                 return -1;//김연경보다 키 큰 경우
             }
+            var getImage = function(idx) {
+                var val = 2;
+                return "images/KYK" + val + ".png";
+            }
             // 페이크 로딩
             function fakeloading() {
                 $section1.css('display', 'none');
@@ -114,6 +128,11 @@
                     showResult();
                 }, fakeloadingTime);
             }
+            
+            var replaceMessage = function(message, regex, value){
+                return message.replace(regex, value);
+            }
+
             var getNameHeight = function (ev){
                 ev.preventDefault();
                 height = +$("#height").val();
@@ -121,8 +140,8 @@
                 // loading 하는 척하기
                 fakeloading();
                 var idx = heightAnalyzer(height);
-                result = ageAnalzyer(idx, height);
-                console.log(result);
+                result = heightData[idx];
+                guessedresult = ageAnalzyer(idx, height);
             }
 
             // age analyzer
@@ -134,19 +153,24 @@
                     base = heightData[idx-1].height;
                     baseAge = heightData[idx-1].age;
                 }
-                var ratio = (compData.height - value) / (compData.height - base)
-                return  baseAge + Math.round(ratio * 10) / 10;
+                var ratio = (value - base) / (compData.height - base)
+                var multiplier = compData.age - baseAge
+                return baseAge + Math.round(ratio * multiplier * 10) / 10;
             }
 
             // 결과 보여주기
             var showResult = function() {
                 $analyzed.css("display", "block");
-                var resultMessage = name + "... 누나(언니)는 <br/>" + result + "살 때<br/> 그 키였다.";
+                var resultMessage = result.message;
+                resultMessage = replaceMessage(resultMessage,/<name>/, name);
+                resultMessage = replaceMessage(resultMessage,/<age>/, guessedresult);
                 var resultValue = "\"" + height + "cm\"";
                 var $user_result = $("#user_result");
                 var $user_value = $("#user_value");
                 $user_result.html(resultMessage);
                 $user_value.html(resultValue);
+                var img = getImage();
+                $img.attr("src", img);
                 // 김연경 타임라인으로...
             }
             // 타임라인

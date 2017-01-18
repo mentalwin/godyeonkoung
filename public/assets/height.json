@@ -1,31 +1,34 @@
 {
   "heightData": [
     {
-      "name": "초등학교 3학년",
+      "message": "<name>야(아)<br/>언니 <age>살 때<br/>그 키였어 <br/> ㅋㅋㅋㅋㅋ",
       "height": 140,
       "age": 10
     },
     {
-      "name": "초등학교 5학년",
+      "message": "<name>야(아)<br/>나는 <age>살 때 <br/>그 키였어 ㅋㅋㅋ",
       "height": 150,
       "age": 12
     },
     {
-      "name": "중학교 1학년",
+      "message": "<name>야(아)<br/>누나 <age>살 때 <br/>고~만했어 ㅋㅋㅋㅋㅋ",
       "height": 165,
       "age": 14
     },
     {
+      "message": "하핫 어쩌지<br/> 내 <age>살 때<br/>키랑 같네 ^^",
       "name": "중학교 3학년",
       "height": 170,
       "age": 16
     },
     {
+      "message": "올...나 <age>살 때 <br/>키 정도는<br/>되는데~",
       "name": "고등학교 1학년",
       "height": 180,
       "age": 17
     },
     {
+      "message": "올...나 <age>살 때 <br/>키 정도는<br/>되는데~",
       "name": "고등학교 3학년",
       "height": 190,
       "age": 19
