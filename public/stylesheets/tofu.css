@@ -39,10 +39,17 @@ body {
 }
 
 #sub-text{
-    font-size: 10px;
+    font-size: 2vw;
 }
 #main-text {
-    font-size : 52px;
+    font-size : 12vw;
+}
+.submit{
+    width : 111px;
+    height : 26px;
+    border-radius : 5px;
+    background-color : transparent;
+    border : 2px solid #FFFFFF;
 }
 
 p{
@@ -88,4 +95,26 @@ input {
 }
 #user_result{
     font-size : 36px;
+}
+/*
+ * analyzed
+ */
+.analyzed {
+    display : none;
+}
+/*
+ * timeline section
+ */
+.timeline {
+    display : none;
+}
+.slicker{
+    margin : 0 auto;
+    width : calc(100% - 50px);
+}
+
+.slicker div {
+    height : 100%;
+    width : 100%;
+    background : white;
 }

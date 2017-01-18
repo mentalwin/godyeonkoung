@@ -4,47 +4,72 @@
         <link rel="stylesheet" href="stylesheets/global.css">
         <link rel="stylesheet" href="stylesheets/tofu.css">
         <link rel="stylesheet" href="stylesheets/loading.css">
+        <link rel="stylesheet" href="slick/slick.css">
+        <link rel="stylesheet" href="slick/slick-theme.css">
     </head>
     <body>
         <nav id="navtofu">
             <div class="nav-container">
-                <a href="#">
+                <a href="#" id="logo">
                     <img id="logo-img" src="images/logo.png" alt="logo">
                 </a>
             </div>
         </nav>
         <section class="section1">
             <div class="section-container">
-                <div class="upper white">
+                <div class="upper white margin-top">
                     <p class="lighter Roboto" id="sub-text">덕후와의 대화를 위한 넓고 얕은 스포츠</p>
                     <p class="HANNA" id="main-text">감히 키를 <br/> 재보겠다고?</p>
                 </div>
                 <div class="lower Roboto">
                     <p class="HANNA">당신의 키를 <br/> 입력해보세요</p>
                     <form id="name_height_form" >
-                        <input id="name" type="text" placeholder = "이름"/> 
-                        <input id="height" type="number" placeholder = "키(cm)"/>
-                        <button type="submit">입력!</button>
+                        <input required id="name" type="text" placeholder = "이름(성 빼고)"/> 
+                        <input required id="height" type="number" placeholder = "키(cm)"/>
+                        <button class="submit white" type="submit">G O</button>
                     </form>
-                    <p class="first-tag"># 난 이미 글렀어<br/># 나 키 작고 놀린 놈 태그</p>
+                    <p class="first-tag"># 난 이미 글렀어<br/># 나 키 작다고 놀린 놈 태그</p>
                 </div>
             </div>
         </section>
-        <section class="graph">
+        <section class="analyzed">
             <div class="right-text margin-top">
                 <p id="user_value" class="HANNA white"></p>
                 <p id="user_result" class="HANNA"></p>
+            </div>
+            <div>
+                 
+            </div>
+        </section>
+        <section class="timeline">
+            <div class="slicker">
+                <div>
+                    <hr/>
+                </div>
+                <div>
+                    <hr/> 
+                </div>
+                <div>
+                    <hr/>
+                </div>
             </div>
         </section>
         <div id="img-container">
             <img src="images/koung_1.png" alt="koung">  
         </div>
+        <!-- footer 공유하기 -->
+        <footer></footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="slick/slick.min.js"></script>
         <script>
             var height, name;
             var heightData;
             var result;
             var fakeloadingTime = 1000;
+            // sections
+            var $section1 = $(".section1");
+            var $analyzed = $(".analyzed");
+            var $timeLine = $("section.timeline");
             var messages = [
                 "마음의 준비...",
                 "두구두구두구두구둥둥",
@@ -70,7 +95,6 @@
             }
             // 페이크 로딩
             function fakeloading() {
-                var $section1 = $(".section1");
                 $section1.css('display', 'none');
                 var message = getRandom(messages);
                 var spinner = $("<div class='spinner'>\
@@ -90,22 +114,21 @@
                     showResult();
                 }, fakeloadingTime);
             }
-            
             var getNameHeight = function (ev){
                 ev.preventDefault();
                 height = +$("#height").val();
                 name = $("#name").val();
                 // loading 하는 척하기
                 fakeloading();
-                console.log(height);
                 var idx = heightAnalyzer(height);
                 result = ageAnalzyer(idx, height);
+                console.log(result);
             }
 
             // age analyzer
             var ageAnalzyer = function(idx, value) {
                 var base = 0;
-                var baseAge = 0;
+                var baseAge = 10;
                 var compData = heightData[idx];
                 if (idx > 0) {
                     base = heightData[idx-1].height;
@@ -117,21 +140,33 @@
 
             // 결과 보여주기
             var showResult = function() {
+                $analyzed.css("display", "block");
                 var resultMessage = name + "... 누나(언니)는 <br/>" + result + "살 때<br/> 그 키였다.";
                 var resultValue = "\"" + height + "cm\"";
                 var $user_result = $("#user_result");
                 var $user_value = $("#user_value");
                 $user_result.html(resultMessage);
                 $user_value.html(resultValue);
-
+                // 김연경 타임라인으로...
             }
-            
+            // 타임라인
+            var showTimeLine = function() {
+                $analyzed.css("display", "none");
+                $timeLine.css("display", "block");
+            }
+            function reloadPage(){
+                location.reload();
+            }
+            $("#logo").click(reloadPage);
             $(document).ready(function(){
                 var $form = $("#name_height_form");
+                var $toTimeline = $("#totimeline");
                 getHeightData().done(function(item){
                     heightData = item.heightData;
                 });
                 $form.submit(getNameHeight);
+                $(".slicker").slick();
+                $toTimeline.click(showTimeLine);
             });
         </script> 
     </body>
