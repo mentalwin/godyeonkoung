@@ -37,20 +37,23 @@
                 <p id="user_value" class="white"></p>
                 <p id="user_result" class="HANNA"></p>
             </div>
-            <div class="totimeline">
-                <img src="images/right_arrow.png" alt="right_arrow">
+            <div class="right-text">
+                <img id="totimeline" src="images/right_arrow.png" alt="right_arrow">
             </div>
         </section>
         <section class="timeline">
             <div class="slicker">
                 <div>
-                    <hr/>
+                  <img src="http://placehold.it/350x300?text=1">
+                  <span>1</span>
                 </div>
                 <div>
-                    <hr/> 
+                  <img src="http://placehold.it/350x300?text=2">
+                  <span>2</span>
                 </div>
                 <div>
-                    <hr/>
+                  <img src="http://placehold.it/350x300?text=3">
+                  <span>3</span>
                 </div>
             </div>
         </section>
@@ -69,8 +72,8 @@
             </div>
         </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="slick/slick.min.js"></script>
-        <script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script type="text/javascript">
             var height, name;
             var heightData;
             var result;
@@ -188,6 +191,8 @@
             var showTimeLine = function() {
                 $analyzed.css("display", "none");
                 $timeLine.css("display", "block");
+                $img.css("display", "none");
+                $(".slicker").slick();
             }
             function reloadPage(){
                 location.reload();
@@ -200,7 +205,6 @@
                     heightData = item.heightData;
                 });
                 $form.submit(getNameHeight);
-                $(".slicker").slick();
                 $toTimeline.click(showTimeLine);
             });
         </script> 

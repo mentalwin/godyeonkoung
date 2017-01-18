@@ -112,7 +112,7 @@ input {
 .analyzed {
     display : none;
 }
-.totimeline{
+#totimeline{
     cursor : pointer;
     position : relative;
     animation: right 5s infinite;
@@ -144,15 +144,16 @@ input {
 .timeline {
     display : none;
 }
-.slicker{
-    margin : 0 auto;
-    width : calc(100% - 50px);
+.slicker {
+    width : calc(100% - 40px);
 }
 
-.slicker div {
-    height : 100%;
+.desc{
+    position : absolute;
+    background : rgba(256, 256, 256, 0.84);
     width : 100%;
-    background : white;
+    height : 30%;
+    bottom : 0;
 }
 
 /*
@@ -173,9 +174,10 @@ input {
     color : #888888;
     font-size : 13px;
     height : 100%;
+}
+.foot img {
     cursor : pointer;
 }
-
 .left_footer {
     width : calc(70% - 1px);
 }
