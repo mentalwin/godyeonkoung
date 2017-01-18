@@ -104,11 +104,14 @@
                 return -1;//김연경보다 키 큰 경우
             }
             var getImage = function(idx) {
-                var val = 2;
-                return "images/KYK" + val + ".png";
+                if (idx >= 0 ) {
+                    return "images/KYK" + idx + ".png";
+                } else {
+                    return "images/donotjoke.png"
+                }
             }
             // 페이크 로딩
-            function fakeloading() {
+            function fakeloading(idx) {
                 $section1.css('display', 'none');
                 var message = getRandom(messages);
                 var spinner = $("<div class='spinner'>\
@@ -125,7 +128,7 @@
                 setTimeout(function(){
                     spinner.css("display", "none");
                     // 끝나고 결과 보여주기
-                    showResult();
+                    showResult(idx);
                 }, fakeloadingTime);
             }
             
@@ -138,38 +141,46 @@
                 height = +$("#height").val();
                 name = $("#name").val();
                 // loading 하는 척하기
-                fakeloading();
                 var idx = heightAnalyzer(height);
+                fakeloading(idx);
                 result = heightData[idx];
                 guessedresult = ageAnalzyer(idx, height);
             }
 
             // age analyzer
             var ageAnalzyer = function(idx, value) {
-                var base = 0;
-                var baseAge = 10;
-                var compData = heightData[idx];
-                if (idx > 0) {
-                    base = heightData[idx-1].height;
-                    baseAge = heightData[idx-1].age;
+                if (idx >= 0) {
+                    var base = 100;
+                    var baseAge = 10;
+                    var compData = heightData[idx];
+                    if (idx > 0) {
+                        base = heightData[idx-1].height;
+                        baseAge = heightData[idx-1].age;
+                    }
+                    var ratio = (value - base) / (compData.height - base)
+                    var multiplier = compData.age - baseAge
+                    return baseAge + Math.round(ratio * multiplier * 10) / 10;
                 }
-                var ratio = (value - base) / (compData.height - base)
-                var multiplier = compData.age - baseAge
-                return baseAge + Math.round(ratio * multiplier * 10) / 10;
             }
 
             // 결과 보여주기
-            var showResult = function() {
+            var showResult = function(idx) {
                 $analyzed.css("display", "block");
-                var resultMessage = result.message;
-                resultMessage = replaceMessage(resultMessage,/<name>/, name);
-                resultMessage = replaceMessage(resultMessage,/<age>/, guessedresult);
-                var resultValue = "\"" + height + "cm\"";
+                var resultMessage; 
                 var $user_result = $("#user_result");
                 var $user_value = $("#user_value");
+                if ( idx >= 0) {
+                    resultMessage = result.message;
+                    resultMessage = replaceMessage(resultMessage,/<name>/, name);
+                    resultMessage = replaceMessage(resultMessage,/<age>/, guessedresult);
+                    var resultValue = "\"" + height + "cm\"";
+                   
+                    $user_value.html(resultValue);
+                } else {
+                    resultMessage = "에이... 어플에 거짓말을 하면 쓰나..."
+                }
                 $user_result.html(resultMessage);
-                $user_value.html(resultValue);
-                var img = getImage();
+                var img = getImage(idx);
                 $img.attr("src", img);
                 // 김연경 타임라인으로...
             }
