@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <% include partials/head.ejs %>
+    </head>
+    <body>
+    
+        <div class="container text-center" >
+            <h1>당신의 키를 입력해주세요!</h1>
+            <form id="height_control">
+                <div class="form-group">
+                    <input type="number" class="form-control">
+                </div>
+                <button class="btn btn-primary" type="submit">입력!</button>
+            </form>
+
+            <div id="yourHeight"></div>
+        </div>
+        <div class="margin-auto">
+            <% include partials/cnt.ejs %>
+        </div>
+        <% include partials/js.ejs %> 
+    </body>
+</html>
