@@ -1,11 +1,19 @@
 <html>
     <head>
         <title>GodYeonKoung</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        
+        <% include ../partials/head.ejs %>        
     </head>
     <body>
-        
-
+        <div id="mw-app" class="swiper-container">
+            <div class="swiper-wrapper">
+                <slide-element :is-white='false' class='swiper-slide'>
+                    <p slot='main'>1</p> 
+                </slide-element>    
+                <slide-element :is-white="true" class='swiper-slide'>
+                    <p slot='main'>2</p> 
+                </slide-element>    
+            </div>
+        </div>
+        <% include ../partials/js.ejs %>
     </body>
 </html>

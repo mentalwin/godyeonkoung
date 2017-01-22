@@ -1,3 +1,11 @@
-<script src="js/bundle.js"></script>
-<script src="js/script.js"></script>
-
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/swiper/dist/js/swiper.jquery.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src='js/vue_component.js'></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        direction : 'vertical',
+        nextButton: '.swiper-next',
+        prevButton: '.swiper-prev'
+    });
+</script>
