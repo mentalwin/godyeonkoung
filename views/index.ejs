@@ -9,31 +9,73 @@
             <div class="swiper-wrapper">
                 <!-- First Page -->
                 <slide-element 
-                                :is-white='false' 
-                               class='swiper-slide first-page'>
-                        <div slot="main">
-                            <nav class="nav">
-                                <div class="nav-wrapper">
-                                    <a href="#" class="logo">
-                                        <img src="images/DDD1.png" alt="logo">
-                                    </a>
-                                </div>
-                            </nav>
-                            <div class="background">
-                                <div class="card">
-                                    배구여제<br/>
-                                    '김연경'<br/>
-                                    입덕 스토리<br/>
-                                </div>  
+                            :is-white='false' 
+                           class='swiper-slide first-page'>
+                    <div slot="main">
+                        <nav class="nav">
+                            <div class="nav-wrapper">
+                                <a href="#" class="logo">
+                                    <img src="images/DDD1.png" alt="logo">
+                                </a>
                             </div>
+                        </nav>
+                        <div class="background">
+                            <div class="card">
+                                배구여제<br/>
+                                '김연경'<br/>
+                                입덕 스토리<br/>
+                            </div>  
                         </div>
-                        
+                    </div>
                 </slide-element>    
 
                 <!-- Second Page -->
                 <slide-element :is-white="false" class='swiper-slide'>
-                    <div slot='main'></div>
+                    <div slot='main'>
+                        <video class="slider-video fullscreen-bg__video" width="100%" preload="auto" controls>
+                            <source src="video/YK_win.webm" type="video/webm"></source>
+                        </video>
+                    </div>
                 </slide-element>    
+                <!-- Third Page -->
+                <slide-element 
+                            :texts='[{text:"#아아... 태어날 때부터 스파이크 때렸을 것 같은 언니지만..."},
+                                    {text:"#처음부터 배구를 잘한 건 아니었덕..."}]'
+                            :is-white="true" class='swiper-slide third-page'
+                           :is-duck='"sad"'
+                           >
+                            
+                    <div slot='main'>
+                        <img src="" alt="">
+                    </div>
+                </slide-element>
+                <slide-element>
+                     
+                </slide-element>
+                <slide-element 
+                            :texts='[{text:"#그래도 좌절하지 않은 연경언니."},
+                                    {text:"#시합은 많이 뛰지 못했지만 더 열심히 연습했덕.."}]'
+                            :is-white="true" class='swiper-slide fourth-page'
+                           :is-duck='"happy"'
+                           >
+                            
+                    <div slot='main'>
+                        <img src="" alt="">
+                    </div>
+                </slide-element>
+               <slide-element 
+                            :texts='[{text:"# 이때 배구의 기본기를 튼튼하게 다졌지요!"}]'
+                            :is-white="true" class='swiper-slide fifth-page'
+                           :is-duck='"happy"'
+                           >
+                            
+                    <div slot='main'>
+                        <img src="" alt="">
+                    </div>
+                </slide-element>
+                <slide-element>
+                     
+                </slide-element>
             </div>
         </div>
         <% include ../partials/js.ejs %>

@@ -2,6 +2,35 @@ body
   margin : 0
 
 /*
+ * transition effect
+ */
+.list-enter-active, .list-leave-active
+  transition : all 1s
+.list-enter, .list-leave-to
+  opacity : 0  
+  transform : translateY(30px)
+
+/*
+ * Card
+ */
+section
+  overflow : hidden
+
+.card-container
+  position : absolute
+  right : 31px
+  bottom : 100px
+.duck-container
+  width : 50px
+  height : 50px
+  position : absolute
+  bottom : 50px
+  right : 8px
+  img
+    height : 100%
+    width : 100%
+
+/*
  * progress bar
  */
 #progressbar
@@ -44,3 +73,48 @@ body
     font-size : 8.3vw
     text-align : right
     color : #055b4b
+
+.third-page
+  background-image : url('../images/Elementary_Back.png')
+  .card
+    padding : 11px 24px 8px 19px
+    font-family : 'HANNA'
+    background-color : #007aff
+    border-radius : 30px
+    color : white
+    font-size : 32px
+    width : 325px
+    margin-bottom : 24px
+
+/*
+ * fourth page
+ */
+
+.fourth-page
+  background-image : url('../images/YK_middle.png')
+  .card
+    padding : 11px 24px 8px 19px
+    font-family : 'HANNA'
+    background-color : #007aff
+    border-radius : 30px
+    color : white
+    font-size : 32px
+    width : 325px
+    margin-bottom : 24px
+
+/*
+ * fifth page
+ */
+.fifth-page
+  background-image : url('../images/YK_trainning.png')
+  .card
+    padding : 11px 24px 8px 19px
+    font-family : 'HANNA'
+    background-color : #007aff
+    border-radius : 30px
+    color : white
+    font-size : 32px
+    width : 325px
+    margin-bottom : 24px
+
+

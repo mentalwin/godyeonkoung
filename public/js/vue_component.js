@@ -1,12 +1,24 @@
+Vue.filter('reverse', function(value){
+    return value.slice().reverse();
+});
 Vue.component('slide-element', {
-    props : ['texts', 'isWhite'],
+    props : ['texts', 'isWhite', 'isDuck'],
     template : `<section>
         <slot name='main'></slot>
-        <div class='card' v-for="talk in talks">
-            {{ talk }}
+        <div class="card-container">
+            <transition-group name="list">
+                <div class='card' v-for="talk in talks" :key="talk">
+                    {{ talk.text }}
+                </div>
+            </transition-group>
         </div>
         <slot name='sub'></slot>
-
+        <!-- duck -->
+        <div class="duck-container">
+            <img v-if="isDuck == 'happy'" src="images/love_icon.png" alt="">
+            <img v-if="isDuck == 'sad'" src="images/cry_icon.png" alt="">
+            <div v-else></div>
+        </div>
         <!-- arrow prev & next -->
         <div class="arrow">
             <div class="swiper-prev">
@@ -52,5 +64,6 @@ Vue.component('slide-element', {
 });
 
 var app = new Vue({
-    el : '#mw-app',
+    el : '#mw-app'
+
 });
