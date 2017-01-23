@@ -1,10 +1,45 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  margin: 0; }
 
-a {
-  color: #00B7FF;
-}
-.margin-auto{
-    margin : 0 auto;
-}
+/* progress bar
+ */
+#progressbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(270deg);
+  transform-origin: 100% 0;
+  height: 100vw;
+  width: 10px;
+  margin-left: -10px; }
+
+/* first page
+ */
+.first-page {
+  font-family: "HANNA"; }
+  .first-page section {
+    position: relative; }
+  .first-page nav {
+    height: 54px;
+    background-color: #faff37;
+    padding-top: 13px;
+    padding-left: 8px;
+    padding-bottom: 8px; }
+    .first-page nav .nav-wrapper {
+      height: 54px; }
+    .first-page nav img {
+      height: 100%; }
+  .first-page .background {
+    position: relative;
+    background-image: url("../images/olympic.png");
+    background-size: cover;
+    height: calc(100% - 74px); }
+  .first-page .card {
+    position: absolute;
+    right: 22.3px;
+    bottom: 116px;
+    font-size: 8.3vw;
+    text-align: right;
+    color: #055b4b; }
+
+/*# sourceMappingURL=style.css.map */
