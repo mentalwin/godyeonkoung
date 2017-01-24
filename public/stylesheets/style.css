@@ -2,6 +2,9 @@
 body {
   margin: 0; }
 
+.arrow {
+  z-index: 1; }
+
 /* transition effect
  */
 .list-enter-active, .list-leave-active {

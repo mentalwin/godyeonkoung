@@ -33,7 +33,7 @@ Vue.component('slide-element', {
             <div v-else></div>
         </div>
         <!-- arrow prev & next -->
-        <div class="arrow">
+        <div class="arrow" >
             <div class="swiper-prev">
                 <div v-on:click="prev_step" class="up_arrow">
                     <img :src="arrow[0]" alt="arrowup"> 
