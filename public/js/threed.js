@@ -7,20 +7,22 @@ function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xf2f2f2);
     loader = new THREE.ColladaLoader();
-    initV = new THREE.Vector3(8, -1, 8);
+    initV = new THREE.Vector3(5, -1, 8);
     v = initV.clone() // v THREE
     divider = new THREE.Vector3(20, 20, 20);
     v.divide(divider); // v divide 60 its 60fps
 
     light1 = new THREE.AmbientLight(0x2e2e2e);
     light2 = new THREE.DirectionalLight(0xe8e8e8);
+    light3 = new THREE.DirectionalLight(0xdedede);
     //scene.add(light1);
     scene.add(light2);
+    scene.add(light3);
     camera = new THREE.PerspectiveCamera(75, 
                                     window.innerWidth/window.innerHeight, 
                                     0.1,
                                     1000);
-    camera.position.set(1.64, 0.26, -3.53);
+    camera.position.set(-0.003, 0.626, 0.795);
     controls = new THREE.OrbitControls(camera);
     camera.lookAt(new THREE.Vector3(0, 0, -11));
     renderer = new THREE.WebGLRenderer();
@@ -28,7 +30,7 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     three_container.append(renderer.domElement);
     // ball loading 
-    loader.load('../public/3d/ball2.dae', function(dae){
+    loader.load('3d/ball2.dae', function(dae){
         ball = dae.scene; 
         ball.position.set(-5.1, 3.2, -9.4);
         scene.add(ball);
@@ -44,11 +46,11 @@ function init() {
 $(window).keydown(keydown)
 $(window).keyup(keyup)
 function keydown(e) {
-    e.preventDefault();
+    //e.preventDefault();
     keyboard[e.keyCode] = true;
 }
 function keyup(e) {
-    e.preventDefault();
+    //e.preventDefault();
     keyboard[e.keyCode] = false;
 }
 
