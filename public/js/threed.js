@@ -23,7 +23,7 @@ function init() {
                                     0.1,
                                     1000);
     camera.position.set(-0.003, 0.626, 0.795);
-    controls = new THREE.OrbitControls(camera);
+//    controls = new THREE.OrbitControls(camera);
     camera.lookAt(new THREE.Vector3(0, 0, -11));
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -39,7 +39,7 @@ function init() {
     loader.load('3d/asset2.dae', function(dae){
         court = dae.scene;
         scene.add(court);
-        controls.target = new THREE.Vector3(0, 0, -11);
+        //controls.target = new THREE.Vector3(0, 0, -11);
     });
     render();
 }
@@ -87,6 +87,10 @@ function keycontroller () {
         v.divide(divider); // v divide 60 its 60fps
 
     }
-        
 }
+$(".btnBlueGreen").click(function(){
+    ball.position.set(-5.1, 3.2, -9.4);
+    v = initV.clone(); // v THREE
+    v.divide(divider); // v divide 60 its 60fps
+});
 init();

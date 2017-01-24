@@ -7,6 +7,7 @@ Vue.component('slide-element', {
             type : Object,
             default : function() {
                 return {
+                    next : []
                     texts : [],
                     isWhite : false,
                     isDuck : "",
@@ -86,7 +87,11 @@ var objList = [
     },
     {
         isWhite : false,
-        texts : [{
+        texts : [
+        {
+            text : ''
+        },
+        {
             text : '#CEV컵, 챔피언스리그, 터키리그까지 전관왕 휩쓴 사기캐 우리 연경 선수',
             from : 'duck'
         }],
