@@ -28,7 +28,7 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     three_container.append(renderer.domElement);
     // ball loading 
-    loader.load('3d/ball2.dae', function(dae){
+    loader.load('../public/3d/ball2.dae', function(dae){
         ball = dae.scene; 
         ball.position.set(-5.1, 3.2, -9.4);
         scene.add(ball);
