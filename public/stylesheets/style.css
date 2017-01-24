@@ -32,6 +32,15 @@ section {
   position: absolute;
   right: 31px;
   bottom: 100px; }
+  .card-container .card {
+    padding: 11px 24px 8px 19px;
+    font-family: "HANNA";
+    background-color: #007aff;
+    border-radius: 30px;
+    color: white;
+    font-size: 32px;
+    width: 325px;
+    margin-bottom: 24px; }
 
 .duck-container {
   width: 50px;
@@ -89,17 +98,7 @@ section {
 .second-page .card:first-child {
   background-image: url("../images/cup_win.png");
   width: 267px;
-  height: 290px;
-  position: absolute; }
-.second-page .card {
-  padding: 11px 24px 8px 19px;
-  font-family: "HANNA";
-  background-color: #007aff;
-  border-radius: 30px;
-  color: white;
-  font-size: 32px;
-  width: 325px;
-  margin-bottom: 24px; }
+  height: 290px; }
 
 /* third page
  */
@@ -165,5 +164,12 @@ section {
     background: #00AE68;
     cursor: pointer;
     padding: 10px; }
+
+/* 11th page : 주팅, 김연경
+ */
+.eleventh-page {
+  background-image: url("../images/YK-vs-ZT.png"); }
+  .eleventh-page .card:first-child {
+    background-image: url("../images/graph_ZT_YK.png"); }
 
 /*# sourceMappingURL=style.css.map */

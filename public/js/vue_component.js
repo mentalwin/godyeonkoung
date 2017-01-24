@@ -7,7 +7,6 @@ Vue.component('slide-element', {
             type : Object,
             default : function() {
                 return {
-                    next : []
                     texts : [],
                     isWhite : false,
                     isDuck : "",
@@ -101,7 +100,7 @@ var objList = [
     },
     {
         texts : [
-            {text:"#아아... 태어날 때부터 스파이크 때렸을 것 같은 언니지만...", from:"sdf"},
+            {text:"#아아... 태어날 때부터 스파이크 때렸을 것 같은 언니지만...", from:"duck"},
             {text:"#처음부터 배구를 잘한 건 아니었덕...", from:"duck"}
         ],
         isWhite : true,
@@ -109,8 +108,8 @@ var objList = [
     },
     {
         texts : [
-            {text:"#그래도 좌절하지 않은 연경언니."},
-            {text:"#시합은 많이 뛰지 못했지만 더 열심히 연습했덕.."}],
+            {text:"#그래도 좌절하지 않은 연경언니.", from:'duck'},
+            {text:"#시합은 많이 뛰지 못했지만 더 열심히 연습했덕..", from: 'duck'}],
         isWhite : true,
         isDuck : "happy"
     },
@@ -119,8 +118,59 @@ var objList = [
             {text:"# 이때 배구의 기본기를 튼튼하게 다졌지요!"}],
         isWhite : true,
         isDuck : "happy"
+    },
+    {
+        texts : [
+            { 
+                text : '# 그러다 고등학생 때 키가 20cm 이상 커져 완전체가 된 연경 선수!',
+                from : 'duck'
+            },
+            { 
+                text : '# 이게 다 준비가 되어 있었기에 가능한 일이었덕...',
+                from : 'duck'
+            }
+        ]     
+    },
+    {
+        isWhite : true,
+        texts : [
+        {
+            text : '초/중학교 때부터 기본기를 잘 배우고 올라왔던거 같아요.',
+            from : 'notduck'
+        }],
+        hasVideo : true,
+        isDuck : 'happy',
+        videoId : "video2"
+    },
+    {
+        isWhite : true,
+        texts : [
+        {
+            text : '경쟁에서 멀어지면서 신체조건도 안좋았던거 같고...',
+            from : 'notduck'
+        },{
+            text : '#마음이 아프덕...ㅠㅠ'     ,
+            from : 'notduck'
+        }],
+        hasVideo : true,
+        isDuck : 'sad',
+        videoId : "video3"
+    },
+    {
+        isWhite : true,
+        texts : [
+        {
+            text : '',
+            from : 'notduck'
+        },{
+            text : '#같은 공격수라도 연경 선수만큼 수비할 수는 없덕...ㅠㅠ'     ,
+            from : 'notduck'
+        }],
+        hasVideo : true,
+        isDuck : 'sad',
+        videoId : "video3"
     }
-
+    
 ]
 
 

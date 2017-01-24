@@ -15,13 +15,15 @@
         paginationType : 'progress',
         onSlideChangeEnd : function() {
             if (app && app.$children[mySwiper.activeIndex].properties.hasVideo) {
+                console.log(app.$children[mySwiper.activeIndex].properties.videoId);
                 video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
                 video.play();
             }
         },
         onSlideChangeStart : function() {
             if (video && !video.paused) video.load();
-        }
+        },
+        lazyLoadingInPrevNext : true
     });
     var swiper_h = new Swiper('.swiper-container-h', {
         direction : 'horizontal'  ,
