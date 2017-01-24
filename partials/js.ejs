@@ -1,9 +1,5 @@
 <script src="vendor/jquery/dist/jquery.min.js"></script>
 <script src="vendor/swiper/dist/js/swiper.jquery.js"></script>
-<script src="vendor/three/three.min.js"></script>
-<script src="vendor/three/ColladaLoader.js"></script>
-<script src="vendor/three/ColladaLoader2.js"></script>
-<script src="vendor/three/OrbitControls.js"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src='js/vue_component.js'></script>
 <script src='js/threed.js'></script>
@@ -15,15 +11,13 @@
         paginationType : 'progress',
         onSlideChangeEnd : function() {
             if (app && app.$children[mySwiper.activeIndex].properties.hasVideo) {
-                console.log(app.$children[mySwiper.activeIndex].properties.videoId);
                 video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
                 video.play();
             }
         },
         onSlideChangeStart : function() {
             if (video && !video.paused) video.load();
-        },
-        lazyLoadingInPrevNext : true
+        }
     });
     var swiper_h = new Swiper('.swiper-container-h', {
         direction : 'horizontal'  ,
