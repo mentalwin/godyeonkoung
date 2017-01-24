@@ -9,7 +9,7 @@
             <div class="swiper-wrapper">
                 <!-- First Page -->
                 <slide-element 
-                            :is-white='false' 
+                           :properties="obj1"
                            class='swiper-slide first-page'>
                     <div slot="main">
                         <nav class="nav">
@@ -30,51 +30,71 @@
                 </slide-element>    
 
                 <!-- Second Page -->
-                <slide-element :is-white="false" class='swiper-slide'>
+                <slide-element  
+                    :properties="obj2"
+                    class='swiper-slide second-page'>
                     <div slot='main'>
-                        <video class="slider-video fullscreen-bg__video" width="100%" preload="auto" controls>
-                            <source src="video/YK_win.webm" type="video/webm"></source>
-                        </video>
+                        <div class="fullscreen-bg">
+                            <video id="video1" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" >
+                                <source src="video/YK_win.webm" type="video/webm"></source>
+                            </video>
+                        </div>
                     </div>
                 </slide-element>    
                 <!-- Third Page -->
                 <slide-element 
-                            :texts='[{text:"#아아... 태어날 때부터 스파이크 때렸을 것 같은 언니지만..."},
-                                    {text:"#처음부터 배구를 잘한 건 아니었덕..."}]'
-                            :is-white="true" class='swiper-slide third-page'
-                           :is-duck='"sad"'
-                           >
-                            
+                    :properties="obj3"
+                    class='swiper-slide third-page' > 
                     <div slot='main'>
                         <img src="" alt="">
                     </div>
                 </slide-element>
-                <slide-element>
-                     
-                </slide-element>
+                <!-- Fourth page-->
                 <slide-element 
-                            :texts='[{text:"#그래도 좌절하지 않은 연경언니."},
-                                    {text:"#시합은 많이 뛰지 못했지만 더 열심히 연습했덕.."}]'
-                            :is-white="true" class='swiper-slide fourth-page'
-                           :is-duck='"happy"'
-                           >
-                            
+                    :properties="obj4"
+                    class='swiper-slide fourth-page'> 
                     <div slot='main'>
-                        <img src="" alt="">
+                        <img src="images/YK_middle.png" alt="">
                     </div>
                 </slide-element>
+               <!-- Fifth page-->
                <slide-element 
-                            :texts='[{text:"# 이때 배구의 기본기를 튼튼하게 다졌지요!"}]'
-                            :is-white="true" class='swiper-slide fifth-page'
-                           :is-duck='"happy"'
-                           >
+                    :properties="obj5" 
+                    class='swiper-slide fifth-page'>
                             
                     <div slot='main'>
-                        <img src="" alt="">
+                        <img src="images/YK_trainning.png" alt="">
                     </div>
                 </slide-element>
-                <slide-element>
-                     
+                <!-- sixth page - 기술 설명 영상-->
+                <slide-element class="swiper-slide sixth-page">
+                    <div slot='main' class="swiper-container-h">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="gif-container">
+                                    <img src="gifs/spike.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gif-container">
+                                    <img src="gifs/serve.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gif-container">
+                                    <img src="gifs/receive.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gif-container">
+                                    <img src="gifs/block.gif" alt="">
+                                </div>
+                            </div>
+                        </div>                    
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
                 </slide-element>
             </div>
         </div>

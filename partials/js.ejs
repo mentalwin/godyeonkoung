@@ -3,9 +3,27 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src='js/vue_component.js'></script>
 <script>
+    var video;
     var mySwiper = new Swiper('.swiper-container', {
         direction : 'vertical',
         pagination: '.swiper-pagination',
-        paginationType : 'progress'
+        paginationType : 'progress',
+        onSlideChangeEnd : function() {
+            if (app && app.$children[mySwiper.activeIndex].properties.hasVideo) {
+                video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
+                video.play();
+            }
+        },
+        onSlideChangeStart : function() {
+            if (video && !video.paused) video.load();
+        }
+    });
+    var swiper_h = new Swiper('.swiper-container-h', {
+        direction : 'horizontal'  ,
+        pagination: '.swiper-pagination',
+        paginationClickable : true,
+        nextButton : '.swiper-button-next',
+        prevButton : '.swiper-button-prev',
+
     });
 </script>
