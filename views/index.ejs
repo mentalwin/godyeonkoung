@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </slide-element>    
-                <!-- Third Page -->
+                <!-- Third Page 초등학생 김연경 -->
                 <slide-element 
                     :properties="obj3"
                     class='swiper-slide third-page' > 
@@ -49,7 +49,20 @@
                         <img src="" alt="">
                     </div>
                 </slide-element>
-                <!-- Fourth page-->
+                <!-- 10 page : 김연경 옛날 회상 인터뷰-->
+                <slide-element
+                    :properties="obj8" 
+                    class="swiper-slide tenth-page"
+                >
+                    <div slot ="main">
+                       <div class="fullscreen-bg" >
+                            <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" >
+                                <source src="video/YK_elementary_interview.webm" type="video/webm"></source>
+                            </video>
+                        </div>
+                    </div>
+                </slide-element>
+                <!-- Fourth page 김연경 연습 더 열심히 했다 초-->
                 <slide-element 
                     :properties="obj4"
                     class='swiper-slide fourth-page'> 
@@ -57,7 +70,7 @@
                         <img src="images/YK_middle.png" alt="">
                     </div>
                 </slide-element>
-               <!-- Fifth page-->
+               <!-- Fifth page 연습 사진 페이지-->
                <slide-element 
                     :properties="obj5" 
                     class='swiper-slide fifth-page'>
@@ -66,7 +79,29 @@
                         <img src="images/YK_trainning.png" alt="">
                     </div>
                 </slide-element>
-                <!-- sixth page - 기술 설명 영상-->
+                <!-- 감독 인터뷰 페이지-->
+                <slide-element
+                    :properties = "obj7" 
+                    class="swiper-slide ninth-page">
+                >
+                   <div slot ="main">
+                       <div class="fullscreen-bg" >
+                            <video id="video2" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" >
+                                <source src="video/KJ_interview.webm" type="video/webm"></source>
+                            </video>
+                        </div>
+                    </div>
+                </slide-element>
+               <!-- 8th page 갑자기 키가 컸지요- -->
+                <slide-element
+                    :properties = "obj6"
+                    class="swiper-slide eighth-page">
+                    <div slot='main'>
+                        <img src="images/YK_elementary5.png" alt="">
+                    </div>
+                    
+                </slide-element> 
+                <!-- sixth page - 기술 설명 지피-->
                 <slide-element class="swiper-slide sixth-page">
                     <div slot='main' class="swiper-container-h">
                         <div class="swiper-wrapper">
@@ -107,40 +142,9 @@
                     </div>
                     
                 </slide-element>
-                <!-- 8th page - -->
-                <slide-element
-                    :properties = "obj6"
-                    class="swiper-slide eighth-page">
-                    <div slot='main'>
-                        <img src="images/YK_elementary5.png" alt="">
-                    </div>
-                    
-                </slide-element>
-                <slide-element
-                    :properties = "obj7" 
-                    class="swiper-slide ninth-page">
-                >
-                   <div slot ="main">
-                       <div class="fullscreen-bg" >
-                            <video id="video2" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" >
-                                <source src="video/KJ_interview.webm" type="video/webm"></source>
-                            </video>
-                        </div>
-                    </div>
-                </slide-element>
-                <!-- 10 page : 김연경 인터뷰-->
-                <slide-element
-                    :properties="obj8" 
-                    class="swiper-slide tenth-page"
-                >
-                    <div slot ="main">
-                       <div class="fullscreen-bg" >
-                            <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" >
-                                <source src="video/YK_elementary_interview.webm" type="video/webm"></source>
-                            </video>
-                        </div>
-                    </div>
-                </slide-element>
+                
+                
+                
                 <!-- 11 page : 주팅 김연경 비교-->
                 <slide-element
                     :properties="obj9" 
