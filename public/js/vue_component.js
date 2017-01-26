@@ -6,7 +6,7 @@ var objList = [
         background_image :"../images/olympic.png"
     },
     {
-        isWhite : false,
+        isWhite : true,
         texts : [
         {
             text : '',
@@ -52,7 +52,8 @@ var objList = [
                 text : '# 이게 다 준비가 되어 있었기에 가능한 일이었덕...',
                 from : 'duck'
             }
-        ]     
+        ]    ,
+        isWhite : true
     },
     {
         isWhite : true,
