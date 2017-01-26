@@ -1,98 +1,21 @@
-Vue.filter('reverse', function(value){
-    return value.slice().reverse();
-});
-Vue.component('slide-element', {
-    props : {
-        properties : {
-            type : Object,
-            default : function() {
-                return {
-                    texts : [],
-                    isWhite : false,
-                    isDuck : "",
-                    hasVideo : false,
-                    videoId : null,
-                }
-            }
-        }
-    }, 
-    template : `<section>
-        <slot name='main'></slot>
-        <div class="card-container">
-            <transition-group name="list">
-                <div class='card' v-bind:class="{other : talk.from != 'duck'}" v-for="talk in talks" :key="talk">
-                    {{ talk.text }}
-                </div>
-            </transition-group>
-        </div>
-        <slot name='sub'></slot>
-        <!-- duck -->
-        <div class="duck-container">
-            <img v-if="properties.isDuck === 'happy'" src="images/love_icon.png" alt="">
-            <img v-if="properties.isDuck === 'sad'" src="images/cry_icon.png" alt="">
-            <div v-else></div>
-        </div>
-        <!-- arrow prev & next -->
-        <div class="arrow" >
-            <div class="swiper-prev">
-                <div v-on:click="prev_step" class="up_arrow">
-                    <img :src="arrow[0]" alt="arrowup"> 
-                </div>
-            </div>
-            <div class="swiper-next">
-                <div v-on:click="next_step" class="down_arrow">
-                    <img :src="arrow[1]" alt="arrowdown">
-                </div>
-            </div>
-        </div>
-    </section>`,
-    data : function() {
-        return {
-            talks : [],
-        }
-    },
-    computed : {
-        arrow : function() {
-            var gray = ['assets/up_arrow_gray.png', 'assets/main_arrowdown_gray.gif'];
-            var white = ['assets/up_arrow.png', 'assets/main_arrowdown.gif'];
-            return this.properties.isWhite ? gray : white;
-        }
-    },
-    methods : {
-        next_step : function() {
-            var prop = this.properties;
-            if (prop.texts && prop.texts.length > 0) {
-                this.talks.push(prop.texts.shift());
-            } else {
-                mySwiper.slideNext();
-            }
-        }, 
-        prev_step : function() {
-            var prop = this.properties;
-            if (this.talks.length > 0) {
-                prop.texts.splice(0, 0, this.talks.pop());
-            } else {
-                mySwiper.slidePrev();
-            }
-        }
-    }
-});
-
 var objList = [
     {
         texts : [],
         isWhite : false,
-        isDuck : 'happy'
+        isDuck : 'happy',
+        background_image :"../images/olympic.png"
     },
     {
         isWhite : false,
         texts : [
         {
-            text : ''
+            text : '',
+            type : 'etc'
         },
         {
             text : '#CEV컵, 챔피언스리그, 터키리그까지 전관왕 휩쓴 사기캐 우리 연경 선수',
-            from : 'duck'
+            from : 'duck',
+            type : 'text'
         }],
         hasVideo : true,
         isDuck : 'happy',
@@ -160,18 +83,134 @@ var objList = [
         isWhite : true,
         texts : [
         {
+            type : 'etc',
             text : '',
             from : 'notduck'
         },{
-            text : '#같은 공격수라도 연경 선수만큼 수비할 수는 없덕...ㅠㅠ'     ,
-            from : 'notduck'
+            text : '#같은 공격수라도 연경 선수만큼 수비할 수는 없덕...'     ,
+            from : 'duck'
         }],
-        hasVideo : true,
+        isDuck : 'happy',
+    },
+    {
+        isWhite : true,
+        texts : [
+        {
+            text : '#훌륭한 성적으로 세계를 제패한 연경 선수... 정말 감동이덕...'     ,
+            from : 'duck'
+        }],
+        isDuck : 'happy',
+    },
+    {
+        isWhite : true,
+        texts : [
+        {
+            text : '제 자신을 제가 믿는 게 가장 중요한 거 같아요' ,
+            from : 'notduck'
+        },
+        {
+            text : '# 나 방금 심쿵했덕' ,
+            from : 'duck'
+        }],
         isDuck : 'sad',
-        videoId : "video3"
-    }
+        hasVideo : true,
+        videoId : "video4"
+    },
+    {
+        hasVideo : true,
+        videoId : "video5"
+    } 
     
-]
+];
+
+Vue.filter('reverse', function(value){
+    return value.slice().reverse();
+});
+Vue.component('slide-element', {
+    props : {
+        properties : {
+            type : Object,
+            default : function() {
+                return {
+                    texts : [],
+                    isWhite : false,
+                    isDuck : "",
+                    hasVideo : false,
+                    videoId : null,
+                    background_image : null
+                }
+            }
+        }
+    }, 
+    template : `<section >
+        <slot name='main'></slot>
+        <div class="etc-container">
+            <transition-group name="et">
+                <div class="etc" v-for="et in etc" :key="et">
+                </div>
+            </transition-group>
+        </div>
+        <div class="card-container">
+            <transition-group name="list">
+                <div class="card" v-bind:class="{other : talk.from != 'duck'}" v-for="talk in talks" :key="talk">
+                    {{ talk.text }}
+                </div>
+            </transition-group>
+        </div>
+        <slot name='sub'></slot>
+        <!-- duck -->
+        <div class="duck-container">
+            <img v-if="properties.isDuck === 'happy'" src="images/love_icon.png" alt="">
+            <img v-if="properties.isDuck === 'sad'" src="images/cry_icon.png" alt="">
+            <div v-else></div>
+        </div>
+        <!-- arrow prev & next -->
+        <div class="arrow" >
+            <div class="swiper-prev">
+                <div v-on:click="prev_step" class="up_arrow">
+                    <img :src="arrow[0]" alt="arrowup"> 
+                </div>
+            </div>
+            <div class="swiper-next">
+                <div v-on:click="next_step" class="down_arrow">
+                    <img :src="arrow[1]" alt="arrowdown">
+                </div>
+            </div>
+        </div>
+    </section>`,
+    data : function() {
+        return {
+            talks : [],
+            etc : []
+        }
+    },
+    computed : {
+        arrow : function() {
+            var gray = ['assets/up_arrow_gray.png', 'assets/main_arrowdown_gray.gif'];
+            var white = ['assets/up_arrow.png', 'assets/main_arrowdown.gif'];
+            return this.properties.isWhite ? gray : white;
+        }
+    },
+    methods : {
+        next_step : function() {
+            var prop = this.properties;
+            if (prop.texts.length > 0) {
+                var next_item = prop.texts.shift();
+                next_item.type == "etc" ? this.etc.push(next_item) : this.talks.push(next_item);
+            } else {
+                mySwiper.slideNext();
+            }
+        }, 
+        prev_step : function() {
+            var prop = this.properties;
+            if (this.talks.length > 0) {
+                prop.texts.splice(0, 0, this.talks.pop());
+            } else {
+                mySwiper.slidePrev();
+            }
+        }
+    }
+});
 
 
 var options = {

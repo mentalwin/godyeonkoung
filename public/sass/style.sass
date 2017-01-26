@@ -4,8 +4,31 @@ body
 .arrow
   z-index : 1
 /*
+ * animations
+ */
+@keyframes twinker-right
+  0% 
+    right : 0px
+  10% 
+    right : 10px
+  30% 
+    right : 0px
+
+/*
+ * swiper right
+ */
+.swiper-button-next
+  animation-name : twinker-right
+  animation-duration : 2s
+/*
  * transition effect
  */
+.et-enter-active, .et-leave-active
+  transition : all 1s
+.et-enter, .et-leave-to
+  opacity : 0  
+  transform : translateY(30px)
+
 .list-enter-active, .list-leave-active
   transition : all 1s
 .list-enter, .list-leave-to
@@ -97,10 +120,18 @@ section
  * second page
  */
 .second-page
-  .card:first-child
-    background-image : url('../images/cup_win.png')
-    width : 267px
-    height : 290px
+  .etc-container
+    position : absolute
+    width : 100%
+    height : 100%
+    top : 0
+    .etc
+      background-image : url('../images/cup_win.png')
+      width : 310px
+      margin : 0 auto
+      height : 310px
+      opacity : 0.8
+
 /*
  * third page
  */
@@ -184,5 +215,22 @@ section
  */
 .eleventh-page
   background-image : url('../images/YK-vs-ZT.png')
-  .card:first-child
-    background-image: url('../images/graph_ZT_YK.png')
+  .etc-container
+    position : absolute
+    width : 100%
+    height : 100%
+    top : 0
+    .etc
+      background-image : url('../images/graph_ZT_YK.png')
+      width : 744px
+      margin : 0 auto
+      height : 300px
+      opacity : 0.8
+      margin-top : 250px
+
+/*
+ * 12th page : MVP
+ */
+
+.twelveth-page
+  background-image : url('../images/mvp_back.png')
