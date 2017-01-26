@@ -2,6 +2,9 @@
 body {
   margin: 0; }
 
+.arrow {
+  z-index: 1; }
+
 /* transition effect
  */
 .list-enter-active, .list-leave-active {
@@ -29,6 +32,15 @@ section {
   position: absolute;
   right: 31px;
   bottom: 100px; }
+  .card-container .card {
+    padding: 11px 24px 8px 19px;
+    font-family: "HANNA";
+    background-color: #007aff;
+    border-radius: 30px;
+    color: white;
+    font-size: 32px;
+    width: 325px;
+    margin-bottom: 24px; }
 
 .duck-container {
   width: 50px;
@@ -83,15 +95,10 @@ section {
 
 /* second page
  */
-.second-page .card {
-  padding: 11px 24px 8px 19px;
-  font-family: "HANNA";
-  background-color: #007aff;
-  border-radius: 30px;
-  color: white;
-  font-size: 32px;
-  width: 325px;
-  margin-bottom: 24px; }
+.second-page .card:first-child {
+  background-image: url("../images/cup_win.png");
+  width: 267px;
+  height: 290px; }
 
 /* third page
  */
@@ -140,5 +147,29 @@ section {
 .sixth-page .swiper-slide .gif-container {
   width: 1000px;
   margin: 0 auto; }
+
+/* 7th page : 3d spikes
+ */
+.seventh-page .button {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 120px;
+  margin: 10px 20px 10px;
+  text-align: center;
+  color: #FFF; }
+  .seventh-page .button .btnBlueGreen {
+    border-radius: 5px;
+    background: #00AE68;
+    cursor: pointer;
+    padding: 10px; }
+
+/* 11th page : 주팅, 김연경
+ */
+.eleventh-page {
+  background-image: url("../images/YK-vs-ZT.png"); }
+  .eleventh-page .card:first-child {
+    background-image: url("../images/graph_ZT_YK.png"); }
 
 /*# sourceMappingURL=style.css.map */
