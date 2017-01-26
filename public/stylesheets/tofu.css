@@ -25,7 +25,7 @@ body {
     color : white;
 }
 .lighter{
-    font-weight : lighter;
+    font-weight : normal;
 }
 .section-container {
     width : calc(100% - 50px);
@@ -51,6 +51,7 @@ body {
 }
 
 p{
+    font-size: 7vw;
     margin : 10px;
 }
 .lower{
@@ -58,7 +59,7 @@ p{
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.42;
+    line-height: 1.15;
     letter-spacing: 3.4px;
     color: #0c4b3e
 }
