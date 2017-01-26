@@ -132,7 +132,8 @@ section {
 /* third page
  */
 .third-page {
-  background-image: url("../images/Elementary_Back.png"); }
+  background-image: url("../images/Elementary_Back.png");
+  background-size: cover; }
   .third-page .card {
     padding: 11px 24px 8px 19px;
     font-family: "HANNA";
@@ -146,7 +147,8 @@ section {
 /* fourth page
  */
 .fourth-page {
-  background-image: url("../images/YK_middle.png"); }
+  background-image: url("../images/YK_middle.png");
+  background-size: cover; }
   .fourth-page .card {
     padding: 11px 24px 8px 19px;
     font-family: "HANNA";
@@ -160,7 +162,8 @@ section {
 /* fifth page
  */
 .fifth-page {
-  background-image: url("../images/YK_trainning.png"); }
+  background-image: url("../images/YK_trainning.png");
+  background-size: cover; }
   .fifth-page .card {
     padding: 11px 24px 8px 19px;
     font-family: "HANNA";
@@ -194,10 +197,17 @@ section {
     cursor: pointer;
     padding: 10px; }
 
+/* 8th page : 8번째 페이지 키가 컸어요
+ */
+.eighth-page {
+  background-image: url("../images/YK_elementary5.png");
+  background-size: cover; }
+
 /* 11th page : 주팅, 김연경
  */
 .eleventh-page {
-  background-image: url("../images/YK-vs-ZT.png"); }
+  background-image: url("../images/YK-vs-ZT.png");
+  background-size: cover; }
   .eleventh-page .etc-container {
     position: absolute;
     width: 100%;
@@ -214,6 +224,7 @@ section {
 /* 12th page : MVP
  */
 .twelveth-page {
-  background-image: url("../images/mvp_back.png"); }
+  background-image: url("../images/mvp_back.png");
+  background-size: cover; }
 
 /*# sourceMappingURL=style.css.map */
