@@ -1,3 +1,16 @@
+var mql = matchMedia("(min-aspect-ratio: 1/1)"),
+    handler = function(mql) {
+        if(mql.matches) {
+            // 웹 비디오 리턴
+            console.log("Web!");
+        } else {
+            // 모바일 비디오 return
+            console.log("Mobile!");
+        }
+    }
+handler(mql);
+window.addEventListener('resize')
+
 var objList = [
     {
         texts : [],
@@ -152,7 +165,7 @@ Vue.component('slide-element', {
     }, 
     template : `<section>
         <div class="background" >
-<img class="swiper-lazy" :data-src="properties.background_image" alt="background"/>
+<img class="swiper-lazy" :data-src="properties.background_image" alt=""/>
         </div>
         <slot name='main'>
          
