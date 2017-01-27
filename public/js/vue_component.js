@@ -1,11 +1,12 @@
+var postfix;
 var mql = matchMedia("(min-aspect-ratio: 1/1)"),
     handler = function(mql) {
         if(mql.matches) {
             // 웹 비디오 리턴
-            console.log("Web!");
+            postfix = "_w.png";
         } else {
             // 모바일 비디오 return
-            console.log("Mobile!");
+            postfix = "_m.png";
         }
     }
 handler(mql);
@@ -70,7 +71,7 @@ var objList = [
         ]    ,
         isWhite : true,
         isDuck : "happy",
-        background_image :"../images/YK_Elementary5.png"
+        background_image :"../images/YK_elementary5.png"
     },
     {
         isWhite : true,
@@ -191,16 +192,14 @@ Vue.component('slide-element', {
         </div>
         <!-- arrow prev & next -->
         <div class="arrow" >
-            <div class="swiper-prev swiper-button-custom">
+            <div class="swiper-prev">
                 <div v-on:click="prev_step" class="up_arrow">
-                    <img :src="arrow[0]" alt="arrowup"> 
-                    <div>이전</div>
+                    <img src="images/arrow_up.png" alt="arrowup"> 
                 </div>
             </div>
-            <div class="swiper-next swiper-button-custom">
+            <div class="swiper-next">
                 <div v-on:click="next_step" class="down_arrow">
-                    <img :src="arrow[1]" alt="arrowdown">
-                    <div>다음</div>
+                    <img src="images/arrow_down.png" alt="arrowdown">
                 </div>
             </div>
         </div>
@@ -239,12 +238,16 @@ Vue.component('slide-element', {
     }
 });
 
+var imgAssets = ["bg1", "bg2", "bg3", "bg4", "bg5", "bg6", "bg7"];
+var videoAssets = ["video1","video2","video3","video4","video5"];
 
 var options = {
     el : '#mw-app',
     data : {}
 }
 for(var i = 0; i < objList.length; i++) {
+    var curOption = objList[i];
+    if(!curOption.hasVideo) curOption.background_image = "images/" + imgAssets.shift() + postfix;
     options.data["obj" + (i+1)] = objList[i];
 }
 // get data from 
