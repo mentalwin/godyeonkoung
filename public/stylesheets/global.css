@@ -19,3 +19,18 @@
 .Roboto {
     font-family : 'Roboto';
 }
+
+@keyframes active {
+    0% { right : 10px}
+    5% { right : 20px}
+    10% { right : 10px}
+    15% { right : 20px}
+    20% { right : 10px}
+}
+@-webkit-keyframes active {
+    0% { right : 10px}
+    5% { right : 20px}
+    10% { right : 10px}
+    15% { right : 20px}
+    20% { right : 10px}
+}

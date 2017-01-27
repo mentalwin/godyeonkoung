@@ -5,15 +5,9 @@ body {
 .arrow {
   z-index: 1; }
 
-/* animations
- */
-@keyframes twinker-right {
-  0% {
-    right: 0px; }
-  10% {
-    right: 10px; }
-  30% {
-    right: 0px; } }
+section {
+  background-size: cover; }
+
 /* swiper right
  */
 .swiper-button-next {
@@ -30,11 +24,11 @@ body {
   transform: translateY(30px); }
 
 .list-enter-active, .list-leave-active {
-  transition: all 1s; }
+  transition: transform 0.3s; }
 
 .list-enter, .list-leave-to {
   opacity: 0;
-  transform: translateY(30px); }
+  transform: translateX(50px); }
 
 .other {
   padding: 8px 40px 8px 40px;
@@ -65,8 +59,8 @@ section {
     margin-bottom: 24px; }
 
 .duck-container {
-  width: 50px;
-  height: 50px;
+  width: 104px;
+  height: 104px;
   position: absolute;
   bottom: 50px;
   right: 8px; }
@@ -132,7 +126,6 @@ section {
 /* third page
  */
 .third-page {
-  background-image: url("../images/Elementary_Back.png");
   background-size: cover; }
   .third-page .card {
     padding: 11px 24px 8px 19px;

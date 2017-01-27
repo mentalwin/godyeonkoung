@@ -1,9 +1,7 @@
 var objList = [
     {
         texts : [],
-        isWhite : false,
-        isDuck : 'happy',
-        background_image :"../images/olympic.png"
+        isWhite : false
     },
     {
         isWhite : true,
@@ -19,28 +17,32 @@ var objList = [
         }],
         hasVideo : true,
         isDuck : 'happy',
-        videoId : "video1"
+        videoId : "video1",
     },
+    // 초등학교 시절 3 번째 페이지
     {
         texts : [
             {text:"#아아... 태어날 때부터 스파이크 때렸을 것 같은 언니지만...", from:"duck"},
             {text:"#처음부터 배구를 잘한 건 아니었덕...", from:"duck"}
         ],
         isWhite : true,
-        isDuck : "sad"
+        isDuck : "sad",
+        background_image :"../images/Elementary_Back.png"
     },
     {
         texts : [
             {text:"#그래도 좌절하지 않은 연경언니.", from:'duck'},
             {text:"#시합은 많이 뛰지 못했지만 더 열심히 연습했덕..", from: 'duck'}],
         isWhite : true,
-        isDuck : "happy"
+        isDuck : "happy",
+        background_image :"../images/YK_middle.png"
     },
     {
         texts : [
-            {text:"# 이때 배구의 기본기를 튼튼하게 다졌지요!"}],
+            {text:"# 이때 배구의 기본기를 튼튼하게 다졌지요!", from:'duck'}],
         isWhite : true,
-        isDuck : "happy"
+        isDuck : "happy",
+        background_image :"../images/YK_trainning.png"
     },
     {
         texts : [
@@ -53,7 +55,9 @@ var objList = [
                 from : 'duck'
             }
         ]    ,
-        isWhite : true
+        isWhite : true,
+        isDuck : "happy",
+        background_image :"../images/YK_Elementary5.png"
     },
     {
         isWhite : true,
@@ -74,7 +78,7 @@ var objList = [
             from : 'notduck'
         },{
             text : '#마음이 아프덕...ㅠㅠ'     ,
-            from : 'notduck'
+            from : 'duck'
         }],
         hasVideo : true,
         isDuck : 'sad',
@@ -143,7 +147,7 @@ Vue.component('slide-element', {
             }
         }
     }, 
-    template : `<section >
+    template : `<section :style="{backgroundImage : 'url(' +properties.background_image +')'}">
         <slot name='main'></slot>
         <div class="etc-container">
             <transition-group name="et">
@@ -170,11 +174,13 @@ Vue.component('slide-element', {
             <div class="swiper-prev">
                 <div v-on:click="prev_step" class="up_arrow">
                     <img :src="arrow[0]" alt="arrowup"> 
+                    <div>이전</div>
                 </div>
             </div>
             <div class="swiper-next">
                 <div v-on:click="next_step" class="down_arrow">
                     <img :src="arrow[1]" alt="arrowdown">
+                    <div>다음</div>
                 </div>
             </div>
         </div>

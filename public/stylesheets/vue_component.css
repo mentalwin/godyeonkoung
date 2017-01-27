@@ -2,6 +2,10 @@
     position : absolute;
     bottom : 0;
     left : 50%;
+    transform : translateX(-50%);
+    -webkit-transform : translateX(-50%);
+    color : white;
+    font-family : Roboto;
 }
 .swiper-prev {
     display : inline-block;
@@ -11,9 +15,15 @@
     -ms-transform: translateY(-15px);
     cursor : pointer;
 }
+.swiper-prev div {
+    display : inline-block;
+}
 .swiper-next {
     display : inline-block;
     cursor : pointer;
+}
+.swiper-next div {
+    display : inline-block;
 }
 .up_arrow {
     width : 27px;
@@ -21,14 +31,15 @@
     object-fit : contain;
 }
 .up_arrow img {
-    width : 100%;
+    width : 27px;
 }
 
 .down_arrow {
-    width : 38px;
+    width : 126px;
+    padding : 8px 0px 8px 10px;
     height : 38px;
     object-fit : contain;
 }
 .down_arrow img {
-    width : 100%;
+    width : 38px;
 }
