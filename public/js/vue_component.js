@@ -1,7 +1,8 @@
 var objList = [
     {
         texts : [],
-        isWhite : false
+        isWhite : false,
+        background_image : "../images/olympic.png"
     },
     {
         isWhite : true,
@@ -149,8 +150,13 @@ Vue.component('slide-element', {
             }
         }
     }, 
-    template : `<section :style="{backgroundImage : 'url(' +properties.background_image +')'}">
-        <slot name='main'></slot>
+    template : `<section>
+        <div class="background" >
+<img class="swiper-lazy" :data-src="properties.background_image" alt="background"/>
+        </div>
+        <slot name='main'>
+         
+        </slot>
         <div class="etc-container">
             <transition-group name="et">
                 <div class="etc" v-for="et in etc" :key="et">
