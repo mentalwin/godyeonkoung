@@ -9,7 +9,6 @@ var mql = matchMedia("(min-aspect-ratio: 1/1)"),
         }
     }
 handler(mql);
-window.addEventListener('resize')
 
 var objList = [
     {
