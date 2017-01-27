@@ -68,7 +68,7 @@ var objList = [
         }],
         hasVideo : true,
         isDuck : 'happy',
-        videoId : "video2"
+        videoId : "video2",
     },
     {
         isWhite : true,
@@ -96,6 +96,7 @@ var objList = [
             from : 'duck'
         }],
         isDuck : 'happy',
+        background_image : "../images/YK-vs-ZT.png"
     },
     {
         isWhite : true,
@@ -105,6 +106,7 @@ var objList = [
             from : 'duck'
         }],
         isDuck : 'happy',
+        background_image : "../images/mvp_back.png"
     },
     {
         isWhite : true,
@@ -171,13 +173,13 @@ Vue.component('slide-element', {
         </div>
         <!-- arrow prev & next -->
         <div class="arrow" >
-            <div class="swiper-prev">
+            <div class="swiper-prev swiper-button-custom">
                 <div v-on:click="prev_step" class="up_arrow">
                     <img :src="arrow[0]" alt="arrowup"> 
                     <div>이전</div>
                 </div>
             </div>
-            <div class="swiper-next">
+            <div class="swiper-next swiper-button-custom">
                 <div v-on:click="next_step" class="down_arrow">
                     <img :src="arrow[1]" alt="arrowdown">
                     <div>다음</div>

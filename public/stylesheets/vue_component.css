@@ -7,6 +7,13 @@
     color : white;
     font-family : Roboto;
 }
+.swiper-button-custom {
+    width : 142px;
+    height : 45px;
+    border-radius : 20px;
+    background-color : #46fa8c;
+    box-shadow : 0 0 5px 0 #46fa8c;
+}
 .swiper-prev {
     display : inline-block;
     transform: translateY(-15px);
@@ -26,7 +33,7 @@
     display : inline-block;
 }
 .up_arrow {
-    width : 27px;
+    width : 142px;
     height : 17px;
     object-fit : contain;
 }

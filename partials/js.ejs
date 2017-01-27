@@ -20,7 +20,9 @@
         },
         onSlideChangeStart : function() {
             if (video && !video.paused) video.load();
-        }
+        },
+        preloadImages : false,
+        lazyLoading : true
     });
     var swiper_h = new Swiper('.swiper-container-h', {
         direction : 'horizontal'  ,
@@ -28,6 +30,8 @@
         paginationClickable : true,
         nextButton : '.swiper-button-next',
         prevButton : '.swiper-button-prev',
+        preloadImages : false,
+        lazyLoading : true
 
     });
 </script>
