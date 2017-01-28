@@ -164,6 +164,7 @@ Vue.component('slide-element', {
         }
     }, 
     template : `<section>
+        <div class="topbar" v-if="properties.top"></div>
         <div class="background" >
 <img class="swiper-lazy" :data-src="properties.background_image" alt=""/>
         </div>
@@ -248,7 +249,7 @@ var options = {
 for(var i = 0; i < objList.length; i++) {
     var curOption = objList[i];
     if(!curOption.hasVideo) curOption.background_image = "images/" + imgAssets.shift() + postfix;
-    options.data["obj" + (i+1)] = objList[i];
+    options.data["obj" + (i+1)] = curOption;
 }
 // get data from 
 var app = new Vue(options);

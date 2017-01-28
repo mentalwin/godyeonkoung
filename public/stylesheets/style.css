@@ -1,21 +1,20 @@
 @charset "UTF-8";
+/* Global styles */
 body {
   margin: 0; }
 
 .arrow {
   z-index: 1; }
 
-section {
-  background-size: cover; }
-
-.background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0; }
-  .background img {
-    width: 100%; }
-
+/* animations
+ */
+@keyframes twinker-right {
+  0% {
+    right: 0px; }
+  10% {
+    right: 10px; }
+  30% {
+    right: 0px; } }
 /* swiper right
  */
 .swiper-button-next {
@@ -24,19 +23,12 @@ section {
 
 /* transition effect
  */
-.et-enter-active, .et-leave-active {
-  transition: all 1s; }
-
-.et-enter, .et-leave-to {
-  opacity: 0;
-  transform: translateY(30px); }
-
 .list-enter-active, .list-leave-active {
-  transition: transform 0.3s; }
+  transition: all 1s; }
 
 .list-enter, .list-leave-to {
   opacity: 0;
-  transform: translateX(50px); }
+  transform: translateY(30px); }
 
 .other {
   padding: 8px 40px 8px 40px;
@@ -67,8 +59,8 @@ section {
     margin-bottom: 24px; }
 
 .duck-container {
-  width: 104px;
-  height: 104px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   bottom: 50px;
   right: 8px; }
@@ -88,6 +80,14 @@ section {
   width: 10px;
   margin-left: -10px; }
 
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  background-color: rgba(246, 246, 246, 0.7); }
+
+/* Each page styles */
 /* first page
  */
 .first-page {
@@ -105,11 +105,10 @@ section {
     .first-page nav img {
       height: 100%; }
   .first-page .background {
+    position: relative;
+    background-image: url("../images/olympic.png");
     background-size: cover;
-    height: calc(100% - 74px);
-    top: 74px; }
-    .first-page .background img {
-      width: 100%; }
+    height: calc(100% - 74px); }
   .first-page .card {
     position: absolute;
     right: 22.3px;
@@ -128,14 +127,14 @@ section {
   .second-page .etc-container .etc {
     background-image: url("../images/cup_win.png");
     width: 310px;
-    margin: 0 auto;
     height: 310px;
-    opacity: 0.8; }
+    margin: 30px auto;
+    opacity: 0.7; }
 
 /* third page
  */
 .third-page {
-  background-size: cover; }
+  background-image: url("../images/Elementary_Back.png"); }
   .third-page .card {
     padding: 11px 24px 8px 19px;
     font-family: "HANNA";
@@ -149,7 +148,7 @@ section {
 /* fourth page
  */
 .fourth-page {
-  background-size: cover; }
+  background-image: url("../images/YK_middle.png"); }
   .fourth-page .card {
     padding: 11px 24px 8px 19px;
     font-family: "HANNA";
@@ -163,7 +162,7 @@ section {
 /* fifth page
  */
 .fifth-page {
-  background-size: cover; }
+  background-image: url("../images/YK_trainning.png"); }
   .fifth-page .card {
     padding: 11px 24px 8px 19px;
     font-family: "HANNA";
@@ -197,32 +196,11 @@ section {
     cursor: pointer;
     padding: 10px; }
 
-/* 8th page : 8번째 페이지 키가 컸어요
- */
-.eighth-page {
-  background-size: cover; }
-
 /* 11th page : 주팅, 김연경
  */
 .eleventh-page {
-  background-size: cover; }
-  .eleventh-page .etc-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0; }
-    .eleventh-page .etc-container .etc {
-      background-image: url("../images/graph_ZT_YK.png");
-      width: 744px;
-      margin: 0 auto;
-      height: 300px;
-      opacity: 0.8;
-      margin-top: 250px; }
-
-/* 12th page : MVP
- */
-.twelveth-page {
-  background-image: url("../images/mvp_back.png");
-  background-size: cover; }
+  background-image: url("../images/YK-vs-ZT.png"); }
+  .eleventh-page .card:first-child {
+    background-image: url("../images/graph_ZT_YK.png"); }
 
 /*# sourceMappingURL=style.css.map */
