@@ -4,6 +4,13 @@ body
 
 .arrow
   z-index : 1
+
+.background
+  img
+    width : 100%
+    height : 100%
+
+
 /*
  * animations
  */
@@ -55,8 +62,18 @@ section
     border-radius : 30px
     color : white
     font-size : 32px
-    width : 325px
+    width : calc(100% - 30px)
+    max-width : 310px
     margin-bottom : 24px
+    img
+      width : 100%
+      height : 100%
+
+.etc-container
+  position : absolute
+  width : 100%
+  height : 100%
+  top : 0
 
 .duck-container
   width : 50px
@@ -109,10 +126,12 @@ section
     img
       height : 100%
   .background
-    position : relative
-    background-image : url('../images/olympic.png')
-    background-size : cover
+    position : absolute
+    width : 100%
     height : calc(100% - 74px)
+    top : 74px
+    img
+      width : 100%
   .card
     position : absolute
     right : 22.3px
@@ -124,17 +143,13 @@ section
  * second page
  */
 .second-page
-  .etc-container
-    position : absolute
-    width : 100%
-    height : 100%
-    top : 0
-    .etc
-      background-image : url('../images/cup_win.png')
-      width : 310px
-      height : 310px
-      margin : 30px auto
-      opacity : 0.7
+  
+  .etc
+    background-image : url('../images/cup_win.png')
+    width : 310px
+    height : 310px
+    margin : 30px auto
+    opacity : 0.7
 
 /*
  * third page
@@ -148,7 +163,6 @@ section
     border-radius : 30px
     color : white
     font-size : 32px
-    width : 325px
     margin-bottom : 24px
 
 /*
@@ -156,7 +170,6 @@ section
  */
 
 .fourth-page
-  background-image : url('../images/YK_middle.png')
   .card
     padding : 11px 24px 8px 19px
     font-family : 'HANNA'
@@ -164,14 +177,12 @@ section
     border-radius : 30px
     color : white
     font-size : 32px
-    width : 325px
     margin-bottom : 24px
 
 /*
  * fifth page
  */
 .fifth-page
-  background-image : url('../images/YK_trainning.png')
   .card
     padding : 11px 24px 8px 19px
     font-family : 'HANNA'
@@ -179,7 +190,6 @@ section
     border-radius : 30px
     color : white
     font-size : 32px
-    width : 325px
     margin-bottom : 24px
 
 
@@ -188,6 +198,8 @@ section
  */
 
 .sixth-page
+  .background
+    display : none
   .swiper-slide
     .gif-container
       width : 1000px
@@ -198,6 +210,10 @@ section
  */
 
 .seventh-page
+  .background
+    display : none
+  .etc-container
+    display : none
   .button
     display : block
     position : absolute
@@ -218,6 +234,9 @@ section
  * 11th page : 주팅, 김연경
  */
 .eleventh-page
-  background-image : url('../images/YK-vs-ZT.png')
-  .card:first-child
-    background-image: url('../images/graph_ZT_YK.png')
+  .etc
+    background-image : url('../images/graph_ZT_YK.png')
+    width : 310px
+    height : 310px
+    margin : 30px auto
+    opacity : 0.7

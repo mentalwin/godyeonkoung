@@ -40,7 +40,7 @@
     display : inline-block;
 }
 .up_arrow {
-    width : 80px;
+    width : 77px;
     height : 47px;
     border-right : 4px solid rgba(256, 256, 256, 0.6);
     object-fit : contain;
@@ -54,7 +54,6 @@
     animation-name : buttonanime;
     animation-duration : 4s;
     animation-iteration-count : infinite;
-    width : 126px;
     padding : 8px 0px 8px 10px;
     height : 38px;
     object-fit : contain;

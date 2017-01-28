@@ -6,6 +6,10 @@ body {
 .arrow {
   z-index: 1; }
 
+.background img {
+  width: 100%;
+  height: 100%; }
+
 /* animations
  */
 @keyframes twinker-right {
@@ -55,8 +59,18 @@ section {
     border-radius: 30px;
     color: white;
     font-size: 32px;
-    width: 325px;
+    width: calc(100% - 30px);
+    max-width: 310px;
     margin-bottom: 24px; }
+    .card-container .card img {
+      width: 100%;
+      height: 100%; }
+
+.etc-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; }
 
 .duck-container {
   width: 50px;
@@ -105,10 +119,12 @@ section {
     .first-page nav img {
       height: 100%; }
   .first-page .background {
-    position: relative;
-    background-image: url("../images/olympic.png");
-    background-size: cover;
-    height: calc(100% - 74px); }
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 74px);
+    top: 74px; }
+    .first-page .background img {
+      width: 100%; }
   .first-page .card {
     position: absolute;
     right: 22.3px;
@@ -119,17 +135,12 @@ section {
 
 /* second page
  */
-.second-page .etc-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0; }
-  .second-page .etc-container .etc {
-    background-image: url("../images/cup_win.png");
-    width: 310px;
-    height: 310px;
-    margin: 30px auto;
-    opacity: 0.7; }
+.second-page .etc {
+  background-image: url("../images/cup_win.png");
+  width: 310px;
+  height: 310px;
+  margin: 30px auto;
+  opacity: 0.7; }
 
 /* third page
  */
@@ -142,45 +153,44 @@ section {
     border-radius: 30px;
     color: white;
     font-size: 32px;
-    width: 325px;
     margin-bottom: 24px; }
 
 /* fourth page
  */
-.fourth-page {
-  background-image: url("../images/YK_middle.png"); }
-  .fourth-page .card {
-    padding: 11px 24px 8px 19px;
-    font-family: "HANNA";
-    background-color: #007aff;
-    border-radius: 30px;
-    color: white;
-    font-size: 32px;
-    width: 325px;
-    margin-bottom: 24px; }
+.fourth-page .card {
+  padding: 11px 24px 8px 19px;
+  font-family: "HANNA";
+  background-color: #007aff;
+  border-radius: 30px;
+  color: white;
+  font-size: 32px;
+  margin-bottom: 24px; }
 
 /* fifth page
  */
-.fifth-page {
-  background-image: url("../images/YK_trainning.png"); }
-  .fifth-page .card {
-    padding: 11px 24px 8px 19px;
-    font-family: "HANNA";
-    background-color: #007aff;
-    border-radius: 30px;
-    color: white;
-    font-size: 32px;
-    width: 325px;
-    margin-bottom: 24px; }
+.fifth-page .card {
+  padding: 11px 24px 8px 19px;
+  font-family: "HANNA";
+  background-color: #007aff;
+  border-radius: 30px;
+  color: white;
+  font-size: 32px;
+  margin-bottom: 24px; }
 
 /* sixth page : 기술 설명 gifs
  */
+.sixth-page .background {
+  display: none; }
 .sixth-page .swiper-slide .gif-container {
   width: 1000px;
   margin: 0 auto; }
 
 /* 7th page : 3d spikes
  */
+.seventh-page .background {
+  display: none; }
+.seventh-page .etc-container {
+  display: none; }
 .seventh-page .button {
   display: block;
   position: absolute;
@@ -198,9 +208,11 @@ section {
 
 /* 11th page : 주팅, 김연경
  */
-.eleventh-page {
-  background-image: url("../images/YK-vs-ZT.png"); }
-  .eleventh-page .card:first-child {
-    background-image: url("../images/graph_ZT_YK.png"); }
+.eleventh-page .etc {
+  background-image: url("../images/graph_ZT_YK.png");
+  width: 310px;
+  height: 310px;
+  margin: 30px auto;
+  opacity: 0.7; }
 
 /*# sourceMappingURL=style.css.map */

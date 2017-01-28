@@ -1,22 +1,27 @@
-var postfix;
+var postfix, mobile_mode;
 var mql = matchMedia("(min-aspect-ratio: 1/1)"),
     handler = function(mql) {
         if(mql.matches) {
             // 웹 비디오 리턴
-            postfix = "_w.png";
+            postfix = "_w";
+            mobile_mode = false;
         } else {
             // 모바일 비디오 return
-            postfix = "_m.png";
+            console.log("!!!!");
+            postfix = "_m";
+            mobile_mode = true;
         }
     }
 handler(mql);
 
 var objList = [
+    //1
     {
         texts : [],
         isWhite : false,
         background_image : "../images/olympic.png"
     },
+    //2
     {
         isWhite : true,
         texts : [
@@ -33,7 +38,7 @@ var objList = [
         isDuck : 'happy',
         videoId : "video1",
     },
-    // 초등학교 시절 3 번째 페이지
+    //3
     {
         texts : [
             {text:"#아아... 태어날 때부터 스파이크 때렸을 것 같은 언니지만...", from:"duck"},
@@ -43,6 +48,7 @@ var objList = [
         isDuck : "sad",
         background_image :"../images/Elementary_Back.png"
     },
+    //4
     {
         texts : [
             {text:"#그래도 좌절하지 않은 연경언니.", from:'duck'},
@@ -51,6 +57,7 @@ var objList = [
         isDuck : "happy",
         background_image :"../images/YK_middle.png"
     },
+    //5
     {
         texts : [
             {text:"# 이때 배구의 기본기를 튼튼하게 다졌지요!", from:'duck'}],
@@ -58,6 +65,7 @@ var objList = [
         isDuck : "happy",
         background_image :"../images/YK_trainning.png"
     },
+    //6
     {
         texts : [
             { 
@@ -73,6 +81,7 @@ var objList = [
         isDuck : "happy",
         background_image :"../images/YK_elementary5.png"
     },
+    //7
     {
         isWhite : true,
         texts : [
@@ -84,6 +93,7 @@ var objList = [
         isDuck : 'happy',
         videoId : "video2",
     },
+    //8
     {
         isWhite : true,
         texts : [
@@ -98,6 +108,7 @@ var objList = [
         isDuck : 'sad',
         videoId : "video3"
     },
+    //9
     {
         isWhite : true,
         texts : [
@@ -112,6 +123,7 @@ var objList = [
         isDuck : 'happy',
         background_image : "../images/YK-vs-ZT.png"
     },
+    //10
     {
         isWhite : true,
         texts : [
@@ -122,6 +134,7 @@ var objList = [
         isDuck : 'happy',
         background_image : "../images/mvp_back.png"
     },
+    //11
     {
         isWhite : true,
         texts : [
@@ -137,10 +150,22 @@ var objList = [
         hasVideo : true,
         videoId : "video4"
     },
+    //12
     {
         hasVideo : true,
-        videoId : "video5"
-    } 
+        videoId : "video5",
+        texts : []
+    },
+    // 13
+    {
+        hasVideo : true,
+        videoId : "video6",
+        texts : [
+            {text : "# 공격+수비 완전체로 성장한 연경 선수", from : "duck"} ,
+            {text : "# 어느 무대에서든 노력이 빛을 발하기 시작!", from : "duck"} 
+        ]
+    }
+    
     
 ];
 
@@ -165,8 +190,8 @@ Vue.component('slide-element', {
     }, 
     template : `<section>
         <div class="topbar" v-if="properties.top"></div>
-        <div class="background" >
-<img class="swiper-lazy" :data-src="properties.background_image" alt=""/>
+        <div v-if="!properties.hasVideo" class="background" >
+            <img class="swiper-lazy" :data-src="properties.background_image" alt=""/>
         </div>
         <slot name='main'>
          
@@ -239,19 +264,26 @@ Vue.component('slide-element', {
     }
 });
 
-var imgAssets = ["bg1", "bg2", "bg3", "bg4", "bg5", "bg6", "bg7"];
-var videoAssets = ["video1","video2","video3","video4","video5"];
+var imgAssets = ["bg1", "bg2", "bg3", "bg4", "bg5", "bg6", "bg7", "bg8"];
+var videoAssets = ["video1","video2","video3","video4","video5", "video6"];
 
 var options = {
     el : '#mw-app',
     data : {}
 }
+for (var i = 0; i < videoAssets.length; i++) {
+    videoAssets[i] = {
+        mp4 : "video/" + videoAssets[i] + postfix + ".mp4",
+        webm : "video/" + videoAssets[i] + postfix + ".webm"
+    }
+}
+
 for(var i = 0; i < objList.length; i++) {
     var curOption = objList[i];
-    if(!curOption.hasVideo) curOption.background_image = "images/" + imgAssets.shift() + postfix;
+    if(!curOption.hasVideo) curOption.background_image = "images/" + imgAssets.shift() + postfix + ".png";
     options.data["obj" + (i+1)] = curOption;
 }
+options.data["videos"] = videoAssets;
 // get data from 
 var app = new Vue(options);
-
 
