@@ -34,20 +34,4 @@
     15% { right : 20px}
     20% { right : 10px}
 }
-video::-webkit-media-controls-panel {
-    display: none;
-    -webkit-appearance: none;
-}
-video::-webkit-media-controls-play-button {
-    display: none;
-    -webkit-appearance: none;
-}
-video::-webkit-media-controls-start-playback-button {
-    display: none;
-    -webkit-appearance: none
-}
 
-video::-webkit-media-controls {
-    display: none;
-    -webkit-appearance: none;
-}
