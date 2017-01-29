@@ -39,11 +39,11 @@ video::-webkit-media-controls-panel {
   display: none;
   -webkit-appearance: none;
 }
-
-video::-webkit-media-controls-start-playback-button {
+video::-webkit-media-controls-play-button {
   display: none;
-  -webkit-appearance: none
+  -webkit-appearance: none;
 }
+
 
 video::-webkit-media-controls {
   display: none;
