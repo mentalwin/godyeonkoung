@@ -6,6 +6,7 @@
 <script src="vendor/threee/ColladaLoader2.js"></script>
 <script src='js/vue_component.js'></script>
 <script src='js/threed.js'></script>
+<script src='http://vjs.zencdn.net/5.16.0/video.js'></script>
 <script>
     var video;
     var mySwiper = new Swiper('.swiper-container', {
@@ -15,6 +16,7 @@
         onSlideChangeEnd : function() {
             if (app && app.$children[mySwiper.activeIndex].properties.hasVideo) {
                 video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
+                videojs("")
                 video.play();
             }
         },
