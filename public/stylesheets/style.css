@@ -43,10 +43,14 @@ body {
   -ms-transform: translateX(-40px);
   -o-transform: translateX(-40px); }
 
-/* Card
+/* Card & containers
  */
 section {
   overflow: hidden; }
+
+.video_container {
+  max-width: 385px;
+  max-height: 385px; }
 
 .card-container {
   position: absolute;
@@ -214,5 +218,12 @@ section {
   height: 310px;
   margin: 30px auto;
   opacity: 0.7; }
+
+/* 정방형 영상 있는 곳
+ * 얘만 배경화면, 비디오가 동시에 있음
+ */
+.fifteenth-page {
+  background-image: url("../images/bg9_w.png");
+  background-size: cover; }
 
 /*# sourceMappingURL=style.css.map */

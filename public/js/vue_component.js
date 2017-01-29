@@ -191,7 +191,7 @@ Vue.component('slide-element', {
     template : `<section>
         <div class="topbar" v-if="properties.top"></div>
         <div v-if="!properties.hasVideo" class="background" >
-            <img class="swiper-lazy" :data-src="properties.background_image" alt=""/>
+            <img :src="properties.background_image" alt=""/>
         </div>
         <slot name='main'>
          
