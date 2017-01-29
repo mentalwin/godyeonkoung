@@ -35,18 +35,11 @@
 
     });
 </script>
-<script src="js/canvas-video-player.js"></script>
+<script src="iphone-inline-video.browser.js"></script>
 <script>
-    var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
-
-    if (isIOS) {
-        var canvasVideo = new CanvasVideoPlayer({
-            videoSelector : '#video1'  ,
-            canvasSelector : '.canvas',
-            timelineSelector : false,
-            autoplay : false,
-        });
-    } else {
-        console.log("this is not ipad");
-    }
+    $('video').each(function(){
+        console.log(this);
+        makeVideoPlayableInline(this);
+    });
 </script>
+

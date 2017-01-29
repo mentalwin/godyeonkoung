@@ -34,11 +34,10 @@
                     class='swiper-slide second-page'>
                     <div slot='main'>
                         <div class="fullscreen-bg">
-                            <video id="video1" class=" fullscreen-bg__video fullscreen-bg__video" width="100%"  preload="none" webkit-playsinline playsinline >
+                            <video id="video1" class=" fullscreen-bg__video fullscreen-bg__video" width="100%"  preload="none" muted webkit-playsinline playsinline >
                                 <source :src="videos[0].webm" type="video/webm"></source>
                                 <source :src="videos[0].mp4" type="video/mp4"></source>
                             </video>
-                            <canvas class="canvas"></canvas>
                         </div>
                     </div>
                 </slide-element>    
@@ -56,7 +55,7 @@
                 >
                     <div slot ="main">
                        <div class="fullscreen-bg" >
-                            <video  id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  controls webkit-playsinline playsinline>
+                            <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  controls webkit-playsinline playsinline>
                                 <source :src="videos[1].webm" type="video/webm"></source>
                                 <source :src="videos[1].mp4" type="video/mp4"></source>
                             </video>
