@@ -17,10 +17,7 @@
             if (app && app.$children[mySwiper.activeIndex].properties.hasVideo) {
                 video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
                 video.load();
-                video.addEventListener('loadeddata', function(){
-                    console.log("loadeed!");
-                    video.play();
-                })
+                video.play();
             }
         },
         onSlideChangeStart : function() {
