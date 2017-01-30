@@ -37,6 +37,9 @@ var objList = [
         hasVideo : true,
         isDuck : 'happy',
         videoId : "video1",
+        top : true,
+        hasSound : true,
+        soundSrc : "sound/dingdong.mp3"
     },
     //3
     {
@@ -189,7 +192,9 @@ Vue.component('slide-element', {
         }
     }, 
     template : `<section>
-        <div class="topbar" v-if="properties.top"></div>
+        <div class="topbar" v-if="properties.top">
+            <img class="speaker-button" src="images/phones-speaker-icon.png" alt="speaker">
+        </div>
         <div v-if="!properties.hasVideo" class="background" >
             <img :src="properties.background_image" alt=""/>
         </div>

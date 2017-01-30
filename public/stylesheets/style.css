@@ -86,7 +86,7 @@ section {
     height: 100%;
     width: 100%; }
 
-/* progress bar
+/* progress bar and top bar
  */
 #progressbar {
   position: absolute;
@@ -99,11 +99,24 @@ section {
   margin-left: -10px; }
 
 .topbar {
-  position: fixed;
+  position: absolute;
   top: 0;
+  padding: 8px;
   width: 100%;
   height: 56px;
   background-color: rgba(246, 246, 246, 0.7); }
+  .topbar img {
+    height: 30px;
+    margin-top: 14px;
+    margin-right: 20px;
+    float: right; }
+
+.speaker-button {
+  height: 30px;
+  margin-top: 14px;
+  margin-right: 20px;
+  float: right;
+  cursor: pointer; }
 
 /* Each page styles */
 /* first page
@@ -120,7 +133,7 @@ section {
     padding-bottom: 8px; }
     .first-page nav .nav-wrapper {
       height: 54px; }
-    .first-page nav img {
+    .first-page nav .logo {
       height: 100%; }
   .first-page .background {
     position: absolute;

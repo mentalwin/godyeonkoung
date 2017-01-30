@@ -8,15 +8,23 @@
 <script src='js/threed.js'></script>
 <script>
     var video;
+    var sound;
     var mySwiper = new Swiper('.swiper-container', {
         direction : 'vertical',
         pagination: '.swiper-pagination',
         paginationType : 'progress',
         onSlideChangeEnd : function() {
-            if (app && app.$children[mySwiper.activeIndex].properties.hasVideo) {
+            var curSlideElement = app.$children[mySwiper.activeIndex];
+            if (app && curSlideElement.properties.hasVideo) {
                 video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
                 video.load();
                 video.play();
+            }
+            if (app && curSlideElement.properties.hasSound) {
+                sound = new Howl({
+                    src : [curSlideElement.properties.soundSrc]  
+                });
+                sound.play();
             }
         },
         onSlideChangeStart : function() {
@@ -34,11 +42,20 @@
 
     });
 </script>
-<script src="iphone-inline-video.browser.js"></script>
+<script src="js/iphone-inline-video.browser.js"></script>
 <script>
     $('video').each(function(){
         console.log(this);
         makeVideoPlayableInline(this);
     });
 </script>
-
+<script src="vendor/howler/howler.js"></script>
+<script>
+    var test = new Howl({
+        src : ['sound/dingdong.mp3']  
+    });
+    $('.speaker-button').on('click', function(){
+        test.play()  ;
+    });
+    
+</script>
