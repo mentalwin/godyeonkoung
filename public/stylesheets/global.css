@@ -20,6 +20,9 @@
     font-family : 'Roboto';
 }
 
+.float_left {
+    float : left;
+}
 @keyframes active {
     0% { right : 10px}
     5% { right : 20px}

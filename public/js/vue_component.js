@@ -26,6 +26,8 @@ var objList = [
     },
     //2
     {
+        background_image : "",
+        noBackground : true,
         isWhite : true,
         texts : [
         {
@@ -33,7 +35,12 @@ var objList = [
             type : 'etc'
         },
         {
-            text : '#CEV컵, 챔피언스리그, 터키리그까지 전관왕 휩쓴 사기캐 우리 연경 선수',
+            text : '이번에도 우승한 김연경',
+            from : 'duck',
+            type : 'text'
+        },
+        {
+            text : '이게 뭐가 대단한건가 싶은 배알못들을 위해 내가 왔다!!',
             from : 'duck',
             type : 'text'
         }],
@@ -44,42 +51,39 @@ var objList = [
         hasSound : true,
         soundSrc : ["sound/YK_win_sound.webm", "sound/YK_win_sound.mp3"]
     },
-    //3
+    // 4번째 페이지
     {
         texts : [
-            {text:"#아아... 태어날 때부터 스파이크 때렸을 것 같은 언니지만...", from:"duck"},
-            {text:"#처음부터 배구를 잘한 건 아니었덕...", from:"duck"}
+            {text:"그래서 배구를 그만둘까 생각하기도 했다능...", from:"duck"}
         ],
         isWhite : true,
-        isDuck : "sad",
-        background_image :"../images/Elementary_Back.png"
+        isDuck : "sad"
     },
-    //4
+    // 5번째 페이지
     {
         texts : [
-            {text:"#그래도 좌절하지 않은 연경언니.", from:'duck'},
-            {text:"#시합은 많이 뛰지 못했지만 더 열심히 연습했덕..", from: 'duck'}],
+            {text:"나같으면 포기 했을 텐데...", from: 'duck'}],
         isWhite : true,
-        isDuck : "happy",
-        background_image :"../images/YK_middle.png"
+        isDuck : "happy"
     },
     //5
     {
         texts : [
-            {text:"# 이때 배구의 기본기를 튼튼하게 다졌지요!", from:'duck'}],
+            {text:"190cm의 큰 키에 강하게 찍어내리는 스파이크", from:'duck'},
+            {text: "지금의 베스트스파이커 김연경은 바로 이때 탄생했다.", from: 'duck'}
+            ],
         isWhite : true,
-        isDuck : "happy",
-        background_image :"../images/YK_trainning.png"
+        isDuck : "happy"
     },
     //6
     {
         texts : [
             { 
-                text : '# 그러다 고등학생 때 키가 20cm 이상 커져 완전체가 된 연경 선수!',
+                text : '190cm의 큰 키에 강하게 찍어내리는 스파이크',
                 from : 'duck'
             },
             { 
-                text : '# 이게 다 준비가 되어 있었기에 가능한 일이었덕...',
+                text : '지금의 베스트 스파이커 김연경은 바로 이때 탄생했다!',
                 from : 'duck'
             }
         ]    ,
@@ -90,11 +94,7 @@ var objList = [
     //7
     {
         isWhite : true,
-        texts : [
-        {
-            text : '초/중학교 때부터 기본기를 잘 배우고 올라왔던거 같아요.',
-            from : 'notduck'
-        }],
+        texts : [ ],
         hasVideo : true,
         isDuck : 'happy',
         videoId : "video2",
@@ -104,55 +104,49 @@ var objList = [
         isWhite : true,
         texts : [
         {
-            text : '경쟁에서 멀어지면서 신체조건도 안좋았던거 같고...',
-            from : 'notduck'
-        },{
-            text : '#마음이 아프덕...ㅠㅠ'     ,
+            text : '경기를 못 뛰었다니 맴찢...'     ,
             from : 'duck'
         }],
         hasVideo : true,
         isDuck : 'sad',
-        videoId : "video3"
+        videoId : "video2"
     },
     //9
     {
         isWhite : true,
         texts : [
         {
-            type : 'etc',
-            text : '',
-            from : 'notduck'
-        },{
-            text : '#같은 공격수라도 연경 선수만큼 수비할 수는 없덕...'     ,
+            text : '힘든 시기에도 포기하지 않았던 게 이렇게 빛을 발한다능!'     ,
             from : 'duck'
         }],
         isDuck : 'happy',
-        background_image : "../images/YK-vs-ZT.png"
+        hasVideo : true,
+        videoId : "video3"
     },
     //10
     {
         isWhite : true,
-        texts : [
-        {
-            text : '#훌륭한 성적으로 세계를 제패한 연경 선수... 정말 감동이덕...'     ,
-            from : 'duck'
-        }],
-        isDuck : 'happy',
-        background_image : "../images/mvp_back.png"
+        texts : [],
+        hasVideo : true,
+        videoId : "video4"
     },
     //11
     {
         isWhite : true,
         texts : [
         {
-            text : '제 자신을 제가 믿는 게 가장 중요한 거 같아요' ,
-            from : 'notduck'
+            text: '',
+            type : 'etc'
         },
         {
-            text : '# 나 방금 심쿵했덕' ,
+            text : '공격/수비 모두 잘하기로 유명한 세계적인 신예 주팅과 비교해도 크으...' ,
+            from : 'duck'
+        },
+        {
+            text : '도대체 뭘 어떻게 하길래 이렇게 잘하냐고?' ,
             from : 'duck'
         }],
-        isDuck : 'sad',
+        isDuck : 'happy',
         hasVideo : true,
         videoId : "video4"
     },
@@ -169,6 +163,22 @@ var objList = [
         texts : [
             {text : "# 공격+수비 완전체로 성장한 연경 선수", from : "duck"} ,
             {text : "# 어느 무대에서든 노력이 빛을 발하기 시작!", from : "duck"} 
+        ]
+    },
+    // 14
+    {
+        texts : [{
+            text : "김연경의 실제 스파이크 속도야", from : "duck"
+        }, 
+            {
+                text : "원하는만큼 반복할 수 있도록 해놨음!(버튼 클릭!)", from : "duck" 
+            }
+        ] ,
+        isDuck : 'happy'
+    },
+    {
+        texts : [
+            { text : "핡.. 김연경 대체 뭐야 ㅠㅠ"}
         ]
     }
     
@@ -195,10 +205,6 @@ Vue.component('slide-element', {
         },
     }, 
     template : `<section>
-        
-        <div v-if="!properties.hasVideo" class="background" >
-            <img :src="properties.background_image" alt=""/>
-        </div>
         <slot name='main'>
          
         </slot>
@@ -272,7 +278,7 @@ Vue.component('slide-element', {
 
 // set data and methods of Vue app
 
-var imgAssets = ["bg1", "bg2", "bg3", "bg4", "bg5", "bg6", "bg7", "bg8"];
+var imgAssets = ["bg0", "", "bg1", "bg2", "bg1", "bg1", "bg2", "bg2", "bg2", "bg2", "bg2"];
 var videoAssets = ["video1","video2","video3","video4","video5", "video6"];
 
 var options = {
@@ -306,7 +312,7 @@ options.data["videos"] = videoAssets;
 for(var i = 0; i < objList.length; i++) {
     var curOption = objList[i];
 
-    if(!curOption.hasVideo) curOption.background_image = "images/" + imgAssets.shift() + postfix + ".png";
+    if (!curOption.noBackground) curOption.background_image = "images/" + imgAssets[i] + postfix + ".png";
 
     options.data["obj" + (i+1)] = curOption;
 }

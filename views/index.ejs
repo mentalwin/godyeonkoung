@@ -39,73 +39,118 @@
                     class='swiper-slide second-page'>
                     <div slot='main'>
                         <div class="fullscreen-bg">
-                            <video id="video1" class=" fullscreen-bg__video fullscreen-bg__video" width="100%"  autoplay muted webkit-playsinline playsinline >
-                                <source :src="videos[0].webm" type="video/webm"></source>
-                                <source :src="videos[0].mp4" type="video/mp4"></source>
+                            <video id="video1" class=" fullscreen-bg__video fullscreen-bg__video" width="100%"  preload muted webkit-playsinline playsinline >
+                                <source src="video/video1_w.webm" type="video/webm"></source>
                             </video>
                         </div>
                     </div>
                 </slide-element>    
+
                 <!-- Third Page 초등학생 김연경 -->
                 <slide-element 
                     :properties="obj3"
                     class='swiper-slide third-page' > 
-                    <div slot='main'>
+                    <div class="main-container" slot='main'>
+                        <div class="leftone float_left">
+                            <img src="images/YK_elementary.png" alt="">
+                        </div>
+                        <div class="rightone float_left"></div>
                     </div>
                 </slide-element>
                 <!-- 4 page : 김연경 옛날 회상 인터뷰-->
                 <slide-element
                     :properties="obj8" 
-                    class="swiper-slide tenth-page"
+                    class="swiper-slide page-4"
                 >
-                    <div slot ="main">
-                       <div class="fullscreen-bg" >
-                            <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  autoplay muted webkit-playsinline playsinline>
-                                <source :src="videos[1].webm" type="video/webm"></source>
-                                <source :src="videos[1].mp4" type="video/mp4"></source>
+                   <div class="main-container" slot="main">
+                        <div class="leftone float_left">
+                            <video id="video2" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                                <source src="video/KYK_limit_w.mp4" type="video/webm"></source>
                             </video>
                         </div>
                     </div>
                 </slide-element>
-                <!-- 5 page 김연경 연습 더 열심히 했다 초-->
+                <!-- 5 page 김연경은 포기하지 않았다.-->
                 <slide-element 
                     :properties="obj4"
-                    class='swiper-slide fourth-page'> 
-                    <div slot='main'>
+                    class='swiper-slide fourth-page page-5'> 
+                    <div class="main-container" slot='main'>
+                        <div class="leftone float_left">
+                            <img src="images/YK_middle.png" alt="">
+                        </div>
+                        <div class="rightone float_left"></div>
                     </div>
                 </slide-element>
-               <!-- 6 page 연습 사진 페이지-->
+               <!-- 6 page 키가 20cm 자랐다.-->
                <slide-element 
                     :properties="obj5" 
-                    class='swiper-slide fifth-page'>
-                            
-                    <div slot='main'>
+                    class='swiper-slide fifth-page page-6'>
+                    <div slot='main' class="main-container">
+                        <div class="leftone float_left">
+                            <img src="images/YK_smile.png" alt="">
+                        </div>
+                        <div class="rightone float_left"></div>
                     </div>
                 </slide-element>
-                <!-- 7 page 감독 인터뷰 페이지-->
+                <!-- 7 page - 3d 설명 스파이크! -->
+                <slide-element :properties="obj14" class="swiper-slide seventh-page">
+                    <div class="threeD" slot='main'>
+                        <div class="button">
+                            <span class="btnBlueGreen">
+                                스파이크!
+                            </span >
+                        </div>
+                    </div>
+                </slide-element>
+                <!-- 8 page : 19살의 나이 흥국생명 입단 -->
                 <slide-element
-                    :properties = "obj7" 
-                    class="swiper-slide ninth-page">
+                    :properties="obj9" 
+                    class="swiper-slide page-8 eleventh-page"
                 >
-                   <div slot ="main">
-                       <div class="fullscreen-bg" >
-                            <video id="video2" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" controls webkit-playsinline playsinline >
-                                <source :src="videos[2].webm" type="video/webm"></source>
-                                <source :src="videos[2].mp4" type="video/mp4"></source>
+                    <div class="main-container" slot ="main">
+                        <div class="leftone float_left">
+                            <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                                <source src="video/KYK_special_w.mp4" type="video/webm"></source>
                             </video>
                         </div>
                     </div>
                 </slide-element>
-               <!-- 8th page 갑자기 키가 컸지요- -->
+                <!-- page : 박기주 감독 인터뷰 -->
                 <slide-element
-                    :properties = "obj6"
-                    class="swiper-slide eighth-page">
-                    <div slot='main'>
+                    :properties="obj10" 
+                    class="swiper-slide page-9 eleventh-page"
+                >
+                    <div slot ="main">
+                        <video id="video4" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                            <source src="video/coach_interview_w.webm" type="video/webm"></source>
+                            <source src="video/coach_interview_w.mp4" type="video/mp4"></source>
+                        </video>
+                        <div class="over">"초/중학교 때부터 기본기를 잘 배우고 올라왔던거 같아요." <br><br> - 박기주(김연경 고등학교 감독)</div>
                     </div>
-                    
-                </slide-element> 
-                <!-- 9 page - 기술 설명 지피-->
-                <slide-element class="swiper-slide sixth-page">
+                </slide-element>
+
+                <!-- page : 주팅 비교 -->
+                <slide-element
+                    :properties="obj11" 
+                    class="swiper-slide page-10 eleventh-page"
+                >
+                    <div slot ="main">
+                        
+                    </div>
+                </slide-element>
+                <!-- page : 기술 인트로 -->
+                <slide-element
+                    :properties="obj12" 
+                    class="swiper-slide page-11 eleventh-page"
+                >
+                    <div slot ="main">
+                        
+                    </div>
+                </slide-element>
+                <!-- page - 기술 설명 지피-->
+                <slide-element 
+                    :properties = "obj13"
+                    class="swiper-slide page-12 sixth-page">
                     <div slot='main' class="swiper-container-h">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -134,47 +179,39 @@
                         <div class="swiper-button-prev"></div>
                     </div>
                 </slide-element>
-                <!-- 10 page - 3d 설명 -->
-                <slide-element class="swiper-slide seventh-page">
-                    <div class="threeD" slot='main'>
-                        <div class="button">
-                            <span class="btnBlueGreen">
-                                스파이크!
-                            </span >
+                
+                <!-- still mvp -->
+                <slide-element
+                    :properties="obj14" 
+                    class="swiper-slide page-13 eleventh-page"
+                >
+                    <div class="main-container" slot ="main">
+                        <div class="leftone float_left">
+                            <video id="video5" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                                <source src="video/KYK_special_w.mp4" type="video/webm"></source>
+                            </video>
                         </div>
                     </div>
                     
                 </slide-element>
-                <!-- 11 페이지 - 정방형 영상 -->
-                <slide-element 
-                    :properties="obj13"
-                    class="swiper-slide fifteenth-page">
-                    <div slot="main">
-                        <div class="video_container" >
-                            <video id="video6" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto"  webkit-playsinline playsinline >
-                                <!-- <source :src="videos[3].webm" type="video/webm"></source> -->
-                                <!-- <source :src="videos[3].mp4" type="video/mp4"></source> -->
+
+                <!-- still mvp -->
+                <slide-element
+                    :properties="obj15" 
+                    class="swiper-slide page-14 eleventh-page"
+                >
+                    <div class="main-container" slot ="main">
+                        <div class="leftone float_left">
+                            <video id="video6" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                                <source src="video/KYK_special_w.mp4" type="video/webm"></source>
                             </video>
                         </div>
                     </div>
+                    
                 </slide-element>
-                <!-- 12 page : 주팅 김연경 비교-->
-                <slide-element
-                    :properties="obj9" 
-                    class="swiper-slide eleventh-page"
-                >
-                    <div slot ="main">
-                       
-                    </div>
-                </slide-element>
-                <!-- 13 page : mvp page -->
-                <slide-element
-                    :properties="obj10" 
-                    class="swiper-slide twelveth-page"
-                >
-                    <div slot ="main">
-                    </div>
-                </slide-element>
+
+
+                
                 <!-- 14 page : believe my self -->
                 <slide-element
                     :properties="obj11" 

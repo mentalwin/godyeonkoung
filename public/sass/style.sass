@@ -7,11 +7,16 @@ body
 .arrow
   z-index : 1
 
-.background
-  img
-    width : 100%
-    height : 100%
+/*
+ * main layout
+ */
+.leftone
+  width : 320px
+.rightone
+  width : calc(100% - 321px)
 
+.swiper-slide
+  background-size: cover
 
 /*
  * animations
@@ -53,6 +58,15 @@ body
 section
   overflow : hidden
 
+.main-container
+  position : absolute
+  width : 94.8%
+  left : 2.6%
+  top : 18.6%
+  background : white
+  height : 408px
+  div
+    height : 100%
 .video_container
   max-width : 385px
   max-height : 385px
@@ -130,7 +144,11 @@ section
  */
 
 .first-page
+  background-image : url('../images/bg0_w.png')
   font-family : 'HANNA'
+  @media (max-aspect-ratio : 1/1)
+    background-image : url('../images/bg0_m.png')
+
   section
     position : relative
   .topbar
@@ -179,10 +197,18 @@ section
     opacity : 0.7
 
 /*
+ * 우승 지도
+ */
+.page-3
+  background-color : #152c9a
+  
+/*
  * third page
  */
 .third-page
-  background-image : url('../images/Elementary_Back.png')
+  background-image : url('../images/bg1_w.png')
+  @media (max-aspect-ratio : 1/1)
+    background-image : url('../images/bg1_m.png')
   .card
     padding : 11px 24px 8px 19px
     font-family : 'HANNA'
@@ -206,27 +232,28 @@ section
     font-size : 32px
     margin-bottom : 24px
 
+.page-4
+  background-image : url('../images/bg2_w.png')
+  @media (max-aspect-ratio : 1/1)
+    background-image : url('../images/bg2_m.png')
+
 /*
  * fifth page
  */
-.fifth-page
-  .card
-    padding : 11px 24px 8px 19px
-    font-family : 'HANNA'
-    background-color : #007aff
-    border-radius : 30px
-    color : white
-    font-size : 32px
-    margin-bottom : 24px
-
-
+.page-5
+  background-image : url('../images/bg1_w.png')
+  @media (max-aspect-ratio : 1/1)
+    background-image : url('../images/bg1_m.png')
 /*
  * sixth page : 기술 설명 gifs
  */
 
+.page-6
+  background-image : url('../images/bg1_w.png')
+  @media (max-aspect-ratio : 1/1)
+    background-image : url('../images/bg1_m.png')
 .sixth-page
-  .background
-    display : none
+ 
   .swiper-slide
     .gif-container
       width : 1000px
@@ -244,8 +271,12 @@ section
   .button
     display : block
     position : absolute
-    bottom : 10px
-    right : 10px
+    top : 50%
+    left : 50%
+    transform : translate(-50%, -50%)
+    -webkit-transform : translate(-50%, -50%)
+    -moz-transform : translate(-50%, -50%)
+    -ms-transform : translate(-50%, -50%)
     width : 120px
     margin : 10px 20px 10px
     text-align : center
@@ -256,17 +287,70 @@ section
       cursor : pointer
       padding : 10px
 
+/*
+ * 7페이지 감독 인터뷰
+ */
+.ninth-page
+  .over
+    width : 69.8%
+    height : 240px
+    opacity : 0.8
+    color : #ffffff
 
+/*
+ * 8 page 
+ */
+
+.page-8
+  background-image : url('../images/bg2_w.png')
+  @media (max-aspect-ratio : 1/1)
+    background-image : url('../images/bg2_m.png')
+
+/*
+ * 9 page
+ */
+
+.page-9
+  .over
+    position : absolute
+    top : 50%
+    left : 50%
+    font-size : 48px
+    text-align : center
+    transform : translate(-50%, -50%)
+    -webkit-transform : translate(-50%, -50%)
+    -moz-transform : translate(-50%, -50%)
+    -ms-transform : translate(-50%, -50%)
+    -o-transform : translate(-50%, -50%)
+    width : 69.8%
+    height : 240px
+    opacity : 0.8
+    color : #ffffff
+
+/*
+ * 10 page
+ */
+.page-10
+  background-image : url('../images/bg6_w.png')
+  @media (max-aspect-ratio : 1/1)
+    background-image : url('../images/bg6_m.png')
+  .etc
+    background-image : url('../images/graph.png')
 /*
  * 11th page : 주팅, 김연경
  */
 .eleventh-page
   .etc
-    background-image : url('../images/graph_ZT_YK.png')
-    width : 310px
-    height : 310px
+    background-image : url('../images/graph.png')
+    width : 781px
+    height : 451px
     margin : 30px auto
     opacity : 0.7
+
+.page-11
+  background-image : url('../images/bg2_w.png')
+  @media (max-aspect-ratio : 1/1)
+    background-image : url('../images/bg2_m.png')
 
 /*
  * 정방형 영상 있는 곳
