@@ -13,7 +13,12 @@ body {
   width: 320px; }
 
 .rightone {
-  width: calc(100% - 321px); }
+  width: calc(100% - 321px);
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.75;
+  color: #152c9a;
+  padding-top: 141px; }
 
 .swiper-slide {
   background-size: cover; }
@@ -335,5 +340,21 @@ section {
 .fifteenth-page {
   background-image: url("../images/bg9_w.png");
   background-size: cover; }
+
+/* page 13
+ */
+.page-13 {
+  background-image: url("../images/bg1_w.png"); }
+  @media (max-aspect-ratio: 1 / 1) {
+    .page-13 {
+      background-image: url("../images/bg1_m.png"); } }
+
+/* page 14
+ */
+.page-14 {
+  background-image: url("../images/bg2_w.png"); }
+  @media (max-aspect-ratio: 1 / 1) {
+    .page-14 {
+      background-image: url("../images/bg2_m.png"); } }
 
 /*# sourceMappingURL=style.css.map */

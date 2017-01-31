@@ -54,7 +54,9 @@
                         <div class="leftone float_left">
                             <img src="images/YK_elementary.png" alt="">
                         </div>
-                        <div class="rightone float_left"></div>
+                        <div class="rightone float_left">
+                            {{ obj3.main_text }} 
+                        </div>
                     </div>
                 </slide-element>
                 <!-- 4 page : 김연경 옛날 회상 인터뷰-->
@@ -68,6 +70,9 @@
                                 <source src="video/KYK_limit_w.mp4" type="video/webm"></source>
                             </video>
                         </div>
+                        <div class="rightone float_left">
+                            {{ obj8.main_text }} 
+                        </div>
                     </div>
                 </slide-element>
                 <!-- 5 page 김연경은 포기하지 않았다.-->
@@ -78,7 +83,9 @@
                         <div class="leftone float_left">
                             <img src="images/YK_middle.png" alt="">
                         </div>
-                        <div class="rightone float_left"></div>
+                        <div class="rightone float_left" >
+                            {{ obj4.main_text }}
+                        </div>
                     </div>
                 </slide-element>
                <!-- 6 page 키가 20cm 자랐다.-->
@@ -89,7 +96,9 @@
                         <div class="leftone float_left">
                             <img src="images/YK_smile.png" alt="">
                         </div>
-                        <div class="rightone float_left"></div>
+                        <div class="rightone float_left">
+                            {{obj5.main_text}} 
+                        </div>
                     </div>
                 </slide-element>
                 <!-- 7 page - 3d 설명 스파이크! -->
@@ -112,6 +121,9 @@
                             <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
                                 <source src="video/KYK_special_w.mp4" type="video/webm"></source>
                             </video>
+                        </div>
+                        <div class="rightone float_left">
+                            {{obj9.main_text}} 
                         </div>
                     </div>
                 </slide-element>
@@ -149,7 +161,6 @@
                 </slide-element>
                 <!-- page - 기술 설명 지피-->
                 <slide-element 
-                    :properties = "obj13"
                     class="swiper-slide page-12 sixth-page">
                     <div slot='main' class="swiper-container-h">
                         <div class="swiper-wrapper">
@@ -182,7 +193,7 @@
                 
                 <!-- still mvp -->
                 <slide-element
-                    :properties="obj14" 
+                    :properties="obj15" 
                     class="swiper-slide page-13 eleventh-page"
                 >
                     <div class="main-container" slot ="main">
@@ -191,53 +202,35 @@
                                 <source src="video/KYK_special_w.mp4" type="video/webm"></source>
                             </video>
                         </div>
+                        <div class="rightone float_left">
+                            {{obj15.main_text}} 
+                        </div>
+
                     </div>
                     
                 </slide-element>
 
-                <!-- still mvp -->
+                <!-- believe myself -->
                 <slide-element
-                    :properties="obj15" 
+                    :properties="obj16" 
                     class="swiper-slide page-14 eleventh-page"
                 >
                     <div class="main-container" slot ="main">
                         <div class="leftone float_left">
                             <video id="video6" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
-                                <source src="video/KYK_special_w.mp4" type="video/webm"></source>
+                                <source src="video/KYK_believe_myself_w.mp4" type="video/mp4"></source>
                             </video>
                         </div>
+                        <div class="rightone float_left">
+                            {{obj16.main_text}} 
+                        </div>
+
                     </div>
                     
                 </slide-element>
 
 
-                
-                <!-- 14 page : believe my self -->
-                <slide-element
-                    :properties="obj11" 
-                    class="swiper-slide 13th-page"
-                >
-                    <div slot ="main">
-                       <div class="fullscreen-bg" >
-                            <video id="video4" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto"  webkit-playsinline playsinline >
-                                <source :src="videos[4].webm" type="video/webm"></source>
-                            </video>
-                        </div>
-                    </div>
-                </slide-element>
-                <!-- 15 page : ceremony airplane -->
-                <slide-element
-                    :properties="obj12" 
-                    class="swiper-slide 14th-page"
-                >
-                    <div slot ="main">
-                       <div class="fullscreen-bg" >
-                            <video id="video5" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto"  webkit-playsinline playsinline >
-                                <source :src="videos[5].webm" type="video/webm"></source>
-                            </video>
-                        </div>
-                    </div>
-                </slide-element></div>
+            </div>
         </div>
         <% include ../partials/js.ejs %>
     </body>

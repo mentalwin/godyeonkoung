@@ -57,14 +57,17 @@ var objList = [
             {text:"그래서 배구를 그만둘까 생각하기도 했다능...", from:"duck"}
         ],
         isWhite : true,
-        isDuck : "sad"
+        isDuck : "sad",
+          main_text : "김연경은 초등학교 4학년 때 배구를 시작했다. 그러나 작은 키 때문에 6년 가까이 제대로 시합 한 번 뛰지 못했다."
+
     },
-    // 5번째 페이지
+    //5번째 페이지
     {
         texts : [
             {text:"나같으면 포기 했을 텐데...", from: 'duck'}],
         isWhite : true,
-        isDuck : "happy"
+        isDuck : "happy",
+        main_text : "그러나 김연경은 포기하지 않았다. 세터든 리베로든 자신을 불러주는 포지션이면 가리지 않았다."
     },
     //5
     {
@@ -73,7 +76,8 @@ var objList = [
             {text: "지금의 베스트스파이커 김연경은 바로 이때 탄생했다.", from: 'duck'}
             ],
         isWhite : true,
-        isDuck : "happy"
+        isDuck : "happy",
+        main_text : "키가 크지 않을 거라는 우려와 달리 고등학생이 되면서 20CM 넘게 키가 자랐다.  힘든 시기를 버텨내고 찾아온 기회! 공격수 포지션인 레프트로 시합에 뛰기 시작했다."
     },
     //6
     {
@@ -109,7 +113,8 @@ var objList = [
         }],
         hasVideo : true,
         isDuck : 'sad',
-        videoId : "video2"
+        videoId : "video2",
+        main_text : "경쟁에서 멀어지면서 신체조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요.."
     },
     //9
     {
@@ -121,7 +126,8 @@ var objList = [
         }],
         isDuck : 'happy',
         hasVideo : true,
-        videoId : "video3"
+        videoId : "video3",
+        main_text : "공격수 김연경에게는 특별한 것이 있었다. 그것은 다양한 포지션에서 겪으며 익힌 기본기 였다."
     },
     //10
     {
@@ -152,17 +158,13 @@ var objList = [
     },
     //12
     {
-        hasVideo : true,
-        videoId : "video5",
         texts : []
     },
     // 13
     {
-        hasVideo : true,
-        videoId : "video6",
         texts : [
-            {text : "# 공격+수비 완전체로 성장한 연경 선수", from : "duck"} ,
-            {text : "# 어느 무대에서든 노력이 빛을 발하기 시작!", from : "duck"} 
+            {text : "공격+수비 완전체로 성장한 연경 선수", from : "duck"} ,
+            {text : "어느 무대에서든 노력이 빛을 발하기 시작!", from : "duck"} 
         ]
     },
     // 14
@@ -176,10 +178,25 @@ var objList = [
         ] ,
         isDuck : 'happy'
     },
+    // 15
     {
         texts : [
-            { text : "핡.. 김연경 대체 뭐야 ㅠㅠ"}
-        ]
+            { text : "핡.. 김연경 대체 뭐야 ㅠㅠ", from : "duck"}
+        ],
+        isDuck : 'happy',
+        hasVideo : true,
+        videoId : "video5",
+        main_text : "힘들어도 포기하지 않고 꿋꿋하게 노력한 김연경"
+    },
+    // 16
+    {
+        texts : [
+            { text : "심쿵", from : "duck"} 
+        ],
+        isduck : 'sad',
+        hasVideo : true,
+        videoId : "video6",
+        main_text : "제 자신을 제가 믿는 게 중요한 것 같아요."
     }
     
     
