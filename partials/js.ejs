@@ -25,7 +25,7 @@
                         src : curSlideElement.properties.soundSrc
                     });
                     soundId = sound.play();
-                    if (!app.muted) sound.mute(true);
+                    if (app.muted) sound.mute(true);
                     else sound.mute(false);
                 }
                 video.load();
