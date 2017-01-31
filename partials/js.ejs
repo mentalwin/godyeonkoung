@@ -9,27 +9,35 @@
 <script src="vendor/howler/howler.js"></script>
 <script>
     var video;
-    var sound;
+    var sound, soundId;
+    var curSlideElement;
     var mySwiper = new Swiper('.swiper-container', {
         direction : 'vertical',
         pagination: '.swiper-pagination',
         paginationType : 'progress',
         onSlideChangeEnd : function() {
-            var curSlideElement = app.$children[mySwiper.activeIndex];
+            curSlideElement = app.$children[mySwiper.activeIndex];
             if (app && curSlideElement.properties.hasVideo) {
                 video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
+
+                if(curSlideElement.properties.hasSound) {
+                    sound = new Howl({
+                        src : curSlideElement.properties.soundSrc
+                    });
+                    soundId = sound.play();
+                    if (!sound.mute) sound.mute(true);
+                    else sound.mute(false);
+                }
                 video.load();
-                video.play();
+                video.play();  
             }
-            if (app && curSlideElement.properties.hasSound) {
-                sound = new Howl({
-                    src : curSlideElement.properties.soundSrc
-                });
-                if (!app.muted) sound.play();
-            }
+            
         },
         onSlideChangeStart : function() {
             if (video && !video.paused) video.load();
+            if (sound) {
+                sound.unload();
+            }
         }
     });
     var swiper_h = new Swiper('.swiper-container-h', {
