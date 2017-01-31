@@ -40,7 +40,7 @@ var objList = [
             type : 'text'
         },
         {
-            text : '이게 뭐가 대단한건가 싶은 배알못들을 위해 내가 왔다!!',
+            text : '이게 뭐가 대단한 건가 <br/>싶은 배알못들을 위해...<br/> 내가 왔다!!',
             from : 'duck',
             type : 'text'
         }],
@@ -58,7 +58,7 @@ var objList = [
         ],
         isWhite : true,
         isDuck : "sad",
-          main_text : "김연경은 초등학교 4학년 때 배구를 시작했다. 그러나 작은 키 때문에 6년 가까이 제대로 시합 한 번 뛰지 못했다."
+          main_text : "김연경은 초등학교 4학년 때 배구를 시작했다.<br/> 그러나 작은 키 때문에 6년 가까이 제대로 시합 한 번 뛰지 못했다."
 
     },
     //5번째 페이지
@@ -234,7 +234,7 @@ Vue.component('slide-element', {
         <div class="card-container">
             <transition-group name="list">
                 <div class="card" v-bind:class="{other : talk.from != 'duck'}" v-for="talk in talks" :key="talk">
-                    {{ talk.text }}
+                    <span v-html="talk.text"></span>
                 </div>
             </transition-group>
         </div>
@@ -307,7 +307,7 @@ var options = {
         toggle : function() {
             this.muted ? false : true;
             if (sound) sound.mute();
-        } 
+        }
     },
     computed : {
         sound : function() {

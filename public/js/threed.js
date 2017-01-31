@@ -88,9 +88,12 @@ function keycontroller () {
 
     }
 }
-$(".btnBlueGreen").click(function(){
+function spike() {
     ball.position.set(-5.1, 3.2, -9.4);
     v = initV.clone(); // v THREE
     v.divide(divider); // v divide 60 its 60fps
+}
+$(".btnBlueGreen").click(function(){
+    spike();
 });
 init();
