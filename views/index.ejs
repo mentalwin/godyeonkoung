@@ -6,6 +6,11 @@
     <body>
         <div id="mw-app" class="swiper-container">
             <div id="progressbar" class="swiper-pagination"></div>
+            <div class="topbar">
+                <img class="speaker-button" 
+                    v-on:click = "toggle"
+                    :src="sound" alt="speaker">
+            </div>
             <div class="swiper-wrapper">
                 <!-- First Page -->
                 <slide-element 
@@ -17,7 +22,6 @@
                                 <a href="#" class="logo">
                                     <img src="images/DDD1.png" alt="logo" class="logo">
                                 </a>
-                                <img class="speaker-button" src="images/phones-speaker-icon.png" alt="phone">
                             </div>
                         </nav>
                         <div class="card">

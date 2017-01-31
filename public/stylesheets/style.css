@@ -104,7 +104,8 @@ section {
   padding: 8px;
   width: 100%;
   height: 56px;
-  background-color: rgba(246, 246, 246, 0.7); }
+  background-color: rgba(246, 246, 246, 0.7);
+  z-index: 10000; }
   .topbar img {
     height: 30px;
     margin-top: 14px;
@@ -125,9 +126,11 @@ section {
   font-family: "HANNA"; }
   .first-page section {
     position: relative; }
+  .first-page .topbar {
+    background: transparent; }
   .first-page nav {
     height: 54px;
-    background-color: #faff37;
+    background-color: #007aff;
     padding-top: 13px;
     padding-left: 8px;
     padding-bottom: 8px; }
@@ -145,10 +148,14 @@ section {
   .first-page .card {
     position: absolute;
     right: 22.3px;
-    bottom: 116px;
-    font-size: 8.3vw;
+    top: 238px;
+    font-size: 108px;
     text-align: right;
-    color: #055b4b; }
+    color: #ffffff;
+    opacity: 0.9; }
+    @media (max-aspect-ratio: 1 / 1) {
+      .first-page .card {
+        font-size: 64px; } }
 
 /* second page
  */

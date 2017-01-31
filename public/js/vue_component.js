@@ -14,12 +14,15 @@ var mql = matchMedia("(min-aspect-ratio: 1/1)"),
     }
 handler(mql);
 
+// set components properties and methods of components
+
 var objList = [
     //1
     {
         texts : [],
         isWhite : false,
-        background_image : "../images/olympic.png"
+        background_image : "../images/olympic.png",
+        top : true
     },
     //2
     {
@@ -39,7 +42,7 @@ var objList = [
         videoId : "video1",
         top : true,
         hasSound : true,
-        soundSrc : "sound/dingdong.mp3"
+        soundSrc : ["sound/YK_win_sound.webm", "sound/YK_win_sound.mp3"]
     },
     //3
     {
@@ -189,12 +192,10 @@ Vue.component('slide-element', {
                     background_image : null
                 }
             }
-        }
+        },
     }, 
     template : `<section>
-        <div class="topbar" v-if="properties.top">
-            <img class="speaker-button" src="images/phones-speaker-icon.png" alt="speaker">
-        </div>
+        
         <div v-if="!properties.hasVideo" class="background" >
             <img :src="properties.background_image" alt=""/>
         </div>
@@ -265,16 +266,33 @@ Vue.component('slide-element', {
             } else {
                 mySwiper.slidePrev();
             }
-        }
+        },
     }
 });
+
+// set data and methods of Vue app
 
 var imgAssets = ["bg1", "bg2", "bg3", "bg4", "bg5", "bg6", "bg7", "bg8"];
 var videoAssets = ["video1","video2","video3","video4","video5", "video6"];
 
 var options = {
     el : '#mw-app',
-    data : {}
+    data : {
+        muted : false,
+    },
+    methods : {
+        toggle : function() {
+            this.muted ? false : true;
+            if (sound) sound.mute();
+        } 
+    },
+    computed : {
+        sound : function() {
+            var muted_icon = "images/mute-icon.png";
+            var unmuted_icon = "images/phones-speaker-icon.png";
+            return this.muted ? muted_icon : unmuted_icon;
+        }
+    }
 }
 for (var i = 0; i < videoAssets.length; i++) {
     videoAssets[i] = {
@@ -283,12 +301,16 @@ for (var i = 0; i < videoAssets.length; i++) {
     }
 }
 
+options.data["videos"] = videoAssets;
+
 for(var i = 0; i < objList.length; i++) {
     var curOption = objList[i];
+
     if(!curOption.hasVideo) curOption.background_image = "images/" + imgAssets.shift() + postfix + ".png";
+
     options.data["obj" + (i+1)] = curOption;
 }
-options.data["videos"] = videoAssets;
+
 // get data from 
 var app = new Vue(options);
 

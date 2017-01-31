@@ -6,6 +6,7 @@
 <script src="vendor/threee/ColladaLoader2.js"></script>
 <script src='js/vue_component.js'></script>
 <script src='js/threed.js'></script>
+<script src="vendor/howler/howler.js"></script>
 <script>
     var video;
     var sound;
@@ -22,9 +23,9 @@
             }
             if (app && curSlideElement.properties.hasSound) {
                 sound = new Howl({
-                    src : [curSlideElement.properties.soundSrc]  
+                    src : curSlideElement.properties.soundSrc
                 });
-                sound.play();
+                if (!app.muted) sound.play();
             }
         },
         onSlideChangeStart : function() {
@@ -45,17 +46,27 @@
 <script src="js/iphone-inline-video.browser.js"></script>
 <script>
     $('video').each(function(){
-        console.log(this);
         makeVideoPlayableInline(this);
     });
 </script>
-<script src="vendor/howler/howler.js"></script>
+<script>
+    $("img")
+        .on('load', function(){
+        });
+</script>
+<script>
+</script>
 <script>
     var test = new Howl({
         src : ['sound/dingdong.mp3']  
     });
     $('.speaker-button').on('click', function(){
-        test.play()  ;
+        app.muted = !app.muted;
+        if (sound) {
+            if (app.muted) sound.mute(true);
+            else sound.mute(false);
+        }
+            
     });
     
 </script>
