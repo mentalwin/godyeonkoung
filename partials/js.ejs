@@ -8,6 +8,7 @@
 <script src='js/threed.js'></script>
 <script src="js/topbar.js"></script>
 <script src="vendor/howler/howler.js"></script>
+<script src="js/srcloader.js"></script>
 <script type="text/javascript">
     function getVideoSrc(se) {
         return "video/" + se.videoSrc;
@@ -32,9 +33,9 @@
             //  1. has video
             if (app && curSlideElement.properties.hasVideo) {
                 // find video-container inside this component
-                var el = $(curSlideElement.$el);
-                var v = el.find(".video_container video");
-                v.attr("src", getVideoSrc(curSlideElement.properties));
+                //var el = $(curSlideElement.$el);
+                //var v = el.find(".video_container video");
+                //v.attr("src", getVideoSrc(curSlideElement.properties));
                 //video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
 
                 // video가 있으면 sound도 있으니깐 이건 필요 없을 듯

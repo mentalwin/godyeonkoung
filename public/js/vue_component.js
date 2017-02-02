@@ -46,7 +46,7 @@ var objList = [
         }],
         hasVideo : true,
         isDuck : 'happy',
-        videoSrc : "YK_win_w.mp4",
+        videoSrc : "YK_win",
         top : true,
         hasSound : true,
         soundSrc : ["sound/YK_win_sound.webm", "sound/YK_win_sound.mp3"]
@@ -100,6 +100,7 @@ var objList = [
         isWhite : true,
         texts : [ ],
         hasVideo : true,
+        videoSrc : "YK_limit",
         isDuck : 'happy',
         videoId : "video2",
     },
@@ -112,6 +113,7 @@ var objList = [
             from : 'duck'
         }],
         hasVideo : true,
+        videoSrc : "YK_limit",
         isDuck : 'sad',
         videoId : "video2",
         main_text : "경쟁에서 멀어지면서 신체조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요.."
@@ -126,6 +128,7 @@ var objList = [
         }],
         isDuck : 'happy',
         hasVideo : true,
+        videoSrc : "YK_limit",
         videoId : "video3",
         main_text : "공격수 김연경에게는 특별한 것이 있었다. 그것은 다양한 포지션에서 겪으며 익힌 기본기 였다."
     },
@@ -134,6 +137,7 @@ var objList = [
         isWhite : true,
         texts : [],
         hasVideo : true,
+        videoSrc : "YK_limit",
         videoId : "video4"
     },
     //11
@@ -154,6 +158,7 @@ var objList = [
         }],
         isDuck : 'happy',
         hasVideo : true,
+        videoSrc : "YK_limit",
         videoId : "video4"
     },
     //12
@@ -185,6 +190,7 @@ var objList = [
         ],
         isDuck : 'happy',
         hasVideo : true,
+        videoSrc : "YK_limit",
         videoId : "video5",
         main_text : "힘들어도 포기하지 않고 꿋꿋하게 노력한 김연경"
     },
@@ -195,6 +201,7 @@ var objList = [
         ],
         isduck : 'sad',
         hasVideo : true,
+        videoSrc : "YK_limit",
         videoId : "video6",
         main_text : "제 자신을 제가 믿는 게 중요한 것 같아요."
     }
