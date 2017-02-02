@@ -27,6 +27,9 @@ for(var i = 0; i < comps.length; i++) {
     var src;
     if (el.properties.hasVideo) {
         var temp = $(el.$el).find("video");
+        temp.on("loadeddata", function(){
+            console.log("HELLO!")  ;
+        });
         temp.attr("src", "video/" + el.properties.videoSrc + ratio + ext);
         if (isMobile) temp.attr("autoplay", true);
     }
