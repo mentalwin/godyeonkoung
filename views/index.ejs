@@ -38,10 +38,8 @@
                     :properties="obj2"
                     class='swiper-slide second-page'>
                     <div slot='main'>
-                        <div class="fullscreen-bg">
-                            <video id="video1" class=" fullscreen-bg__video fullscreen-bg__video" width="100%"  preload muted webkit-playsinline playsinline >
-                                <source src="video/video1_w.webm" type="video/webm"></source>
-                            </video>
+                        <div class="video_container">
+                            <video muted autoplay playsinline id="video_player"></video>
                         </div>
                     </div>
                 </slide-element>    

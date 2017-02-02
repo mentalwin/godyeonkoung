@@ -1,7 +1,6 @@
 <script src="vendor/jquery/dist/jquery.min.js"></script>
 <script src="vendor/swiper/dist/js/swiper.jquery.js"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="http://vjs.zencdn.net/5.16.0/video.js"></script>
 <script src="vendor/threee/three.min.js"></script>
 <script src="vendor/threee/ColladaLoader.js"></script>
 <script src="vendor/threee/ColladaLoader2.js"></script>
@@ -9,8 +8,17 @@
 <script src='js/threed.js'></script>
 <script src="js/topbar.js"></script>
 <script src="vendor/howler/howler.js"></script>
+<script type="text/javascript">
+    function getVideoSrc(se) {
+        return "video/" + se.videoSrc;
+    }
+</script>
 <script>
-    var video;
+    var video; // previous html5
+    var vp; // videojs
+    var videoOption = { id : "video_player", controls : false, 
+                        autoplay : true, muted : true,
+                        playsinline : true};
     var sound, soundId;
     var curSlideElement;
     var mySwiper = new Swiper('.swiper-container', {
@@ -18,29 +26,33 @@
         pagination: '.swiper-pagination',
         paginationType : 'progress',
         onSlideChangeEnd : function() {
+            // callback function that slide change end
+            //  2. text preload
             curSlideElement = app.$children[mySwiper.activeIndex];
+            //  1. has video
             if (app && curSlideElement.properties.hasVideo) {
-                video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
+                // find video-container inside this component
+                var el = $(curSlideElement.$el);
+                var v = el.find(".video_container video");
+                v.attr("src", getVideoSrc(curSlideElement.properties));
+                //video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
 
+                // video가 있으면 sound도 있으니깐 이건 필요 없을 듯
                 if(curSlideElement.properties.hasSound) {
                     sound = new Howl({
                         src : curSlideElement.properties.soundSrc
                     });
-                    soundId = sound.play();
+                    //soundId = sound.play();
                     if (app.muted) sound.mute(true);
                     else sound.mute(false);
                 }
-                video.load();
-                video.play();  
             }
             
         },
         onSlideChangeStart : function() {
-            checktopbar();
+            checktopbar(); // topbar style
             if (video && !video.paused) video.load();
-            if (sound) {
-                sound.unload();
-            }
+            if (sound) { sound.unload(); }
         }
     });
     var swiper_h = new Swiper('.swiper-container-h', {

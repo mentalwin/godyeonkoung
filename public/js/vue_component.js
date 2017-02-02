@@ -46,7 +46,7 @@ var objList = [
         }],
         hasVideo : true,
         isDuck : 'happy',
-        videoId : "video1",
+        videoSrc : "YK_win_w.mp4",
         top : true,
         hasSound : true,
         soundSrc : ["sound/YK_win_sound.webm", "sound/YK_win_sound.mp3"]

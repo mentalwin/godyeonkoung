@@ -74,8 +74,11 @@ section
   div
     height : 100%
 .video_container
-  max-width : 385px
-  max-height : 385px
+  width : 385px
+  height : 385px
+  video
+    width : 100%
+    height : 100%
 
 .card-container
   position : absolute
@@ -194,6 +197,17 @@ section
  * second page
  */
 .second-page
+  .video_container
+    width : 100%
+    height : 100%
+    transform : translate(-50%, -50%)
+    -webkit-transform : translate(-50%, -50%)
+    -moz-transform : translate(-50%, -50%)
+    -ms-transform : translate(-50%, -50%)
+    -o-transform : translate(-50%, -50%)
+    position : absolute
+    top : 50%
+    left : 50%
   .etc
     background-image : url('../images/cup_win.png')
     width : 310px
@@ -364,7 +378,6 @@ section
 .fifteenth-page
   background-image : url('../images/bg9_w.png')
   background-size : cover
-  .video_container
   
 /*
  * page 13
