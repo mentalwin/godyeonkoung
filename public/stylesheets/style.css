@@ -11,6 +11,11 @@ body {
  */
 .leftone {
   width: 320px; }
+  @media (max-width: 420px) {
+    .leftone {
+      width: 100%;
+      height: 71.7% !important;
+      background-size: cover; } }
 
 .rightone {
   width: calc(100% - 321px);
@@ -18,6 +23,10 @@ body {
   line-height: 1.75;
   color: #152c9a;
   padding-top: 141px; }
+  @media (max-width: 420px) {
+    .rightone {
+      width: 100%;
+      padding-top: 20px; } }
   .rightone div {
     padding-left: 30px; }
 
@@ -68,7 +77,14 @@ section {
   left: 2.6%;
   top: 18.6%;
   background: white;
-  height: 408px; }
+  height: 408px;
+  max-width: 800px; }
+  @media (max-width: 420px) {
+    .main-container {
+      width: 77.8%;
+      height: 77.8%;
+      left: 11.1%;
+      top: 11.1%; } }
   .main-container div {
     height: 100%; }
 
@@ -103,11 +119,15 @@ section {
   top: 0; }
 
 .duck-container {
-  width: 50px;
-  height: 50px;
+  width: 108px;
+  height: 108px;
   position: absolute;
   bottom: 50px;
   right: 8px; }
+  @media (max-width: 420px) {
+    .duck-container {
+      width: 70px;
+      height: 70px; } }
   .duck-container img {
     height: 100%;
     width: 100%; }
@@ -129,10 +149,10 @@ section {
   top: 0;
   padding: 8px;
   width: 100%;
-  height: 56px;
+  height: 5%;
   z-index: 10000; }
   .topbar img {
-    height: 30px;
+    height: 80%;
     margin-top: 14px;
     margin-right: 20px;
     float: right; }
@@ -218,6 +238,8 @@ section {
   @media (max-aspect-ratio: 1 / 1) {
     .third-page {
       background-image: url("../images/bg1_m.png"); } }
+  .third-page .leftone {
+    background-image: url("../images/YK_elementary.png"); }
   .third-page .card {
     padding: 11px 24px 8px 19px;
     font-family: "HANNA";
@@ -251,6 +273,8 @@ section {
   @media (max-aspect-ratio: 1 / 1) {
     .page-5 {
       background-image: url("../images/bg1_m.png"); } }
+  .page-5 .leftone {
+    background-image: url("../images/YK_middle.png"); }
 
 /* sixth page : 기술 설명 gifs
  */
@@ -259,6 +283,8 @@ section {
   @media (max-aspect-ratio: 1 / 1) {
     .page-6 {
       background-image: url("../images/bg1_m.png"); } }
+  .page-6 .leftone {
+    background-image: url("images/yk_smile.png"); }
 
 .sixth-page .swiper-slide .gif-container {
   width: 1000px;
