@@ -28,9 +28,10 @@ for(var i = 0; i < comps.length; i++) {
     if (el.properties.hasVideo) {
         var temp = $(el.$el).find("video");
         temp.on("loadeddata", function(){
-            console.log("HELLO!")  ;
+            this.play();
         });
-        temp.attr("src", "video/" + el.properties.videoSrc + ratio + ext);
+        temp.attr("data-src", "video/" + el.properties.videoSrc + ratio + ext);
+        temp.addClass("swiper-lazy");
         if (isMobile) temp.attr("autoplay", true);
     }
 }

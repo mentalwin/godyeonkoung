@@ -46,7 +46,10 @@
             checktopbar(); // topbar style
             if (video && !video.paused) video.stop();
             if (sound) { sound.unload(); }
-        }
+        },
+        preloadImages: false,
+        // Enable lazy loading
+        lazyLoading: true
     });
     var swiper_h = new Swiper('.swiper-container-h', {
         direction : 'horizontal'  ,
