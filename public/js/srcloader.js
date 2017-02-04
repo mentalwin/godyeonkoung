@@ -31,6 +31,7 @@ for(var i = 0; i < comps.length; i++) {
             this.play();
         });
         temp.attr("data-src", "video/" + el.properties.videoSrc + ratio + ext);
+        temp.attr("poster", "images/poster/" + el.properties.videoSrc + "_poster.png" );
         temp.addClass("swiper-lazy");
         if (isMobile) temp.attr("autoplay", true);
     }
