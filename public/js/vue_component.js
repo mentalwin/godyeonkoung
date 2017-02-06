@@ -7,7 +7,6 @@ var mql = matchMedia("(min-aspect-ratio: 1/1)"),
             mobile_mode = false;
         } else {
             // 모바일 비디오 return
-            console.log("!!!!");
             postfix = "_m";
             mobile_mode = true;
         }
@@ -82,11 +81,11 @@ var objList = [
     //6
     {
         texts : [
-            { 
+            {
                 text : '190cm의 큰 키에 강하게 찍어내리는 스파이크',
                 from : 'duck'
             },
-            { 
+            {
                 text : '지금의 베스트 스파이커 김연경은 바로 이때 탄생했다!',
                 from : 'duck'
             }
@@ -169,16 +168,17 @@ var objList = [
     {
         texts : [
             {text : "공격+수비 완전체로 성장한 연경 선수", from : "duck"} ,
-            {text : "어느 무대에서든 노력이 빛을 발하기 시작!", from : "duck"} 
+            {text : "어느 무대에서든 노력이 빛을 발하기 시작!", from : "duck"}
         ]
     },
     // 14
     {
+
         texts : [{
             text : "김연경의 실제 스파이크 속도야", from : "duck"
-        }, 
+        },
             {
-                text : "원하는만큼 반복할 수 있도록 해놨음!(버튼 클릭!)", from : "duck" 
+                text : "원하는만큼 반복할 수 있도록 해놨음!(버튼 클릭!)", from : "duck"
             }
         ] ,
         isDuck : 'happy'
@@ -197,7 +197,7 @@ var objList = [
     // 16
     {
         texts : [
-            { text : "심쿵", from : "duck"} 
+            { text : "심쿵", from : "duck"}
         ],
         isduck : 'sad',
         hasVideo : true,
@@ -205,8 +205,8 @@ var objList = [
         videoId : "video6",
         main_text : "제 자신을 제가 믿는 게 중요한 것 같아요."
     }
-    
-    
+
+
 ];
 
 Vue.filter('reverse', function(value){
@@ -218,6 +218,7 @@ Vue.component('slide-element', {
             type : Object,
             default : function() {
                 return {
+                    talks : [],
                     texts : [],
                     isWhite : false,
                     isDuck : "",
@@ -227,10 +228,10 @@ Vue.component('slide-element', {
                 }
             }
         },
-    }, 
+    },
     template : `<section>
         <slot name='main'>
-         
+
         </slot>
         <div class="etc-container">
             <transition-group name="et">
@@ -239,11 +240,9 @@ Vue.component('slide-element', {
             </transition-group>
         </div>
         <div class="card-container">
-            <transition-group name="list">
-                <div class="card" v-bind:class="{other : talk.from != 'duck'}" v-for="talk in talks" :key="talk">
-                    <span v-html="talk.text"></span>
-                </div>
-            </transition-group>
+            <div class="bubble animated bounceInUp" v-bind:class="{other : talk.from != 'duck'}" v-for="talk in talks">
+                <p v-html="talk.text"></p>
+            </div>
         </div>
         <slot name='sub'></slot>
         <!-- duck -->
@@ -256,7 +255,7 @@ Vue.component('slide-element', {
         <div class="arrow" >
             <div class="swiper-prev">
                 <div v-on:click="prev_step" class="up_arrow">
-                    <img src="images/arrow_up.png" alt="arrowup"> 
+                    <img src="images/arrow_up.png" alt="arrowup">
                 </div>
             </div>
             <div class="swiper-next">
@@ -269,7 +268,8 @@ Vue.component('slide-element', {
     data : function() {
         return {
             talks : [],
-            etc : []
+            etc : [],
+            loaded : true
         }
     },
     computed : {
@@ -288,7 +288,7 @@ Vue.component('slide-element', {
             } else {
                 mySwiper.slideNext();
             }
-        }, 
+        },
         prev_step : function() {
             var prop = this.properties;
             if (this.talks.length > 0) {
@@ -341,6 +341,5 @@ for(var i = 0; i < objList.length; i++) {
     options.data["obj" + (i+1)] = curOption;
 }
 
-// get data from 
+// get data from
 var app = new Vue(options);
-
