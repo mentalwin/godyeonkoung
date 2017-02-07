@@ -26,14 +26,14 @@ for(var i = 0; i < comps.length; i++) {
     var isMobile = detectmob();
     var src;
     if (el.properties.hasVideo) {
-        var temp = $(el.$el).find("video");
-        temp.on("loadeddata", function(){
+        var t= $(el.$el).find("video");
+        t.on("loadeddata", function(){
             this.play();
         });
-        temp.attr("data-src", "video/" + el.properties.videoSrc + ratio + ext);
-        temp.attr("poster", "images/poster/" + el.properties.videoSrc + "_poster.png" );
-        temp.addClass("swiper-lazy");
-        if (isMobile) temp.attr("autoplay", true);
+        t.attr("data-src", "video/" + el.properties.videoSrc + ratio + ext);
+        t.attr("poster", "images/poster/" + el.properties.videoSrc + "_poster" + ratio + ".png" );
+        t.addClass("swiper-lazy");
+        if (isMobile) t.attr("autoplay", true);
     }
 }
 

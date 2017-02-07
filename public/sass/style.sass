@@ -32,6 +32,8 @@ p
   position : relative
   @media (max-width: 420px)
     font-size : 16px
+    width : 100%
+    padding-top : 20px
   .inner
     position : absolute
     font-family : 'HANNA'
@@ -43,9 +45,8 @@ p
     -webkit-transform : translate(-50%, -50%)
     -ms-transform : translate(-50%, -50%)
     -o-transform : translate(-50%, -50%)
-  @media (max-width: 420px)
-    width : 100%
-    padding-top : 20px
+    @media (max-width : 420px)
+      padding-top : 21%
 
 .swiper-slide
   background-size: cover
@@ -290,6 +291,7 @@ section
     height: 84%
     img
       width : 100%
+      height : 100%
 /*
  * third page
  */
@@ -361,8 +363,8 @@ section
   .button
     display : block
     position : absolute
-    top : 100%
-    left : 0%
+    top : 50%
+    left : 50%
     transform : translate(-50%, -50%)
     -webkit-transform : translate(-50%, -50%)
     -moz-transform : translate(-50%, -50%)
@@ -439,8 +441,31 @@ section
 
 .page-11
   background-image : url('../images/bg2_w.png')
+  .duck-container
+    bottom : 29%
+    right : 22%
+    width : 208px
+    height : 208px
+  .card-container
+    right : 36%
+    bottom : 55%
+    .bubble
+      line-height : 1.4
+      font-size : 40px
   @media (max-aspect-ratio : 1/1)
     background-image : url('../images/bg2_m.png')
+  @media (max-width: 420px)
+    .duck-container
+      bottom : 32%
+      right : 10%
+      width : 107px
+      height : 107px
+    .card-container
+      bottom : 50%
+      right : 20%
+      .bubble
+        font-size : 24px
+        line-height : 1.25
   
 
 /*

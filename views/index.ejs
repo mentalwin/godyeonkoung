@@ -1,6 +1,5 @@
 <html>
     <head>
-        <title>GodYeonKoung</title>
         <% include ../partials/head.ejs %>        
     </head>
     <body>
@@ -108,10 +107,15 @@
                 <!-- 7 page - 3d 설명 스파이크! -->
                 <slide-element :properties="obj14" class="swiper-slide seventh-page">
                     <div class="threeD" slot='main'>
-                        <div class="button">
-                            <span class="btnBlueGreen">
-                                스파이크!
-                            </span >
+                        <div class="card-container">
+                            <div class="bubble">
+                                김연경의 실제<br/>
+                                스파이크 속도야
+                            </div>
+                            <div class="bubble">
+                                원하는만큼 반복할 수 있도록<br/>
+                                해놨음!(버튼클릭)
+                            </div>
                         </div>
                     </div>
                 </slide-element>
@@ -247,8 +251,16 @@
                     </div>
                     
                 </slide-element>
-
-
+                <!-- 비행기 세레머니 -->
+                <slide-element  
+                    :properties="obj18"
+                    class='swiper-slide second-page'>
+                    <div slot='main'>
+                        <div class="video_container">
+                            <video muted playsinline></video>
+                        </div>
+                    </div>
+                </slide-element>   
             </div>
         </div>
         <% include ../partials/js.ejs %>

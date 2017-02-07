@@ -125,7 +125,7 @@ var objList = [
             from : 'duck'
         }],
         hasVideo : true,
-        videoSrc : "YK_believe",
+        videoSrc : "YK_limit",
         isDuck : 'sad',
         videoId : "video2",
         main_text : "경쟁에서 멀어지면서 신체조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요.."
@@ -140,16 +140,16 @@ var objList = [
         }],
         isDuck : 'happy',
         hasVideo : true,
-        videoSrc : "YK_believe",
+        videoSrc : "YK_special",
         videoId : "video3",
         main_text : "공격수 김연경에게는 특별한 것이 있었다. 그것은 다양한 포지션에서 겪으며 익힌 기본기 였다."
     },
-    //10
+    //10 coach
     {
         isWhite : true,
         texts : [],
         hasVideo : true,
-        videoSrc : "YK_believe",
+        videoSrc : "coach_interview",
         videoId : "video4"
     },
     //11
@@ -188,13 +188,7 @@ var objList = [
     // 14
     {
 
-        texts : [{
-            text : "김연경의 실제 <br/> 스파이크 속도야", from : "duck"
-        },
-            {
-                text : "원하는만큼 반복할 <br/>수 있도록 해놨음!<br/>(버튼 클릭!)", from : "duck"
-            }
-        ] ,
+        texts : [ ],
         isDuck : 'happy'
     },
     // 15
@@ -204,7 +198,7 @@ var objList = [
         ],
         isDuck : 'happy',
         hasVideo : true,
-        videoSrc : "YK_believe",
+        videoSrc : "YK_still_mvp",
         videoId : "video5",
         main_text : "힘들어도 포기하지 않고 꿋꿋하게 노력한 김연경"
     },
@@ -225,6 +219,16 @@ var objList = [
         texts : [
             { text : '이분 최소 우승컵 컬렉터.. <br> 터키뿐만 아니라 온갖지역 상 휩쓸고 다님', from : 'duck'} 
         ]
+    },
+    // 18 
+    {
+        isDuck : 'sad',
+        texts : [
+            { text : '알고보니 더 멋있지 ㅠㅠ', from : 'duck'} ,
+            { text : '진짜 이러고도 입덕이 안됐다고..?', from : 'duck'}
+        ],
+        hasVideo : true,
+        videoSrc : "airplane_ceremony",
     }
 
 
