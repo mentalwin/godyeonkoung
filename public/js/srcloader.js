@@ -25,7 +25,6 @@ for(var i = 0; i < comps.length; i++) {
     el.$data.sound = new Howl({
         src : ["sound/YK_win_sound.mp3"]
     });
-    console.log(el);
     var useWebm = !/Android/i.test(ua) && /Chrome/i.test(ua); 
     var ext = useWebm ? '.webm' : '.mp4';
     var isMobile = detectmob();
