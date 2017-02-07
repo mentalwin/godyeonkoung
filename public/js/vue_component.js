@@ -61,7 +61,7 @@ var objList = [
         videoSrc : "YK_win",
         top : true,
         hasSound : true,
-        soundSrc : ["sound/YK_win_sound.webm", "sound/YK_win_sound.mp3"]
+        soundSrc : ["sound/YK_win_sound.mp3"]
     },
     // 4번째 페이지
     {
@@ -113,6 +113,7 @@ var objList = [
         texts : [ ],
         hasVideo : true,
         videoSrc : "YK_believe",
+        soundSrc : ["sound/YK_believe_sound.mp3"],
         isDuck : 'happy',
         videoId : "video2",
     },
@@ -168,10 +169,7 @@ var objList = [
             text : '도대체 뭘 어떻게 하길래 <br/>이렇게 잘하냐고?' ,
             from : 'duck'
         }],
-        isDuck : 'happy',
-        hasVideo : true,
-        videoSrc : "YK_believe",
-        videoId : "video4"
+        isDuck : 'happy'
     },
     //12
     {
