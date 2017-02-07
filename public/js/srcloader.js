@@ -18,7 +18,7 @@ function detectmob() {
              return false; 
         }
 }
-
+var gifs = $(".gif");
 for(var i = 0; i < comps.length; i++) {
     var el = comps[i];
     var useWebm = !/Android/i.test(ua) && /Chrome/i.test(ua); 
@@ -35,4 +35,11 @@ for(var i = 0; i < comps.length; i++) {
         temp.addClass("swiper-lazy");
         if (isMobile) temp.attr("autoplay", true);
     }
+}
+
+for (var i = 0; i < gifs.length; i++) {
+    var el = $(gifs[i]);
+    var m = el.attr("name");
+    console.log(el);
+    el.attr("data-src", "gifs/" + m + ratio + ".gif");
 }

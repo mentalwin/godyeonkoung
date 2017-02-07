@@ -1,14 +1,27 @@
+function detectmob() { 
+     if( navigator.userAgent.match(/Android/i)
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i) 
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i)
+      ){
+         return true;
+         }
+         else {
+             return false; 
+        }
+}
 var postfix, mobile_mode;
 var mql = matchMedia("(min-aspect-ratio: 1/1)"),
     handler = function(mql) {
         if(mql.matches) {
             // 웹 비디오 리턴
             postfix = "_w";
-            mobile_mode = false;
         } else {
             // 모바일 비디오 return
             postfix = "_m";
-            mobile_mode = true;
         }
     }
 handler(mql);
@@ -53,7 +66,7 @@ var objList = [
     // 4번째 페이지
     {
         texts : [
-            {text:"그래서 배구를 그만둘까 생각하기도 했다능...", from:"duck"}
+            {text:"그래서 배구를 그만둘까 <br/> 생각하기도 했다능...", from:"duck"}
         ],
         isWhite : true,
         isDuck : "sad",
@@ -63,7 +76,7 @@ var objList = [
     //5번째 페이지
     {
         texts : [
-            {text:"나같으면 포기 했을 텐데...", from: 'duck'}],
+            {text:"나같으면 포기 했을 <br/>텐데...", from: 'duck'}],
         isWhite : true,
         isDuck : "happy",
         main_text : "그러나 김연경은 포기하지 않았다. 세터든 리베로든 자신을 불러주는 포지션이면 가리지 않았다."
@@ -71,8 +84,8 @@ var objList = [
     //5
     {
         texts : [
-            {text:"190cm의 큰 키에 강하게 찍어내리는 스파이크", from:'duck'},
-            {text: "지금의 베스트스파이커 김연경은 바로 이때 탄생했다.", from: 'duck'}
+            {text:"190cm의 큰 키에 강하게 <br/>찍어내리는 스파이크", from:'duck'},
+            {text: "지금의 베스트스파이커 <br/>김연경은 바로 이때 탄생했다.", from: 'duck'}
             ],
         isWhite : true,
         isDuck : "happy",
@@ -82,11 +95,11 @@ var objList = [
     {
         texts : [
             {
-                text : '190cm의 큰 키에 강하게 찍어내리는 스파이크',
+                text : '190cm의 큰 키에 <br/>강하게 찍어내리는 스파이크',
                 from : 'duck'
             },
             {
-                text : '지금의 베스트 스파이커 김연경은 바로 이때 탄생했다!',
+                text : '지금의 베스트 스파이커<br/> 김연경은 바로 이때 탄생했다!',
                 from : 'duck'
             }
         ]    ,
@@ -122,7 +135,7 @@ var objList = [
         isWhite : true,
         texts : [
         {
-            text : '힘든 시기에도 포기하지 않았던 게 이렇게 빛을 발한다능!'     ,
+            text : '힘든 시기에도 포기하지 <br/>않았던 게 이렇게 빛을 발한다능!'     ,
             from : 'duck'
         }],
         isDuck : 'happy',
@@ -148,11 +161,11 @@ var objList = [
             type : 'etc'
         },
         {
-            text : '공격/수비 모두 잘하기로 유명한 세계적인 신예 주팅과 비교해도 크으...' ,
+            text : '공격/수비 모두 잘하기로 <br/>유명한 세계적인 신예<br/> 주팅과 비교해도 크으...' ,
             from : 'duck'
         },
         {
-            text : '도대체 뭘 어떻게 하길래 이렇게 잘하냐고?' ,
+            text : '도대체 뭘 어떻게 하길래 <br/>이렇게 잘하냐고?' ,
             from : 'duck'
         }],
         isDuck : 'happy',
@@ -162,7 +175,8 @@ var objList = [
     },
     //12
     {
-        texts : []
+        texts : [],
+        isDuck : 'happy'
     },
     // 13
     {
@@ -175,10 +189,10 @@ var objList = [
     {
 
         texts : [{
-            text : "김연경의 실제 스파이크 속도야", from : "duck"
+            text : "김연경의 실제 <br/> 스파이크 속도야", from : "duck"
         },
             {
-                text : "원하는만큼 반복할 수 있도록 해놨음!(버튼 클릭!)", from : "duck"
+                text : "원하는만큼 반복할 <br/>수 있도록 해놨음!<br/>(버튼 클릭!)", from : "duck"
             }
         ] ,
         isDuck : 'happy'
@@ -199,11 +213,18 @@ var objList = [
         texts : [
             { text : "심쿵", from : "duck"}
         ],
-        isduck : 'sad',
+        isDuck : 'sad',
         hasVideo : true,
         videoSrc : "YK_believe",
         videoId : "video6",
         main_text : "제 자신을 제가 믿는 게 중요한 것 같아요."
+    },
+    //17
+    {
+        isDuck : 'happy',
+        texts : [
+            { text : '이분 최소 우승컵 컬렉터.. <br> 터키뿐만 아니라 온갖지역 상 휩쓸고 다님', from : 'duck'} 
+        ]
     }
 
 
@@ -234,10 +255,8 @@ Vue.component('slide-element', {
 
         </slot>
         <div class="etc-container">
-            <transition-group name="et">
-                <div class="etc" v-for="et in etc" :key="et">
-                </div>
-            </transition-group>
+            <div class="etc animated bounceInDown" v-for="et in etc" :key="et">
+            </div>
         </div>
         <div class="card-container">
             <div class="bubble animated bounceInUp" v-bind:class="{other : talk.from != 'duck'}" v-for="talk in talks">
@@ -332,7 +351,7 @@ for (var i = 0; i < videoAssets.length; i++) {
 }
 
 options.data["videos"] = videoAssets;
-
+options.data["mobile_mode"] = false;
 for(var i = 0; i < objList.length; i++) {
     var curOption = objList[i];
 

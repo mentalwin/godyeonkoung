@@ -44,6 +44,16 @@
                     </div>
                 </slide-element>    
 
+                <!-- 우승지도 -->
+                <slide-element
+                    :properties="obj17"
+                    class='swiper-slide win_map'>
+                    <div class="map" slot="main">
+                        <img src="images/win_map_text.png" alt="">
+                    
+                    </div>
+                </slide-element>
+
                 <!-- Third Page 초등학생 김연경 -->
                 <slide-element 
                     :properties="obj3"
@@ -52,7 +62,7 @@
                         <div class="leftone float_left">
                         </div>
                         <div class="rightone float_left">
-                           <div v-html="obj3.main_text"></div> 
+                           <div class="inner" v-html="obj3.main_text"></div> 
                         </div>
                     </div>
                 </slide-element>
@@ -66,7 +76,7 @@
                             <video muted playsinline></video>
                         </div>
                         <div class="rightone float_left">
-                           <div v-html="obj8.main_text"></div> 
+                           <div class="inner" v-html="obj8.main_text"></div> 
                         </div>
                     </div>
                 </slide-element>
@@ -78,7 +88,7 @@
                         <div class="leftone float_left">
                         </div>
                         <div class="rightone float_left" >
-                            <div v-html="obj4.main_text"></div>
+                            <div class="inner" v-html="obj4.main_text"></div>
                         </div>
                     </div>
                 </slide-element>
@@ -91,7 +101,7 @@
                             <img src="images/yk_smile.png" alt="">
                         </div>
                         <div class="rightone float_left">
-                        <div v-html="obj5.main_text"></div>
+                            <div class="inner" v-html="obj5.main_text"></div>
                         </div>
                     </div>
                 </slide-element>
@@ -116,7 +126,7 @@
                             </video>
                         </div>
                         <div class="rightone float_left">
-                        <div v-html="obj9.main_text"></div>
+                        <div class="inner" v-html="obj9.main_text"></div>
                         </div>
                     </div>
                 </slide-element>
@@ -147,6 +157,13 @@
                     class="swiper-slide page-11 eleventh-page"
                 >
                     <div slot ="main">
+                        <div class="card-container">
+                            <div class="bubble">
+                                그럴 줄 알고 내가 또 준비했지!<br/>
+                                김연경의 공격 & 수비 기술을<br/>
+                                천천히 살펴보자<br/>
+                            </div>
+                        </div>
                         
                     </div>
                 </slide-element>
@@ -158,22 +175,22 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="gif-container">
-                                    <img class="swiper-lazy" data-src="gifs/spike.gif" alt="">
+                                    <img class="gif swiper-lazy" name="spike"  alt="">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="gif-container">
-                                    <img class="swiper-lazy" data-src="gifs/serve.gif" alt="">
+                                    <img class="gif swiper-lazy" name="serve"  alt="">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="gif-container">
-                                    <img class="swiper-lazy" data-src="gifs/receive.gif" alt="">
+                                    <img class="gif swiper-lazy" name="receive"  alt="">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="gif-container">
-                                    <img class="swiper-lazy" data-src="gifs/block.gif" alt="">
+                                    <img class="gif swiper-lazy" name="block"  alt="">
                                 </div>
                             </div>
                         </div>                    
@@ -206,7 +223,7 @@
                             </video>
                         </div>
                         <div class="rightone float_left">
-                        <div v-html="obj15.main_text"></div>
+                            <div class="inner" v-html="obj15.main_text"></div>
                         </div>
 
                     </div>
@@ -224,7 +241,7 @@
                             </video>
                         </div>
                         <div class="rightone float_left">
-                        <div v-html="obj16.main_text"></div>
+                            <div class="inner" v-html="obj16.main_text"></div>
                         </div>
 
                     </div>

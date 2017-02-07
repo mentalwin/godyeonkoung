@@ -4,7 +4,7 @@ function checktopbar() {
         topbar.css("background", "transparent");
     }
     else{
-        topbar.css("background", "rgba(246,246,246,0.7)")
+        topbar.css("background", "#dedede");
     }
 
 }

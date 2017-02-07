@@ -30,31 +30,33 @@
                 // find video-container inside this component
                 var el = $(curSlideElement.$el);
                 var vc = el.find(".video_container");
-                var loader = $("<div class='loader-container'> \
-                                    <div class='loader'>Loading...</div> \
-                                </div>");
-                vc.append(loader);
                 video = el.find(".video_container video");
                 video.on('loadeddata', function(){
-                    console.log('dataloaded!')  ;
-                    loader.remove();
+                    // video가 있으면 sound도 있으니깐 이건 필요 없을 듯
+                    if(curSlideElement.properties.hasSound) {
+                        sound = new Howl({
+                            src : curSlideElement.properties.soundSrc
+                        });
+                        //soundId = sound.play();
+                        if (app.muted) sound.mute(true);
+                        else sound.mute(false);
+                    }
                 });
-                // video가 있으면 sound도 있으니깐 이건 필요 없을 듯
-                if(curSlideElement.properties.hasSound) {
-                    sound = new Howl({
-                        src : curSlideElement.properties.soundSrc
-                    });
-                    //soundId = sound.play();
-                    if (app.muted) sound.mute(true);
-                    else sound.mute(false);
-                }
             }
             
         },
         onSlideChangeStart : function() {
             checktopbar(); // topbar style
-            if (video && !video.paused) video.stop();
-            if (sound) { sound.unload(); }
+            if (video && !video.paused) {
+                if (video[0]) {
+                    video[0].pause();
+                    video[0].currentTime = 0;
+                }
+            }
+            if (sound) { 
+                console.log("sound!");
+                sound.unload(); 
+            }
         },
         preloadImages: false,
         // Enable lazy loading

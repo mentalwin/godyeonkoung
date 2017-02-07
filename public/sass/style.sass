@@ -7,11 +7,18 @@ body
 .arrow
   z-index : 1
 
+p
+  margin : 0
+
 /*
  * main layout
  */
 .leftone
   width : 320px
+  overflow : hidden
+  img
+    width : 100%
+
   @media (max-width: 420px)
     width : 100%
     height : 71.7% !important
@@ -22,11 +29,23 @@ body
   line-height : 1.75
   color : #152c9a
   padding-top : 141px
+  position : relative
+  @media (max-width: 420px)
+    font-size : 16px
+  .inner
+    position : absolute
+    font-family : 'HANNA'
+    width : 80%
+    padding-top : 60%
+    top : 50%
+    left : 50%
+    transform : translate(-50%, -50%)
+    -webkit-transform : translate(-50%, -50%)
+    -ms-transform : translate(-50%, -50%)
+    -o-transform : translate(-50%, -50%)
   @media (max-width: 420px)
     width : 100%
     padding-top : 20px
-  div
-    padding-left : 30px
 
 .swiper-slide
   background-size: cover
@@ -86,8 +105,7 @@ section
   @media (max-width: 420px)
     width : 77.8%
     height : 77.8%
-    left : 11.1%
-    top : 11.1%
+    top : 9.6%
 
   div
     height : 100%
@@ -106,11 +124,14 @@ section
 .card-container
   position : absolute
   right : 31px
-  bottom : 100px
+  bottom : 170px
+  @media (max-width: 420px)
+    bottom : 140px
   .bubble
+    margin-top : 10px
     position: relative
     padding : 11px 24px 8px 19px
-    font-family : 'HANNA'
+    font-family : 'Nanum Gothic'
     color : white
     font-size : 32px
     width : calc(100% - 30px)
@@ -118,6 +139,8 @@ section
     -webkit-border-radius: 13px
     -moz-border-radius: 13px
     border-radius: 13px
+    @media (max-width: 420px)
+      font-size : 18px
 
 
   .bubble:last-child:after
@@ -131,19 +154,9 @@ section
     width: 0
     bottom: -15px
     left: 90%
+    @media (max-width: 420px)
+      left : 84%
 
-  .card
-    padding : 11px 24px 8px 19px
-    background-color : #007aff
-    border-radius : 30px
-    color : white
-    font-size : 32px
-    width : calc(100% - 30px)
-    max-width : 310px
-    margin-bottom : 24px
-    img
-      width : 100%
-      height : 100%
 
 .etc-container
   position : absolute
@@ -175,6 +188,7 @@ section
   height : 100vw
   width : 10px
   margin-left : -10px
+  z-index : 1000000
 
 .topbar
   position : absolute
@@ -184,8 +198,8 @@ section
   height : 5%
   z-index : 10000
   img
-    height : 80%
-    margin-top : 14px
+    height : 68%
+    margin-top : 8px
     margin-right : 20px
     float : right
 
@@ -268,9 +282,14 @@ section
 /*
  * 우승 지도
  */
-.page-3
-  background-color : #152c9a
-
+.win_map
+  background : #152c9a
+  .map
+    width : 94.8%
+    margin : 80px auto
+    height: 84%
+    img
+      width : 100%
 /*
  * third page
  */
@@ -280,28 +299,12 @@ section
     background-image : url('../images/bg1_m.png')
   .leftone
     background-image : url('../images/YK_elementary.png')
-  .card
-    padding : 11px 24px 8px 19px
-    font-family : 'HANNA'
-    background-color : #007aff
-    border-radius : 30px
-    color : white
-    font-size : 32px
-    margin-bottom : 24px
 
 /*
  * fourth page
  */
 
-.fourth-page
-  .card
-    padding : 11px 24px 8px 19px
-    font-family : 'HANNA'
-    background-color : #007aff
-    border-radius : 30px
-    color : white
-    font-size : 32px
-    margin-bottom : 24px
+
 
 .page-4
   background-image : url('../images/bg2_w.png')
@@ -332,7 +335,7 @@ section
 
   .swiper-slide
     .gif-container
-      width : 1000px
+      text-align : center
       margin : 0 auto
   .gallery-top
     height : 80%
@@ -358,8 +361,8 @@ section
   .button
     display : block
     position : absolute
-    top : 50%
-    left : 50%
+    top : 100%
+    left : 0%
     transform : translate(-50%, -50%)
     -webkit-transform : translate(-50%, -50%)
     -moz-transform : translate(-50%, -50%)
@@ -438,6 +441,7 @@ section
   background-image : url('../images/bg2_w.png')
   @media (max-aspect-ratio : 1/1)
     background-image : url('../images/bg2_m.png')
+  
 
 /*
  * 정방형 영상 있는 곳
