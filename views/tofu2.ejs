@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="fb:app_id" content="1313361188707351">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="김연경">
-    <meta property="og:url" content="mentalwin.newslabfellows.com">
-    <meta property="og:description" content="김연경과 키 대보기!">
-    <meta property="og:image" content="1313361188707351">
+    <meta property="og:title" content="김연경이랑 키 재볼래?">
+    <meta property="og:url" content="mentalwin.newslabfellows.com/tofu2">
     
     <link rel="stylesheet" type="text/css" href="/resource/common/iu.css">
     <link rel="stylesheet" type="text/css" href="/resource/css/pages/index.css">
@@ -35,27 +33,6 @@
     <![endif]-->
   </head>
   <body>
-  <script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '1313361188707351',
-            xfbml      : true,
-            version    : 'v2.8'
-        });
-        FB.ui({
-            method: 'share' ,
-            href : 'https://developers.facebook.com/docs/'
-        }, function(response){});
-        FB.AppEvents.logPageView();
-    };
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
       
     <div class="iu-page index">
       <header class="iu-header header">
@@ -94,7 +71,7 @@
           <div class="iu-box box-23">
             <form id="name_height_form">
                 <input required id="name" type="text" placeholder="이름 (성 빼고)" maxlength="5">
-                <input required id="height" type="number" placeholder="키 (cm)" maxlength="3">
+                <input required id="height" type="number" placeholder="키 (cm)" min="100" maxlength="3">
                 <button class="iu-pg-button pg-button" type="submit">입력</button>
             </form>
           </div>
@@ -124,7 +101,7 @@
         <div class="iu-icon-button icon-button-24">
           <p>
           <img src="/resource/project/Share.png">
-          <a href="http://www.facebook.com/sharer/sharer.php?u=mentalwin.newslabfellows.com"">
+          <a href="http://www.facebook.com/sharer/sharer.php?u=mentalwin.newslabfellows.com">
           공유
           </a>
           </p>
@@ -240,9 +217,18 @@
                     resultMessage = "에이... 어플에 거짓말을 하면 쓰나..."
                 }
                 $user_result.html(resultMessage);
+                // facebook metatag 추가
+                addMetaFacebook(resultMessage);
                 var img = getImage(idx);
                 $img.attr("src", img);
                 // 김연경 타임라인으로...
+            }
+            
+            function addMetaFacebook(metaMessage) {
+                var meta = $("<meta>");
+                meta.attr("property", "og:title");
+                meta.attr("content", metaMessage);
+                $("head").append(meta);
             }
             
             // 타임라인
