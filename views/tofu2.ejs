@@ -2,7 +2,13 @@
 <HTML>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김연경이랑 키대보기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="fb:app_id" content="1313361188707351"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="김연경이랑 키 재볼래?"/>
+    <meta property="og:url" content="http://mentalwin.newslabfellows.com/tofu2"/>
+    <meta property="og:image" content="http://mentalwin.newslabfellows.com/resource/project/shareimage.png"/>
     <link rel="stylesheet" type="text/css" href="/resource/common/iu.css">
     <link rel="stylesheet" type="text/css" href="/resource/css/pages/index.css">
     <link rel="stylesheet" href="resource/css/pages/loading.css">
@@ -28,6 +34,7 @@
     <![endif]-->
   </head>
   <body>
+      
     <div class="iu-page index">
       <header class="iu-header header">
         <div class="iu-center-box center-box"></div>
@@ -65,7 +72,7 @@
           <div class="iu-box box-23">
             <form id="name_height_form">
                 <input required id="name" type="text" placeholder="이름 (성 빼고)" maxlength="5">
-                <input required id="height" type="number" placeholder="키 (cm)" maxlength="3">
+                <input required id="height" type="number" placeholder="키 (cm)" min="100" maxlength="3">
                 <button class="iu-pg-button pg-button" type="submit">입력</button>
             </form>
           </div>
@@ -95,9 +102,9 @@
         <div class="iu-icon-button icon-button-24">
           <p>
           <img src="/resource/project/Share.png">
-          <span>
+          <a href="http://www.facebook.com/sharer/sharer.php?u=mentalwin.newslabfellows.com/tofu2">
           공유
-          </span>
+          </a>
           </p>
         </div>
       </footer>
@@ -211,9 +218,18 @@
                     resultMessage = "에이... 어플에 거짓말을 하면 쓰나..."
                 }
                 $user_result.html(resultMessage);
+                // facebook metatag 추가
+                addMetaFacebook(resultMessage);
                 var img = getImage(idx);
                 $img.attr("src", img);
                 // 김연경 타임라인으로...
+            }
+            
+            function addMetaFacebook(metaMessage) {
+                var meta = $("<meta>");
+                meta.attr("property", "og:title");
+                meta.attr("content", metaMessage);
+                $("head").append(meta);
             }
             
             // 타임라인
