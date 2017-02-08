@@ -1,0 +1,49 @@
+{
+  "heightData": [
+    {
+      "message": "<name>야(아)<br/>언니 <age>살 때<br/>그 키였어 <br/> ㅋㅋㅋㅋㅋ",
+      "height": 147,
+      "age": 12
+    },
+    {
+      "message": "<name>야(아)<br/>나는 <age>살 때 <br/>그 키였어 ㅋㅋㅋ",
+      "height": 150,
+      "age": 13
+    },
+    {
+      "message": "<name>야(아)<br/>누나 <age>살 때 <br/>고~만했어 ㅋㅋㅋㅋㅋ",
+      "height": 153,
+      "age": 14
+    },
+    {
+      "message": "하핫 어쩌지<br/> 내 <age>살 때<br/>키랑 같네 ^^",
+      "name": "중학교 3학년",
+      "height": 172,
+      "age": 16
+    },
+    {
+      "message": "올...나 <age>살 때 <br/>키 정도는<br/>되는데~",
+      "name": "고등학교 1학년",
+      "height": 178,
+      "age": 17
+    },
+    {
+      "message": "올...나 <age>살 때 <br/>키 정도는<br/>되는데~",
+      "name": "고등학교 3학년",
+      "height": 186,
+      "age": 19
+    },
+    {
+      "message" : "나랑 키 비슷해!!",
+      "name": "현재",
+      "height":192,
+      "age" : 21
+    },
+    {
+      "message" : "헐...<br/> ㅇㅇ...<br/> ㅇㅈ...",
+      "name" : "김연경보다 큼",
+      "height": 220,
+      "age" : 23
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<HTML>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/resource/common/iu.css">
+    <link rel="stylesheet" type="text/css" href="/resource/css/pages/index.css">
+    <link rel="stylesheet" href="resource/css/pages/loading.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700,400" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/earlyaccess/hanna.css' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet" type='text/css'>
+    
+    <script type="text/javascript" src="//cdn.iueditor.org/js/iueditor-2.1.js"></script>
+    <script type="text/javascript">window.IUEditor || document.write('<script src="//s3.iueditor.org/js/iueditor-2.1.js">\x3C/script>')</script>
+    <!--[if lt IE 9]>
+      <script>
+        document.createElement("header" );
+        document.createElement("footer" );
+        document.createElement("section");
+        document.createElement("nav"    );
+        document.createElement("article");
+      </script>
+      <noscript>
+        <strong>Warning !</strong>
+        Because your browser does not support HTML5, some elements are simulated using JScript.
+        Unfortunately your browser has disabled scripting. Please enable it in order to display this page.
+      </noscript>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="iu-page index">
+      <header class="iu-header header">
+        <div class="iu-center-box center-box"></div>
+        <div class="iu-text text-12">
+          <p>김연경 키 보기</p>
+        </div>
+        <div class="iu-text text-14">
+          <p>내 키와 비교 해보기</p>
+        </div>
+        <a class="iux-outer-link" href="/index.html">
+          <img class="iu-image image" src="/resource/project/DDD2.png">
+        </a>
+        <div class="iu-text text-15">
+          <p>김연경 입덕</p>
+        </div>
+        <div class="iu-text text-16">
+          <p>김연경으로 배구보기</p>
+        </div>
+      </header>
+      <section class="iu-page-content page-content section1">
+        <section class="iu-section section">
+          <div class="iu-floating-image floating-image"></div>
+          <div class="iu-box box">
+            <div class="iu-text text-18">
+              <p>감히 키를</p>
+              <p>재보겠다고?</p>
+            </div>
+            <div class="iu-text text-19">
+              <p>&nbsp;# 난 이미 글렀어, # 나 키작다고 놀린 놈 태그</p>
+            </div>
+            <div class="iu-text text-20">
+              <p>당신의 키를 입력해 보세요</p>
+            </div>
+          </div>
+          <div class="iu-box box-23">
+            <form id="name_height_form">
+                <input required id="name" type="text" placeholder="이름 (성 빼고)" maxlength="5">
+                <input required id="height" type="number" placeholder="키 (cm)" maxlength="3">
+                <button class="iu-pg-button pg-button" type="submit">입력</button>
+            </form>
+          </div>
+        </section>
+      </section>
+      <section class="analyzed">
+            <div class="margin-top padding">
+                <p id="user_value" class="white"></p>
+                <p id="user_result" class="HANNA"></p>
+            </div>
+            <a class="right-text" href="timeline.html">
+                <img id="totimeline" src="resource/project/carousel_right.png" alt="right_arrow">
+            </a>
+            <div id="img-container">
+            <img src="resource/project/KYK0.png" alt="koung">
+            </div>
+        </section>
+      <footer class="iu-footer footer">
+        <div class="iux-has-hover iu-icon-button icon-button">
+          <p>
+          <img src="/resource/project/plus_icon.png">
+          <span>
+          더 보기
+          </span>
+          </p>
+        </div>
+        <div class="iu-icon-button icon-button-24">
+          <p>
+          <img src="/resource/project/Share.png">
+          <span>
+          공유
+          </span>
+          </p>
+        </div>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            var height, name;
+            var heightData;
+            var result;
+            var fakeloadingTime = 2000;
+            // sections
+            var $section1 = $(".section1");
+            var $analyzed = $(".analyzed");
+            var $img = $("#img-container img");
+            var messages = [
+                "마음의 준비...",
+                "두구두구두구두구둥둥",
+                "김연경도 어렸을 땐 작았다던데..."
+            ]
+            var getRandom = function(list) {
+                var idx = Math.floor(Math.random() * list.length);
+                return list[idx];
+            }
+            function getHeightData() {
+                return $.ajax({
+                        method : 'GET',
+                        url : 'resource/assets/height.json'
+                    })
+            }
+            // 결과 분석하기
+            var heightAnalyzer = function(value) {
+                var returnValue;
+                for (var i = 0; i < heightData.length; i++){
+                    if (value <= heightData[i].height) return i;
+                }
+                return -1;//김연경보다 키 큰 경우
+            }
+            var getImage = function(idx) {
+                if (idx >= 0 ) {
+                    return "resource/project/KYK" + idx + ".png";
+                } else {
+                    return "resource/project/donotjoke.png"
+                }
+            }
+            // 페이크 로딩
+            function fakeloading(idx) {
+                $section1.css('display', 'none');
+                var message = getRandom(messages);
+                var spinner = $("<div class='spinner'>\
+                                    <img src='resource/project/yk_height.png' alt='Duck'>\
+                                    <div class='spinner__item1'></div>\
+                                    <div class='spinner__item2'></div>\
+                                    <div class='spinner__item3'></div>\
+                                    <div class='spinner__item4'></div>\
+                                </div>");
+                $("header").append(spinner);
+                var pMessage = $("<p class='shortMessage'></p>");
+                pMessage.html(message);
+                spinner.append(pMessage);
+                setTimeout(function(){
+                    spinner.css("display", "none");
+                    // 끝나고 결과 보여주기
+                    showResult(idx);
+                }, fakeloadingTime);
+            }
+            
+            var replaceMessage = function(message, regex, value){
+                return message.replace(regex, value);
+            }
+
+            var getNameHeight = function (ev){
+                ev.preventDefault();
+                height = +$("#height").val();
+                name = $("#name").val();
+                // loading 하는 척하기
+                var idx = heightAnalyzer(height);
+                fakeloading(idx);
+                result = heightData[idx];
+                guessedresult = ageAnalzyer(idx, height);
+            }
+
+            // age analyzer
+            var ageAnalzyer = function(idx, value) {
+                if (idx >= 0) {
+                    var base = 100;
+                    var baseAge = 10;
+                    var compData = heightData[idx];
+                    if (idx > 0) {
+                        base = heightData[idx-1].height;
+                        baseAge = heightData[idx-1].age;
+                    }
+                    var ratio = (value - base) / (compData.height - base)
+                    var multiplier = compData.age - baseAge
+                    return baseAge + Math.round(ratio * multiplier * 10) / 10;
+                }
+            }
+
+            // 결과 보여주기
+            var showResult = function(idx) {
+                $analyzed.css("display", "block");
+                var resultMessage; 
+                var $user_result = $("#user_result");
+                var $user_value = $("#user_value");
+                if ( idx >= 0) {
+                    resultMessage = result.message;
+                    resultMessage = replaceMessage(resultMessage,/<name>/, name);
+                    resultMessage = replaceMessage(resultMessage,/<age>/, guessedresult);
+                    var resultValue = "\"" + height + " cm\"";
+                   
+                    $user_value.html(resultValue);
+                } else {
+                    resultMessage = "에이... 어플에 거짓말을 하면 쓰나..."
+                }
+                $user_result.html(resultMessage);
+                var img = getImage(idx);
+                $img.attr("src", img);
+                // 김연경 타임라인으로...
+            }
+            
+            // 타임라인
+            var showTimeLine = function() {
+                $analyzed.css("display", "none");
+                $timeLine.css("display", "block");
+                $img.css("display", "none");
+                $(".slicker").slick();
+            }
+            function reloadPage(){
+                location.reload();
+            }
+            $("#logo").click(reloadPage);
+            $(document).ready(function(){
+                var $form = $("#name_height_form");
+                var $toTimeline = $("#totimeline");
+                getHeightData().done(function(item){
+                    heightData = item.heightData;
+                });
+                $form.submit(getNameHeight);
+                $toTimeline.click(showTimeLine);
+            });
+        </script>
+    </div>
+  </body>
+</HTML>

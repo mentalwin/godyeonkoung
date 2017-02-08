@@ -6,7 +6,7 @@
 
 body {
     margin : 0px;
-    background : #5ce0b2;
+    background-color : #5ce0b2;
 }
 .nav-container{
     padding : 3px 0px 8px 3px;
@@ -20,6 +20,10 @@ body {
 
 .HANNA {
     font-family : 'HANNA';
+}
+
+.NanumGothic {
+    font-family: 'NanumGothic';
 }
 .white {
     color : white;
@@ -35,6 +39,7 @@ body {
 }
 
 #main-text {
+    font-size : 14vw;
     font-size : 14vw;
     line-height: 1.15;
 }
@@ -88,22 +93,27 @@ input {
  * img container
  */
 #img-container{
-    height : 75%;
-    position : fixed;
-    bottom : 0%;
-    right : 5%;
-    z-index : -1;
+    height: 75%;
+    position: fixed;
+    bottom: -6%;
+    right: 10%;
+    z-index: -1;
 }
 #img-container img {
     height : 100%;
 }
 
 #user_value{
-    font-size : 42px;
-    font-weight : bold;
+    font-size : 14vw;
+    font-family : bangers;
+    margin-top : 1vw;
+    color : #ff8989;
 }
 #user_result{
-    font-size : 36px;
+    font-size: 6vw;
+    line-height: 8vw;
+    margin-top: 4vw;
+    color: #267579;
 }
 /*
  * analyzed

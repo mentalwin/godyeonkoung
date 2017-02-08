@@ -6,6 +6,14 @@
     font-family : 'Roboto';
     src : url('../fonts/Roboto-Light.ttf');
 }
+@font-face{
+    font-family : 'Bangers';
+    src : url('../fonts/Bangers-Regular.ttf');
+}
+@font-face{
+    font-family : 'NanumGothic';
+    src : url('../fonts/NanumGothic-ExtraBold.ttf');
+}
 
 .margin-top{
     margin-top : 15px;

@@ -34,7 +34,7 @@
         <section class="analyzed">
             <div class="margin-top padding">
                 <p id="user_value" class="white"></p>
-                <p id="user_result" class="HANNA"></p>
+                <p id="user_result" class="NanumGothic"></p>
             </div>
             <div class="right-text">
                 <img id="totimeline" src="../public/images/right_arrow.png" alt="right_arrow">
@@ -189,7 +189,7 @@
             var height, name;
             var heightData;
             var result;
-            var fakeloadingTime = 2000;
+            var fakeloadingTime = 200;
             // sections
             var $section1 = $(".section1");
             var $analyzed = $(".analyzed");
@@ -288,7 +288,7 @@
                     resultMessage = result.message;
                     resultMessage = replaceMessage(resultMessage,/<name>/, name);
                     resultMessage = replaceMessage(resultMessage,/<age>/, guessedresult);
-                    var resultValue = "\"" + height + "cm\"";
+                    var resultValue = "\"" + height + " cm\"";
 
                     $user_value.html(resultValue);
                 } else {
