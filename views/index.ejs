@@ -1,11 +1,15 @@
 <html>
     <head>
-        <title>GodYeonKoung</title>
         <% include ../partials/head.ejs %>        
     </head>
     <body>
         <div id="mw-app" class="swiper-container">
             <div id="progressbar" class="swiper-pagination"></div>
+            <div class="topbar">
+                <img class="speaker-button" 
+                    v-on:click = "toggle"
+                    :src="sound" alt="speaker">
+            </div>
             <div class="swiper-wrapper">
                 <!-- First Page -->
                 <slide-element 
@@ -15,141 +19,248 @@
                         <nav class="nav">
                             <div class="nav-wrapper">
                                 <a href="#" class="logo">
-                                    <img src="images/DDD1.png" alt="logo">
+                                    <img src="images/DDD1.png" alt="logo" class="logo">
                                 </a>
                             </div>
                         </nav>
-                        <div class="background">
-                            <div class="card">
-                                배구여제<br/>
-                                '김연경'<br/>
-                                입덕 스토리<br/>
-                            </div>  
-                        </div>
+                        <div class="card">
+                                갓연경을<br/>
+                                아직도<br/>
+                                모른다고?<br/>
+                        </div>  
+                        
                     </div>
                 </slide-element>    
 
-                <!-- Second yage -->
+                <!-- Second page 김연경 터키컵 우승-->
                 <slide-element  
                     :properties="obj2"
                     class='swiper-slide second-page'>
                     <div slot='main'>
-                        <div class="fullscreen-bg">
-                            <video id="video1" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" >
-                                <source src="video/YK_win.webm" type="video/webm"></source>
-                            </video>
+                        <div class="video_container">
+                            <video muted playsinline></video>
                         </div>
                     </div>
                 </slide-element>    
-                <!-- Third Page -->
+
+                <!-- 우승지도 -->
+                <slide-element
+                    :properties="obj17"
+                    class='swiper-slide win_map'>
+                    <div class="map" slot="main">
+                        <img src="images/win_map_text.png" alt="">
+                    
+                    </div>
+                </slide-element>
+
+                <!-- Third Page 초등학생 김연경 -->
                 <slide-element 
                     :properties="obj3"
                     class='swiper-slide third-page' > 
-                    <div slot='main'>
-                        <img src="" alt="">
+                    <div class="main-container" slot='main'>
+                        <div class="leftone float_left">
+                        </div>
+                        <div class="rightone float_left">
+                           <div class="inner" v-html="obj3.main_text"></div> 
+                        </div>
                     </div>
                 </slide-element>
-                <!-- Fourth page-->
+                <!-- 4 page : 김연경 옛날 회상 인터뷰-->
+                <slide-element
+                    :properties="obj8" 
+                    class="swiper-slide page-4"
+                >
+                   <div class="main-container" slot="main">
+                        <div class="leftone float_left">
+                            <video muted playsinline></video>
+                        </div>
+                        <div class="rightone float_left">
+                           <div class="inner" v-html="obj8.main_text"></div> 
+                        </div>
+                    </div>
+                </slide-element>
+                <!-- 5 page 김연경은 포기하지 않았다.-->
                 <slide-element 
                     :properties="obj4"
-                    class='swiper-slide fourth-page'> 
-                    <div slot='main'>
-                        <img src="images/YK_middle.png" alt="">
+                    class='swiper-slide fourth-page page-5'> 
+                    <div class="main-container" slot='main'>
+                        <div class="leftone float_left">
+                        </div>
+                        <div class="rightone float_left" >
+                            <div class="inner" v-html="obj4.main_text"></div>
+                        </div>
                     </div>
                 </slide-element>
-               <!-- Fifth page-->
+               <!-- 6 page 키가 20cm 자랐다.-->
                <slide-element 
                     :properties="obj5" 
-                    class='swiper-slide fifth-page'>
-                            
-                    <div slot='main'>
-                        <img src="images/YK_trainning.png" alt="">
+                    class='swiper-slide fifth-page page-6'>
+                    <div slot='main' class="main-container">
+                        <div class="leftone float_left">
+                            <img src="images/YK_smile.png" alt="">
+                        </div>
+                        <div class="rightone float_left">
+                            <div class="inner" v-html="obj5.main_text"></div>
+                        </div>
                     </div>
                 </slide-element>
-                <!-- sixth page - 기술 설명 영상-->
-                <slide-element class="swiper-slide sixth-page">
-                    <div slot='main' class="swiper-container-h">
+                <!-- 7 page - 3d 설명 스파이크! -->
+                <slide-element :properties="obj14" class="swiper-slide seventh-page">
+                    <div class="threeD" slot='main'>
+                        <div class="card-container">
+                            <div class="bubble">
+                                김연경의 실제<br/>
+                                스파이크 속도야
+                            </div>
+                            <div class="bubble">
+                                원하는만큼 반복할 수 있도록<br/>
+                                해놨음!(버튼클릭)
+                            </div>
+                        </div>
+                    </div>
+                </slide-element>
+                <!-- 8 page : 19살의 나이 흥국생명 입단 -->
+                <slide-element
+                    :properties="obj9" 
+                    class="swiper-slide page-8 eleventh-page"
+                >
+                    <div class="main-container" slot ="main">
+                        <div class="leftone float_left">
+                            <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                            </video>
+                        </div>
+                        <div class="rightone float_left">
+                        <div class="inner" v-html="obj9.main_text"></div>
+                        </div>
+                    </div>
+                </slide-element>
+                <!-- page : 박기주 감독 인터뷰 -->
+                <slide-element
+                    :properties="obj10" 
+                    class="swiper-slide page-9 eleventh-page"
+                >
+                    <div slot ="main">
+                        <video id="video4" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                        </video>
+                        <div class="over">"초/중학교 때부터 기본기를 잘 배우고 올라왔던거 같아요." <br><br> - 박기주(김연경 고등학교 감독)</div>
+                    </div>
+                </slide-element>
+
+                <!-- page : 주팅 비교 -->
+                <slide-element
+                    :properties="obj11" 
+                    class="swiper-slide page-10 eleventh-page"
+                >
+                    <div slot ="main">
+                        
+                    </div>
+                </slide-element>
+                <!-- page : 기술 인트로 -->
+                <slide-element
+                    :properties="obj12" 
+                    class="swiper-slide page-11 eleventh-page"
+                >
+                    <div slot ="main">
+                        <div class="card-container">
+                            <div class="bubble">
+                                그럴 줄 알고 내가 또 준비했지!<br/>
+                                김연경의 공격 & 수비 기술을<br/>
+                                천천히 살펴보자<br/>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </slide-element>
+                <!-- page - 기술 설명 지피-->
+                <slide-element 
+                    class="swiper-slide page-12 sixth-page">
+                    <div slot='main' class="swiper-container-h gallery-top">
+                        <!-- main -->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="gif-container">
-                                    <img src="gifs/spike.gif" alt="">
+                                    <img class="gif swiper-lazy" name="spike"  alt="">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="gif-container">
-                                    <img src="gifs/serve.gif" alt="">
+                                    <img class="gif swiper-lazy" name="serve"  alt="">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="gif-container">
-                                    <img src="gifs/receive.gif" alt="">
+                                    <img class="gif swiper-lazy" name="receive"  alt="">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="gif-container">
-                                    <img src="gifs/block.gif" alt="">
+                                    <img class="gif swiper-lazy" name="block"  alt="">
                                 </div>
                             </div>
                         </div>                    
-                        <div class="swiper-pagination"></div>
+                        <!-- thumbs -->
+                        <div class="gallery-thumbs">
+                            <div class="swiper-wrapper gallery-thumb">
+                                <div class="swiper-slide">
+                                </div>
+                                <div class="swiper-slide">
+                                </div>
+                                <div class="swiper-slide">
+                                </div>
+                                <div class="swiper-slide">
+                                </div> 
+                            </div>
+                        </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
                 </slide-element>
-                <!-- 7th page - 3d 설명 -->
-                <slide-element class="swiper-slide seventh-page">
-                    <div class="threeD" slot='main'>
-                        <div class="button">
-                            <span class="btnBlueGreen">
-                                스파이크!
-                            </span >
+                
+                <!-- still mvp -->
+                <slide-element
+                    :properties="obj15" 
+                    class="swiper-slide page-13 eleventh-page"
+                >
+                    <div class="main-container" slot ="main">
+                        <div class="leftone float_left">
+                            <video id="video5" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                            </video>
                         </div>
+                        <div class="rightone float_left">
+                            <div class="inner" v-html="obj15.main_text"></div>
+                        </div>
+
                     </div>
                     
                 </slide-element>
-                <!-- 8th page - -->
+
+                <!-- believe myself -->
                 <slide-element
-                    :properties = "obj6"
-                    class="swiper-slide eighth-page">
+                    :properties="obj16" 
+                    class="swiper-slide page-14 eleventh-page"
+                >
+                    <div class="main-container" slot ="main">
+                        <div class="leftone float_left">
+                            <video id="video6" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                            </video>
+                        </div>
+                        <div class="rightone float_left">
+                            <div class="inner" v-html="obj16.main_text"></div>
+                        </div>
+
+                    </div>
+                    
+                </slide-element>
+                <!-- 비행기 세레머니 -->
+                <slide-element  
+                    :properties="obj18"
+                    class='swiper-slide second-page'>
                     <div slot='main'>
-                        <img src="images/YK_elementary5.png" alt="">
-                    </div>
-                    
-                </slide-element>
-                <slide-element
-                    :properties = "obj7" 
-                    class="swiper-slide ninth-page">
-                >
-                   <div slot ="main">
-                       <div class="fullscreen-bg" >
-                            <video id="video2" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" >
-                                <source src="video/KJ_interview.webm" type="video/webm"></source>
-                            </video>
+                        <div class="video_container">
+                            <video muted playsinline></video>
                         </div>
                     </div>
-                </slide-element>
-                <!-- 10 page : 김연경 인터뷰-->
-                <slide-element
-                    :properties="obj8" 
-                    class="swiper-slide tenth-page"
-                >
-                    <div slot ="main">
-                       <div class="fullscreen-bg" >
-                            <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%" preload="auto" >
-                                <source src="video/believe_myself.webm" type="video/webm"></source>
-                            </video>
-                        </div>
-                    </div>
-                </slide-element>
-                <!-- 11 page : 주팅 김연경 비교-->
-                <slide-element
-                    :properties="obj9" 
-                    class="swiper-slide eleventh-page"
-                >
-                    <div slot ="main">
-                       
-                    </div>
-                </slide-element>
+                </slide-element>   
             </div>
         </div>
         <% include ../partials/js.ejs %>

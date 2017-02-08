@@ -10,4 +10,7 @@ router.get('/tofu', function(req, res, next){
     res.render('tofu');
 });
 
+router.get('/testing', function(req, res, next) {
+    res.render('testing');
+});
 module.exports = router;

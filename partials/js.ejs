@@ -1,30 +1,105 @@
 <script src="vendor/jquery/dist/jquery.min.js"></script>
 <script src="vendor/swiper/dist/js/swiper.jquery.js"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="vendor/threee/three.min.js"></script>
+<script src="vendor/threee/ColladaLoader.js"></script>
+<script src="vendor/threee/ColladaLoader2.js"></script>
 <script src='js/vue_component.js'></script>
 <script src='js/threed.js'></script>
+<script src="js/topbar.js"></script>
+<script src="vendor/howler/howler.js"></script>
+<script src="js/srcloader.js"></script>
 <script>
-    var video;
+    var video; // previous html5
+    var videoOption = { id : "video_player", controls : false, 
+                        autoplay : true, muted : true,
+                        playsinline : true};
+    var sound, soundId;
+    var curSlideElement;
     var mySwiper = new Swiper('.swiper-container', {
         direction : 'vertical',
         pagination: '.swiper-pagination',
         paginationType : 'progress',
         onSlideChangeEnd : function() {
-            if (app && app.$children[mySwiper.activeIndex].properties.hasVideo) {
-                video = document.getElementById(app.$children[mySwiper.activeIndex].properties.videoId);
-                video.play();
+            // callback function that slide change end
+            //  2. text preload
+            curSlideElement = app.$children[mySwiper.activeIndex];
+            //  1. has video
+            if (app && curSlideElement.properties.hasVideo) {
+                
+                // find video-container inside this component
+                var el = $(curSlideElement.$el);
+                var vc = el.find(".video_container");
+                video = el.find(".video_container video");
+                video.on('loadeddata', function(){
+                    // video가 있으면 sound도 있으니깐 이건 필요 없을 듯
+                    if(curSlideElement.properties.hasSound) {
+                        sound = new Howl({
+                            src : curSlideElement.properties.soundSrc
+                        });
+                        //soundId = sound.play();
+                        if (app.muted) sound.mute(true);
+                        else sound.mute(false);
+                    }
+                });
             }
+            
         },
         onSlideChangeStart : function() {
-            if (video && !video.paused) video.load();
-        }
+            checktopbar(); // topbar style
+            if (video && !video.paused) {
+                if (video[0]) {
+                    video[0].pause();
+                    video[0].currentTime = 0;
+                }
+            }
+            if (sound) { 
+                console.log("sound!");
+                sound.unload(); 
+            }
+        },
+        preloadImages: false,
+        // Enable lazy loading
+        lazyLoading: true
     });
-    var swiper_h = new Swiper('.swiper-container-h', {
+    var galleryTop = new Swiper('.swiper-container-h', {
         direction : 'horizontal'  ,
-        pagination: '.swiper-pagination',
         paginationClickable : true,
         nextButton : '.swiper-button-next',
         prevButton : '.swiper-button-prev',
-
+        preloadImages : false,
+        lazyLoading : true
     });
+
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween : 10,
+        centeredSlides : true,
+        slidesPerView : 'auto',
+        touchRatio : 0.2,
+        slideToClickedSlide : true
+    });
+
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
+</script>
+<script>
+    $("img")
+        .on('load', function(){
+        });
+</script>
+<script>
+</script>
+<script>
+    var test = new Howl({
+        src : ['sound/dingdong.mp3']  
+    });
+    $('.speaker-button').on('click', function(){
+        app.muted = !app.muted;
+        if (sound) {
+            if (app.muted) sound.mute(true);
+            else sound.mute(false);
+        }
+            
+    });
+    
 </script>

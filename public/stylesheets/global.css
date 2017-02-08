@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @font-face{
     font-family : 'HANNA';
     src : url('../fonts/BM-HANNA.ttf');
@@ -27,3 +28,23 @@
 .Roboto {
     font-family : 'Roboto';
 }
+
+.float_left {
+    float : left;
+}
+@keyframes active {
+    0% { right : 10px}
+    5% { right : 20px}
+    10% { right : 10px}
+    15% { right : 20px}
+    20% { right : 10px}
+}
+@-webkit-keyframes active {
+    0% { right : 10px}
+    5% { right : 20px}
+    10% { right : 10px}
+    15% { right : 20px}
+    20% { right : 10px}
+}
+
+
