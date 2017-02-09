@@ -115,7 +115,7 @@ var height, name;
             
             function addMetaFacebook(metaMessage) {
                 var meta = $("<meta>");
-                meta.attr("property", "og:title");
+                meta.attr("property", "og:description");
                 meta.attr("content", metaMessage);
                 $("head").append(meta);
             }
