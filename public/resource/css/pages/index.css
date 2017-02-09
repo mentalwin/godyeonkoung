@@ -90,24 +90,24 @@
   width:977px;
 }
 .text-18 {
-  color:#FFFFFF;
-  font-family:'Hanna', serif;
-  font-size:168px;
-  height:393px;
-  left:2.66%;
-  line-height:1.20;
-  top:17.67%;
-  width:978px;
+    color: #FFFFFF;
+    font-family: 'Hanna', serif;
+    font-size: 115px;
+    height: 393px;
+    left: 2.66%;
+    line-height: 1.20;
+    top: 11.67%;
+    width: 978px;
 }
 .text-19 {
-  background-color:#36A9FF;
-  color:#FFFFFF;
-  font-size:30px;
-  font-weight:700;
-  height:44px;
-  left:2.56%;
-  top:3.96%;
-  width:555px;
+    background-color: #36A9FF;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 700;
+    height: 35px;
+    left: 2.56%;
+    top: 3.96%;
+    width: 444px;
 }
 .text-20 {
   color:#36A9FF;
@@ -115,13 +115,13 @@
   font-weight:700;
   height:57px;
   left:2.59%;
-  top:89.59%;
+  top:60%;
   width:583px;
 }
 .box-23 {
   height:129px;
   left:5.31%;
-  top:731px;
+  top:540px;
   width:679px;
 }
 .pg-text-field {
@@ -305,9 +305,9 @@ input {
  * img container
  */
 #img-container{
-    height: 65%;
+    height: 45%;
     position: absolute;
-    bottom: 10%;
+    bottom: 34%;
     right: 2%;
     z-index: -1;
 }
@@ -316,13 +316,13 @@ input {
 }
 
 #user_value{
-    font-size : 175px;
+    font-size : 120px;
     font-family : bangers;
-    margin-top : 100px;
+    margin-top : 64px;
     color : #ff8989;
 }
 #user_result{
-    font-size: 85px;
+    font-size: 64px;
     line-height: 1.2;
     margin-top: 20px;
     color: #ffffee;
@@ -430,7 +430,7 @@ input {
   #user_value {
     font-size: 120px;
     font-family: bangers;
-    margin-top: 100px;
+    margin-top: 72px;
     color: #ff8989;
   }
   #user_result {
@@ -440,9 +440,9 @@ input {
     color: #ffffee;
     }  
   #img-container {
-    height: 50%;
+    height: 40%;
     position: absolute;
-    bottom: 10%;
+    bottom: 35%;
     right: 2%;
     z-index: -1;
     }
@@ -575,5 +575,28 @@ input {
     margin-top:auto;
     top:0px;
   }
-
+  #user_value {
+    font-size: 64px;
+    font-family: bangers;
+    text-align: center;
+    margin-top: 80px;
+    color: #ff8989;
+  }
+  #user_result {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-top: 400px;
+    text-align: center;
+    color: #ffffee;
+    }  
+  #img-container {
+    height: 45%;
+    position: absolute;
+    left: 17%;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 33%;
+    align-content: center;
+    z-index: -1;
+    }
 }

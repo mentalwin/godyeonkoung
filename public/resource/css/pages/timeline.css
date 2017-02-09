@@ -165,6 +165,16 @@
   top:0px;
   width:238px;
 }
+.box-80 {
+  background-color:#203E8F;
+  height:638px;
+  left:0px;
+  margin-left:auto;
+  margin-right:auto;
+  right:0px;
+  top:273px;
+  width:6px;
+}
 .section-25 {
   background-color:#1E3B91;
   background-position:center bottom;
@@ -1254,6 +1264,9 @@
     right:0px;
     top:0px;
   }
+    .box-19 {
+    display:none;    
+    }
   .floating-image {
     height:47.24%;
     left:0px;
@@ -1474,12 +1487,12 @@
   .text-47 {
     color:#1A3595;
     font-size:24px;
-    height:10.93%;
+    height:13.93%;
     left:0px;
     margin-left:auto;
     margin-right:auto;
     right:0px;
-    top:73.28%;
+    top:71.5%;
     width:69.17%;
   }
   .box-41 {
