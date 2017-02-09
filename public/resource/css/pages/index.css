@@ -115,13 +115,13 @@
   font-weight:700;
   height:57px;
   left:2.59%;
-  top:60%;
+  top:58%;
   width:583px;
 }
 .box-23 {
   height:129px;
   left:5.31%;
-  top:540px;
+  top:518px;
   width:679px;
 }
 .pg-text-field {
@@ -179,7 +179,12 @@
   color:#FFFFFF;
   font-size:16px;
   height:42px;
-  left:28.04%;
+  left:50%;
+  transform : translateX(-50%);
+  -webkit-transform : translateX(-50%);
+  -moz-transform : translateX(-50%);
+  -ms-transform : translateX(-50%);
+  -o-transform : translateX(-50%);
   line-height:42px;
   margin-bottom:auto;
   margin-top:auto;

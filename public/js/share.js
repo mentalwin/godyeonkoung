@@ -28,7 +28,7 @@ $(document).ready(function(){
 		})
 		$shareButtons.each(function(i){
 			var $cur=$(this);
-			var pos=i-buttonsMid;
+			var pos=i;
 			if(pos>=0) pos+=1;
 			var dist=Math.abs(pos);
 			$cur.css({
@@ -66,7 +66,7 @@ $(document).ready(function(){
 		});
 		$shareButtons.each(function(i){
 			var $cur=$(this);
-			var pos=i-buttonsMid;
+			var pos=i;
 			if(pos>=0) pos+=1;
 			var dist=Math.abs(pos);
 			$cur.css({
