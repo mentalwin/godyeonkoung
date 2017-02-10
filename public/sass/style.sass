@@ -1,8 +1,11 @@
+@import './3-wave.scss'
+
 /* Config style - video control hide*/
 $information-phone : "screen and (min-aspect-ratio: 1/1)"
 /* Global styles */
 body
   margin : 0
+  background-color : #F7BBA8
 
 .arrow
   z-index : 1
@@ -27,7 +30,7 @@ p
   width : calc(100% - 321px)
   font-size: 24px
   line-height : 1.75
-  color : #152c9a
+  color : #7f7f7f
   padding-top : 141px
   position : relative
   @media (max-width: 420px)
@@ -47,6 +50,20 @@ p
     -o-transform : translate(-50%, -50%)
     @media (max-width : 420px)
       padding-top : 21%
+  .interview::before
+    content : ""
+    position : absolute
+    background : url('../images/double_quotation_marks.png')
+    background-repeat : no-repeat
+    background-size : contain
+    width : 27.1px
+    height : 22.6px
+    transform : translate(-22px, -25px)
+    -webkit-transform : translate(-22px, -25px)
+    -moz-transform : translate(-22px, -25px)
+    -ms-transform : translate(-22px, -25px)
+    -o-transform : translate(-22px, -25px)
+
 
 .swiper-slide
   background-size: cover
@@ -111,8 +128,6 @@ section
   div
     height : 100%
 .video_container
-  width : 385px
-  height : 385px
   position : relative
   video
     width : 100%
@@ -135,8 +150,9 @@ section
     font-family : 'Nanum Gothic'
     color : white
     font-size : 32px
+    font-weight : bold
     width : calc(100% - 30px)
-    background: #007aff
+    background: #25d9c8
     -webkit-border-radius: 13px
     -moz-border-radius: 13px
     border-radius: 13px
@@ -150,7 +166,7 @@ section
     border-style: solid
     border-width: 30px 30px 0
     border-right-style : none
-    border-color: #007aff transparent
+    border-color: #25d9c8 transparent
     display: block
     width: 0
     bottom: -15px
@@ -228,7 +244,7 @@ section
     background : transparent
   nav
     height : 54px
-    background-color : #007aff
+    background-color : #dedede
     padding-top : 13px
     padding-left : 8px
     padding-bottom : 8px
@@ -263,8 +279,8 @@ section
  */
 .second-page
   .video_container
-    width : 100%
-    height : 100%
+    width : 90%
+    height : 95%
     transform : translate(-50%, -50%)
     -webkit-transform : translate(-50%, -50%)
     -moz-transform : translate(-50%, -50%)
@@ -284,7 +300,7 @@ section
  * 우승 지도
  */
 .win_map
-  background : #152c9a
+  background : #f7bba8
   .map
     width : 94.8%
     margin : 80px auto
@@ -347,9 +363,11 @@ section
     height : 20%
     padding : 10px 0
     .swiper-slide
-      width : 25%
+      width : 250px
       height : 100%
       background : #01a3be
+    .gif-thumb
+      width : 100%
 
 /*
  * 7th page : 3d spikes
