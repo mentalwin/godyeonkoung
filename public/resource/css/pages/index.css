@@ -115,13 +115,13 @@
   font-weight:700;
   height:57px;
   left:2.59%;
-  top:60%;
+  top:58%;
   width:583px;
 }
 .box-23 {
   height:129px;
   left:5.31%;
-  top:540px;
+  top:518px;
   width:679px;
 }
 .pg-text-field {
@@ -179,7 +179,12 @@
   color:#FFFFFF;
   font-size:16px;
   height:42px;
-  left:28.04%;
+  left:50%;
+  transform : translateX(-50%);
+  -webkit-transform : translateX(-50%);
+  -moz-transform : translateX(-50%);
+  -ms-transform : translateX(-50%);
+  -o-transform : translateX(-50%);
   line-height:42px;
   margin-bottom:auto;
   margin-top:auto;
@@ -561,13 +566,6 @@ input {
     top: 66.14%;
     width: 96px;
 }
-  .icon-button {
-    bottom:0px;
-    left:10.04%;
-    margin-bottom:auto;
-    margin-top:auto;
-    top:0px;
-  }
   .icon-button-24 {
     bottom:0px;
     left:66%;
@@ -585,9 +583,16 @@ input {
   #user_result {
     font-size: 32px;
     line-height: 1.2;
-    margin-top: 400px;
     text-align: center;
     color: #ffffee;
+    bottom : 52px;
+    position : absolute;
+    left : 50%;
+    transform : translateX(-50%);
+    -webkit-transform : translateX(-50%);
+    -moz-transform : translateX(-50%);
+    -ms-transform : translateX(-50%);
+    -o-transform : translateX(-50%);
     }  
   #img-container {
     height: 45%;

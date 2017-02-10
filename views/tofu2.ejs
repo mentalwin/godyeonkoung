@@ -9,14 +9,16 @@
     <meta property="og:title" content="김연경이랑 키 재볼래?"/>
     <meta property="og:url" content="http://mentalwin.newslabfellows.com/tofu2"/>
     <meta property="og:image" content="http://mentalwin.newslabfellows.com/resource/project/shareimage.png"/>
+    <link rel="stylesheet" href="stylesheets/share.css">
     <link rel="stylesheet" type="text/css" href="/resource/common/iu.css">
     <link rel="stylesheet" type="text/css" href="/resource/css/pages/index.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" href="resource/css/pages/loading.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:700,400" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/earlyaccess/hanna.css' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet" type='text/css'>
-    
     <script type="text/javascript" src="//cdn.iueditor.org/js/iueditor-2.1.js"></script>
+    <script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script type="text/javascript">window.IUEditor || document.write('<script src="//s3.iueditor.org/js/iueditor-2.1.js">\x3C/script>')</script>
     <!--[if lt IE 9]>
       <script>
@@ -54,6 +56,28 @@
           <p>김연경으로 배구보기</p>
         </div>
       </header>
+      <!-- share -->
+        <div class="content">
+          <div class="share">
+            <button class="share-toggle-button">
+              <i class="share-icon fa fa-share-alt"></i>
+            </button>
+            <ul class="share-items">
+              <li class="share-item">
+                <a href="http://www.facebook.com/sharer/sharer.php?u=mentalwin.newslabfellows.com/tofu2" class="share-button">
+                  <i class="share-icon fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="share-item">
+                <a href="javascript:;" id="kakao-link-btn" class="share-button">
+                  <i class="share-icon fa fa-comment"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- share -->
       <section class="iu-page-content page-content section1">
         <section class="iu-section section">
           <div class="iu-floating-image floating-image"></div>
@@ -89,7 +113,8 @@
             <div id="img-container">
             <img src="resource/project/KYK0.png" alt="koung">
             </div>
-        </section>
+      </section>
+     
       <footer class="iu-footer footer">
         <div class="iux-has-hover iu-icon-button icon-button">
           <p>
@@ -99,160 +124,30 @@
           </span>
           </p>
         </div>
-        <div class="iu-icon-button icon-button-24">
-          <p>
-          <img src="/resource/project/Share.png">
-          <a href="http://www.facebook.com/sharer/sharer.php?u=mentalwin.newslabfellows.com/tofu2">
-          공유
-          </a>
-          </p>
-        </div>
       </footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script type="text/javascript">
-            var height, name;
-            var heightData;
-            var result;
-            var fakeloadingTime = 2000;
-            // sections
-            var $section1 = $(".section1");
-            var $analyzed = $(".analyzed");
-            var $img = $("#img-container img");
-            var messages = [
-                "마음의 준비...",
-                "두구두구두구두구둥둥",
-                "김연경도 어렸을 땐 작았다던데..."
-            ]
-            var getRandom = function(list) {
-                var idx = Math.floor(Math.random() * list.length);
-                return list[idx];
-            }
-            function getHeightData() {
-                return $.ajax({
-                        method : 'GET',
-                        url : 'resource/assets/height.json'
-                    })
-            }
-            // 결과 분석하기
-            var heightAnalyzer = function(value) {
-                var returnValue;
-                for (var i = 0; i < heightData.length; i++){
-                    if (value <= heightData[i].height) return i;
-                }
-                return -1;//김연경보다 키 큰 경우
-            }
-            var getImage = function(idx) {
-                if (idx >= 0 ) {
-                    return "resource/project/KYK" + idx + ".png";
-                } else {
-                    return "resource/project/donotjoke.png"
-                }
-            }
-            // 페이크 로딩
-            function fakeloading(idx) {
-                $section1.css('display', 'none');
-                var message = getRandom(messages);
-                var spinner = $("<div class='spinner'>\
-                                    <img src='resource/project/yk_height.png' alt='Duck'>\
-                                    <div class='spinner__item1'></div>\
-                                    <div class='spinner__item2'></div>\
-                                    <div class='spinner__item3'></div>\
-                                    <div class='spinner__item4'></div>\
-                                </div>");
-                $("header").append(spinner);
-                var pMessage = $("<p class='shortMessage'></p>");
-                pMessage.html(message);
-                spinner.append(pMessage);
-                setTimeout(function(){
-                    spinner.css("display", "none");
-                    // 끝나고 결과 보여주기
-                    showResult(idx);
-                }, fakeloadingTime);
-            }
-            
-            var replaceMessage = function(message, regex, value){
-                return message.replace(regex, value);
-            }
-
-            var getNameHeight = function (ev){
-                ev.preventDefault();
-                height = +$("#height").val();
-                name = $("#name").val();
-                // loading 하는 척하기
-                var idx = heightAnalyzer(height);
-                fakeloading(idx);
-                result = heightData[idx];
-                guessedresult = ageAnalzyer(idx, height);
-            }
-
-            // age analyzer
-            var ageAnalzyer = function(idx, value) {
-                if (idx >= 0) {
-                    var base = 100;
-                    var baseAge = 10;
-                    var compData = heightData[idx];
-                    if (idx > 0) {
-                        base = heightData[idx-1].height;
-                        baseAge = heightData[idx-1].age;
-                    }
-                    var ratio = (value - base) / (compData.height - base)
-                    var multiplier = compData.age - baseAge
-                    return baseAge + Math.round(ratio * multiplier * 10) / 10;
-                }
-            }
-
-            // 결과 보여주기
-            var showResult = function(idx) {
-                $analyzed.css("display", "block");
-                var resultMessage; 
-                var $user_result = $("#user_result");
-                var $user_value = $("#user_value");
-                if ( idx >= 0) {
-                    resultMessage = result.message;
-                    resultMessage = replaceMessage(resultMessage,/<name>/, name);
-                    resultMessage = replaceMessage(resultMessage,/<age>/, guessedresult);
-                    var resultValue = "\"" + height + " cm\"";
-                   
-                    $user_value.html(resultValue);
-                } else {
-                    resultMessage = "에이... 어플에 거짓말을 하면 쓰나..."
-                }
-                $user_result.html(resultMessage);
-                // facebook metatag 추가
-                addMetaFacebook(resultMessage);
-                var img = getImage(idx);
-                $img.attr("src", img);
-                // 김연경 타임라인으로...
-            }
-            
-            function addMetaFacebook(metaMessage) {
-                var meta = $("<meta>");
-                meta.attr("property", "og:title");
-                meta.attr("content", metaMessage);
-                $("head").append(meta);
-            }
-            
-            // 타임라인
-            var showTimeLine = function() {
-                $analyzed.css("display", "none");
-                $timeLine.css("display", "block");
-                $img.css("display", "none");
-                $(".slicker").slick();
-            }
-            function reloadPage(){
-                location.reload();
-            }
-            $("#logo").click(reloadPage);
-            $(document).ready(function(){
-                var $form = $("#name_height_form");
-                var $toTimeline = $("#totimeline");
-                getHeightData().done(function(item){
-                    heightData = item.heightData;
-                });
-                $form.submit(getNameHeight);
-                $toTimeline.click(showTimeLine);
-            });
-        </script>
+      
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/height.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/share.js"></script>
+    <script type='text/javascript'>
+        Kakao.init('7018baee7cc475fe5d5331b0672f765f');
+
+        Kakao.Link.createTalkLinkButton({
+            container : '#kakao-link-btn',
+            label : '김연경, 키, 비교',
+            image : {
+                src : 'http://mentalwin.newslabfellows.com/resource/project/YK_present.jpg',
+                width : '300',
+                height : '200'
+            },
+            webButton : {
+                text : '김연경이랑 키재러 ㄱ',
+                url : 'mentalwin.newslabfellows.com/tofu2'
+            }
+        })
+    </script>
   </body>
 </HTML>
