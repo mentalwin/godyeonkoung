@@ -109,13 +109,6 @@ var objList = [
     },
     //7
     {
-        isWhite : true,
-        texts : [ ],
-        hasVideo : true,
-        videoSrc : "YK_believe",
-        soundSrc : ["sound/YK_believe_sound.mp3"],
-        isDuck : 'happy',
-        videoId : "video2",
     },
     //8
     {

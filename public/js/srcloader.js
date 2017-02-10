@@ -19,12 +19,15 @@ function detectmob() {
         }
 }
 var gifs = $(".gif");
-
+var sound;
 for(var i = 0; i < comps.length; i++) {
     var el = comps[i];
-    el.$data.sound = new Howl({
-        src : ["sound/YK_win_sound.mp3"]
-    });
+    if (el.properties.hasSound) {
+        sound = new Howl({
+            src : el.properties.soundSrc
+        });
+    }
+    
     var useWebm = !/Android/i.test(ua) && /Chrome/i.test(ua); 
     var ext = useWebm ? '.webm' : '.mp4';
     var isMobile = detectmob();
@@ -32,7 +35,6 @@ for(var i = 0; i < comps.length; i++) {
     if (el.properties.hasVideo) {
         var t= $(el.$el).find("video");
         t.on("loadeddata", function(){
-            this.play();
         });
         t.attr("data-src", "video/" + el.properties.videoSrc + ratio + ext);
         t.attr("poster", "images/poster/" + el.properties.videoSrc + "_poster" + ratio + ".png" );
@@ -44,6 +46,5 @@ for(var i = 0; i < comps.length; i++) {
 for (var i = 0; i < gifs.length; i++) {
     var el = $(gifs[i]);
     var m = el.attr("name");
-    console.log(el);
     el.attr("data-src", "gifs/" + m + ratio + ".gif");
 }

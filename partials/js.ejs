@@ -30,14 +30,23 @@
                 // find video-container inside this component
                 var el = $(curSlideElement.$el);
                 var vc = el.find(".video_container");
+                var vspin = $("<div class='sk-wave'><div class='sk-rect sk-rect1'></div>\
+                              <div class='sk-rect sk-rect2'></div>\
+                              <div class='sk-rect sk-rect3'></div>\
+                              <div class='sk-rect sk-rect4'></div>\
+                              <div class='sk-rect sk-rect5'></div>");
+                vc.append(vspin);
                 video = el.find(".video_container video");
                 video.on('loadeddata', function(){
+                    this.play();
+                    // vspinner display none;
+                    vspin.css("display", "none");
                     // video가 있으면 sound도 있으니깐 이건 필요 없을 듯
                     if(curSlideElement.properties.hasSound) {
                         sound = new Howl({
                             src : curSlideElement.properties.soundSrc
                         });
-                        //soundId = sound.play();
+                        soundId = sound.play();
                         if (app.muted) sound.mute(true);
                         else sound.mute(false);
                     }
@@ -54,7 +63,7 @@
                 }
             }
             if (sound) { 
-                console.log("sound!");
+                console.log(sound);
                 sound.unload(); 
             }
         },

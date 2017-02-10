@@ -72,10 +72,12 @@
                 >
                    <div class="main-container" slot="main">
                         <div class="leftone float_left">
-                            <video muted playsinline></video>
+                            <div class="video_container">
+                                <video muted playsinline></video> 
+                            </div>
                         </div>
                         <div class="rightone float_left">
-                           <div class="inner" v-html="obj8.main_text"></div> 
+                           <div class="inner interview" v-html="obj8.main_text"></div> 
                         </div>
                     </div>
                 </slide-element>
@@ -126,8 +128,10 @@
                 >
                     <div class="main-container" slot ="main">
                         <div class="leftone float_left">
-                            <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
-                            </video>
+                            <div class="video_container">
+                                <video id="video3" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                                </video>
+                            </div>
                         </div>
                         <div class="rightone float_left">
                         <div class="inner" v-html="obj9.main_text"></div>
@@ -140,8 +144,10 @@
                     class="swiper-slide page-9 eleventh-page"
                 >
                     <div slot ="main">
-                        <video id="video4" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
-                        </video>
+                        <div class="video_container">
+                            <video id="video4" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                            </video>
+                        </div>
                         <div class="over">"초/중학교 때부터 기본기를 잘 배우고 올라왔던거 같아요." <br><br> - 박기주(김연경 고등학교 감독)</div>
                     </div>
                 </slide-element>
@@ -202,12 +208,16 @@
                         <div class="gallery-thumbs">
                             <div class="swiper-wrapper gallery-thumb">
                                 <div class="swiper-slide">
+                                    <img class="gif-thumb" src="images/spike.png" alt="">
                                 </div>
                                 <div class="swiper-slide">
+                                    <img class="gif-thumb" src="images/serve.png" alt="">
                                 </div>
                                 <div class="swiper-slide">
+                                    <img class="gif-thumb" src="images/receive.png" alt="">
                                 </div>
                                 <div class="swiper-slide">
+                                    <img class="gif-thumb" src="images/block.png" alt="">
                                 </div> 
                             </div>
                         </div>
@@ -223,8 +233,10 @@
                 >
                     <div class="main-container" slot ="main">
                         <div class="leftone float_left">
-                            <video id="video5" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
-                            </video>
+                            <div class="video_container">
+                                <video id="video5" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                                </video>
+                            </div>
                         </div>
                         <div class="rightone float_left">
                             <div class="inner" v-html="obj15.main_text"></div>
@@ -241,8 +253,10 @@
                 >
                     <div class="main-container" slot ="main">
                         <div class="leftone float_left">
-                            <video id="video6" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
-                            </video>
+                            <div class="video_container">
+                                <video id="video6" class="fullscreen-bg__video fullscreen-bg__video" width="100%"  muted webkit-playsinline playsinline>
+                                </video>
+                            </div>
                         </div>
                         <div class="rightone float_left">
                             <div class="inner" v-html="obj16.main_text"></div>
@@ -257,7 +271,9 @@
                     class='swiper-slide second-page'>
                     <div slot='main'>
                         <div class="video_container">
-                            <video muted playsinline></video>
+                            <div class="video_container">
+                                <video muted playsinline></video>
+                            </div>
                         </div>
                     </div>
                 </slide-element>   
