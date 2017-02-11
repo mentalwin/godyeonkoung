@@ -9,13 +9,15 @@
     <meta property="og:title" content="김연경이랑 키 재볼래?"/>
     <meta property="og:url" content="http://mentalwin.newslabfellows.com/tofu2"/>
     <meta property="og:image" content="http://mentalwin.newslabfellows.com/resource/project/shareimage.png"/>
+    <link rel="stylesheet" href="stylesheets/share.css">
     <link rel="stylesheet" type="text/css" href="../public/resource/common/iu.css">
-    <link rel="stylesheet" type="text/css" href="/../public/resource/css/pages/index.css">
+    <link rel="stylesheet" type="text/css" href="../public/resource/css/pages/index.css">
     <link rel="stylesheet" href="../public/resource/css/pages/loading.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:700,400" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/earlyaccess/hanna.css' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet" type='text/css'>
-    
+    <script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script type="text/javascript" src="//cdn.iueditor.org/js/iueditor-2.1.js"></script>
     <script type="text/javascript">window.IUEditor || document.write('<script src="//s3.iueditor.org/js/iueditor-2.1.js">\x3C/script>')</script>
     <!--[if lt IE 9]>
@@ -37,22 +39,22 @@
       
     <div class="iu-page index">
       <header class="iu-header header">
-        <div class="iu-center-box center-box"></div>
-        <div class="iu-text text-12">
-          <p>김연경 키 보기</p>
-        </div>
-        <div class="iu-text text-14">
-          <p>내 키와 비교 해보기</p>
-        </div>
-        <a class="iux-outer-link" href="/tofu2.html">
-          <img class="iu-image image" src="/resource/project/DDD2.png">
+        <!--<div class="iu-center-box center-box"></div>-->
+        <!--<div class="iu-text text-12">-->
+          <!--<p>김연경 키 보기</p>-->
+        <!--</div>-->
+        <!--<div class="iu-text text-14">-->
+          <!--<p>내 키와 비교 해보기</p>-->
+        <!--</div>-->
+        <a class="iux-outer-link" href="http://mentalwin.newslabfellows.com/tofu2/">
+          <img class="iu-image image" src="../public/resource/project/DDD2.png">
         </a>
-        <div class="iu-text text-15">
-          <p>김연경 입덕</p>
-        </div>
-        <div class="iu-text text-16">
-          <p>김연경으로 배구보기</p>
-        </div>
+        <!--<div class="iu-text text-15">-->
+          <!--<p>김연경 입덕</p>-->
+        <!--</div>-->
+        <!--<div class="iu-text text-16">-->
+          <!--<p>김연경으로 배구보기</p>-->
+        <!--</div>-->
       </header>
       <section class="iu-page-content page-content section1">
         <section class="iu-section section">
@@ -83,33 +85,44 @@
                 <p id="user_value" class="white"></p>
                 <p id="user_result" class="HANNA"></p>
             </div>
-            <a class="right-text" href="timeline.html">
-                <img id="totimeline" src="resource/project/carousel_right.png" alt="right_arrow">
+            <a class="right-text" href="../public/timeline.html">
+                <img id="totimeline" src="../public/resource/project/carousel_right.png" alt="right_arrow">
             </a>
             <div id="img-container">
-            <img src="resource/project/KYK0.png" alt="koung">
+            <img src="../public/resource/project/KYK0.png" alt="koung">
             </div>
         </section>
       <footer class="iu-footer footer">
         <div class="iux-has-hover iu-icon-button icon-button">
           <p>
-          <img src="/resource/project/plus_icon.png">
+          <img src="../public/resource/project/plus_icon.png">
           <span>
           더 보기
           </span>
           </p>
         </div>
-        <div class="iu-icon-button icon-button-24">
-          <p>
-          <img src="/resource/project/Share.png">
-          <a href="http://www.facebook.com/sharer/sharer.php?u=mentalwin.newslabfellows.com/tofu2">
-          공유
-          </a>
-          </p>
-        </div>
       </footer>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/height.js"></script>
+      <script src="https://unpkg.com/vue/dist/vue.js"></script>
+      <script src="js/TweenMax.min.js"></script>
+      <script src="js/share.js"></script>
         <script type="text/javascript">
+            Kakao.init('7018baee7cc475fe5d5331b0672f765f');
+            Kakao.Link.createTalkLinkButton({
+            container : '#kakao-link-btn',
+            label : '김연경, 키, 비교',
+            image : {
+                src : 'http://mentalwin.newslabfellows.com/resource/project/YK_present.jpg',
+                width : '300',
+                height : '200'
+            },
+            webButton : {
+                text : '김연경이랑 키재러 ㄱ',
+                url : 'mentalwin.newslabfellows.com/tofu2'
+            }
+        })
+
             var height, name;
             var heightData;
             var result;
@@ -130,7 +143,7 @@
             function getHeightData() {
                 return $.ajax({
                         method : 'GET',
-                        url : 'resource/assets/height.json'
+                        url : '../public/resource/assets/height.json'
                     })
             }
             // 결과 분석하기
@@ -143,9 +156,9 @@
             }
             var getImage = function(idx) {
                 if (idx >= 0 ) {
-                    return "resource/project/KYK" + idx + ".png";
+                    return "../public/resource/project/KYK" + idx + ".png";
                 } else {
-                    return "resource/project/donotjoke.png"
+                    return "../public/resource/project/donotjoke.png"
                 }
             }
             // 페이크 로딩
@@ -153,7 +166,7 @@
                 $section1.css('display', 'none');
                 var message = getRandom(messages);
                 var spinner = $("<div class='spinner'>\
-                                    <img src='resource/project/yk_height.png' alt='Duck'>\
+                                    <img src='../public/resource/project/yk_height.png' alt='Duck'>\
                                     <div class='spinner__item1'></div>\
                                     <div class='spinner__item2'></div>\
                                     <div class='spinner__item3'></div>\
