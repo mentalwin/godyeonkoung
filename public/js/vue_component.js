@@ -71,7 +71,7 @@ var objList = [
         ],
         isWhite : true,
         isDuck : "sad",
-          main_text : "김연경은 초등학교 4학년 때 배구를 시작했다.<br/> 그러나 작은 키 때문에 6년 가까이 제대로 시합 한 번 뛰지 못했다."
+          main_text : "김연경은 초등학교 4학년 때 배구를 시작했다. 그러나 작은 키 때문에 6년 가까이 제대로 시합 한 번 뛰지 못했다."
 
     },
     //5번째 페이지
@@ -123,7 +123,7 @@ var objList = [
         videoSrc : "YK_limit",
         isDuck : 'sad',
         videoId : "video2",
-        main_text : "경쟁에서 멀어지면서 신체조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요..",
+        main_text : "신체조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요..",
         soundSrc : ["sound/YK_limit.mp3"]
     },
     //9
