@@ -463,6 +463,21 @@ section {
   .page-10 .etc {
     background-image: url("../images/graph.png"); }
 
+.page-10-m {
+  background-image: url("../images/bg6_w.png"); }
+  @media (max-aspect-ratio: 1 / 1) {
+    .page-10-m {
+      background-image: url("../images/bg6_m.png"); } }
+  .page-10-m .etc {
+    margin: 150px auto;
+    width: 280px; }
+  .page-10-m .etc:first-child {
+    background-image: url("../images/graph_1_m.png");
+    height: 355px; }
+  .page-10-m .etc:nth-child(2) {
+    background-image: url("../images/graph_2_m.png");
+    height: 361px; }
+
 /* 11th page : 주팅, 김연경
  */
 .eleventh-page .etc {

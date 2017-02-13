@@ -21,6 +21,7 @@ var mql = matchMedia("(min-aspect-ratio: 1/1)"),
             postfix = "_w";
         } else {
             // 모바일 비디오 return
+            mobile_mode = true;
             postfix = "_m";
         }
     }
@@ -122,7 +123,8 @@ var objList = [
         videoSrc : "YK_limit",
         isDuck : 'sad',
         videoId : "video2",
-        main_text : "경쟁에서 멀어지면서 신체조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요.."
+        main_text : "경쟁에서 멀어지면서 신체조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요..",
+        soundSrc : ["sound/YK_limit.mp3"]
     },
     //9
     {
@@ -134,6 +136,7 @@ var objList = [
         }],
         isDuck : 'happy',
         hasVideo : true,
+        soundSrc : ["sound/YK_special.mp3"],
         videoSrc : "YK_special",
         videoId : "video3",
         main_text : "공격수 김연경에게는 특별한 것이 있었다. 그것은 다양한 포지션에서 겪으며 익힌 기본기 였다."
@@ -143,6 +146,7 @@ var objList = [
         isWhite : true,
         texts : [],
         hasVideo : true,
+        soundSrc : ["sound/coach_interview.mp3"],
         videoSrc : "coach_interview",
         videoId : "video4"
     },
@@ -189,6 +193,7 @@ var objList = [
         ],
         isDuck : 'happy',
         hasVideo : true,
+        soundSrc : ["sound/YK_still_mvp.mp3"],
         videoSrc : "YK_still_mvp",
         videoId : "video5",
         main_text : "힘들어도 포기하지 않고 꿋꿋하게 노력한 김연경"
@@ -200,6 +205,7 @@ var objList = [
         ],
         isDuck : 'sad',
         hasVideo : true,
+        soundSrc : ["sound/YK_believe.mp3"],
         videoSrc : "YK_believe",
         videoId : "video6",
         main_text : "제 자신을 제가 믿는 게 중요한 것 같아요."
@@ -219,8 +225,31 @@ var objList = [
             { text : '진짜 이러고도 입덕이 안됐다고..?', from : 'duck'}
         ],
         hasVideo : true,
+        soundSrc : ["sound/airplane_ceremony.mp3"],
         videoSrc : "airplane_ceremony",
-    }
+    },
+    // 19
+    {
+        isWhite : true,
+        texts : [
+        {
+            text: '',
+            type : 'etc'
+        },
+        {
+            text: '',
+            type : 'etc'
+        },
+        {
+            text : '공격/수비 모두 잘하기로 <br/>유명한 세계적인 신예<br/> 주팅과 비교해도 크으...' ,
+            from : 'duck'
+        },
+        {
+            text : '도대체 뭘 어떻게 하길래 <br/>이렇게 잘하냐고?' ,
+            from : 'duck'
+        }],
+        isDuck : 'happy'
+    },
 
 
 ];
@@ -259,7 +288,7 @@ Vue.component('slide-element', {
 
         </slot>
         <div class="etc-container">
-            <div class="etc animated bounceInDown" v-for="et in etc" :key="et">
+            <div class="etc animated bounceInDown" v-for="(et, index) in etc" :class="{ none : index != etc.length - 1}">
             </div>
         </div>
         <div class="card-container">
@@ -355,7 +384,7 @@ for (var i = 0; i < videoAssets.length; i++) {
 }
 
 options.data["videos"] = videoAssets;
-options.data["mobile_mode"] = false;
+options.data["mobile_mode"] = mobile_mode;
 for(var i = 0; i < objList.length; i++) {
     var curOption = objList[i];
 

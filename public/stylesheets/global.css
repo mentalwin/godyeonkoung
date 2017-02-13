@@ -16,6 +16,9 @@
     src : url('../fonts/NanumGothic-ExtraBold.ttf');
 }
 
+.none {
+    display : none;
+}
 .margin-top{
     margin-top : 15px;
 }

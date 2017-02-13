@@ -158,6 +158,17 @@
                 <slide-element
                     :properties="obj11" 
                     class="swiper-slide page-10 eleventh-page"
+                    v-if = "!mobile_mode"
+                >
+                    <div slot ="main">
+                        
+                    </div>
+                </slide-element>
+                <!-- page : 주팅 모바일 -->
+                <slide-element
+                    v-if = "mobile_mode"
+                    :properties="obj19" 
+                    class="swiper-slide page-10-m"
                 >
                     <div slot ="main">
                         
