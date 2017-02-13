@@ -30,16 +30,10 @@
                 // find video-container inside this component
                 var el = $(curSlideElement.$el);
                 var vc = el.find(".video_container");
-                var vspin = $("<div class='sk-wave'><div class='sk-rect sk-rect1'></div>\
-                              <div class='sk-rect sk-rect2'></div>\
-                              <div class='sk-rect sk-rect3'></div>\
-                              <div class='sk-rect sk-rect4'></div>\
-                              <div class='sk-rect sk-rect5'></div>");
-                vc.append(vspin);
+                var vspin = el.find(".v-spin");
                 video = el.find(".video_container video");
                 video.on('loadeddata', function(){
                     this.play();
-                    // vspinner display none;
                     vspin.css("display", "none");
                     // video가 있으면 sound도 있으니깐 이건 필요 없을 듯
                     if(curSlideElement.properties.hasSound) {

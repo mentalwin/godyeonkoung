@@ -228,6 +228,15 @@ var objList = [
 Vue.filter('reverse', function(value){
     return value.slice().reverse();
 });
+Vue.component('v-spinner', {
+    template : `<div class='sk-wave v-spinner'>
+                    <div class='sk-rect sk-rect1'></div>
+                    <div class='sk-rect sk-rect2'></div>
+                    <div class='sk-rect sk-rect3'></div>
+                    <div class='sk-rect sk-rect4'></div>
+                    <div class='sk-rect sk-rect5'></div>
+                </div>`
+});
 Vue.component('slide-element', {
     props : {
         properties : {
