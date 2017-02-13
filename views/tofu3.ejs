@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<HTML>
+  <head>
+    <meta charset="utf-8">
+    <title>김연경이랑 키대보기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="fb:app_id" content="1313361188707351"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="김연경이랑 키 재볼래?"/>
+    <meta property="og:url" content="http://mentalwin.newslabfellows.com/tofu3"/>
+    <meta property="og:image" content="http://mentalwin.newslabfellows.com/resource/project/shareimage.png"/>
+    <link rel="stylesheet" href="stylesheets/share.css">
+    <link rel="stylesheet" type="text/css" href="resource/common/iu.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/pages/index.css">
+    <link rel="stylesheet" href="resource/css/pages/loading.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700,400" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/earlyaccess/hanna.css' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet" type='text/css'>
+    <script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="//cdn.iueditor.org/js/iueditor-2.1.js"></script>
+    <script type="text/javascript">window.IUEditor || document.write('<script src="//s3.iueditor.org/js/iueditor-2.1.js">\x3C/script>')</script>
+    <!--[if lt IE 9]>
+      <script>
+        document.createElement("header" );
+        document.createElement("footer" );
+        document.createElement("section");
+        document.createElement("nav"    );
+        document.createElement("article");
+      </script>
+      <noscript>
+        <strong>Warning !</strong>
+        Because your browser does not support HTML5, some elements are simulated using JScript.
+        Unfortunately your browser has disabled scripting. Please enable it in order to display this page.
+      </noscript>
+    <![endif]-->
+  </head>
+  <body>
+      
+    <div class="iu-page index">
+      <header class="iu-header header">
+        <!--<div class="iu-center-box center-box"></div>-->
+        <!--<div class="iu-text text-12">-->
+          <!--<p>김연경 키 보기</p>-->
+        <!--</div>-->
+        <!--<div class="iu-text text-14">-->
+          <!--<p>내 키와 비교 해보기</p>-->
+        <!--</div>-->
+        <a class="iux-outer-link" href="http://mentalwin.newslabfellows.com/tofu2/">
+          <img class="iu-image image" src="resource/project/DDD2.png">
+        </a>
+        <!--<div class="iu-text text-15">-->
+          <!--<p>김연경 입덕</p>-->
+        <!--</div>-->
+        <!--<div class="iu-text text-16">-->
+          <!--<p>김연경으로 배구보기</p>-->
+        <!--</div>-->
+      </header>
+      <!-- share -->
+        <div class="content">
+          <div class="share">
+            <button class="share-toggle-button">
+              <i class="share-icon fa fa-share-alt"></i>
+            </button>
+            <ul class="share-items">
+              <li class="share-item">
+                <a href="http://www.facebook.com/sharer/sharer.php?u=mentalwin.newslabfellows.com/tofu2" class="share-button">
+                  <i class="share-icon fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="share-item">
+                <a href="javascript:;" id="kakao-link-btn" class="share-button">
+                  <i class="share-icon fa fa-comment"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- share -->
+      <section class="iu-page-content page-content section1">
+        <section class="iu-section section">
+          <div class="iu-floating-image floating-image"></div>
+          <div class="iu-box box">
+            <div class="iu-text text-18">
+              <p>감히 키를</p>
+              <p>재보겠다고?</p>
+            </div>
+            <div class="iu-text text-19">
+              <p>&nbsp;# 난 이미 글렀어, # 나 키작다고 놀린 놈 태그</p>
+            </div>
+            <div class="iu-text text-20">
+              <p>당신의 키를 입력해 보세요</p>
+            </div>
+          </div>
+          <div class="iu-box box-23">
+            <form id="name_height_form">
+                <input required id="name" type="text" placeholder="이름 (성 빼고)" maxlength="5">
+                <input required id="height" type="number" placeholder="키 (cm)" min="100" maxlength="3">
+                <button class="iu-pg-button pg-button" type="submit">입력</button>
+            </form>
+          </div>
+        </section>
+      </section>
+      <section class="analyzed">
+            <div class="margin-top padding">
+                <p id="user_value" class="white"></p>
+                <p id="user_result" class="HANNA"></p>
+            </div>
+            <a class="right-text" href="timeline.html">
+                <img id="totimeline" src="resource/project/carousel_right.png" alt="right_arrow">
+            </a>
+            <div id="img-container">
+                <img src="resource/project/KYK0.png" alt="koung">
+            </div>
+        </section>
+      <footer class="iu-footer footer">
+        <div class="iux-has-hover iu-icon-button icon-button">
+          <p>
+              <img src="resource/project/plus_icon.png">
+          <span>
+          더 보기
+          </span>
+          </p>
+        </div>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/height.js"></script>
+      <script src="https://unpkg.com/vue/dist/vue.js"></script>
+      <script src="js/TweenMax.min.js"></script>
+      <script src="js/share.js"></script>
+    </div>
+  </body>
+</HTML>

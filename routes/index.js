@@ -17,4 +17,7 @@ router.get('/testing', function(req, res, next) {
 router.get('/tofu2', function(req, res, next){
     res.render('tofu2');
 });
+router.get('/tofu3', function(req, res, next){
+    res.render('tofu3');
+});
 module.exports = router;

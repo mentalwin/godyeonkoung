@@ -56,7 +56,8 @@ a.share-button:focus {
 
 .share-toggle-button {
   z-index: 9;
-  background: #666;
+  background: #d8d8d8;
+  color : #3D4444;
   font-size: 20px;
   cursor : pointer;
 }

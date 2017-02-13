@@ -68,13 +68,13 @@
   background-color:#FFFFFF;
 }
 .section {
-  background-image:url('/resource/project/tofu_first_back.png');
+  background-image:url('../../project/tofu_first_back.png');
   background-size:cover;
   color:#000000;
   height:1366px;
 }
 .floating-image {
-  background-image:url('/resource/project/tofu_YK_first.png');
+  background-image:url('../../project/tofu_YK_first.png');
   background-position:center center;
   background-size:contain;
   height:1010px;
@@ -577,31 +577,33 @@ input {
     font-size: 64px;
     font-family: bangers;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 70px;
     color: #ff8989;
   }
   #user_result {
+    width: 290px;
     font-size: 32px;
     line-height: 1.2;
     text-align: center;
     color: #ffffee;
-    bottom : 52px;
+    bottom : 11%;
     position : absolute;
     left : 50%;
-    transform : translateX(-50%);
     -webkit-transform : translateX(-50%);
     -moz-transform : translateX(-50%);
     -ms-transform : translateX(-50%);
     -o-transform : translateX(-50%);
     }  
   #img-container {
-    height: 45%;
-    position: absolute;
-    left: 17%;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 33%;
-    align-content: center;
+    width:290px;
     z-index: -1;
+    height: 45%;
+    bottom: 30%;
+    position : absolute;
+    left : 50%;
+    -webkit-transform : translateX(-50%);
+    -moz-transform : translateX(-50%);
+    -ms-transform : translateX(-50%);
+    -o-transform : translateX(-50%);
     }
 }
