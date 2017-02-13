@@ -196,7 +196,7 @@ var objList = [
         soundSrc : ["sound/YK_still_mvp.mp3"],
         videoSrc : "YK_still_mvp",
         videoId : "video5",
-        main_text : "힘들어도 포기하지 않고 꿋꿋하게 노력한 김연경"
+        main_text : "공격 + 수비 완전체로 성장한 김연경 <br/> 한국과 일본, 터키 리그에서 활동하며<br/>매번 자신의 한계를 뛰어넘는다."
     },
     // 16
     {
