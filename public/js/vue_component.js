@@ -67,7 +67,7 @@ var objList = [
     // 4번째 페이지
     {
         texts : [
-            {text:"배구를 그만둘까 <br/> 생각하기도 했다능ㅠㅠ from:"duck"}
+            {text:"배구를 그만둘까 <br/> 생각하기도 했다능ㅠㅠ", from:"duck"}
         ],
         isWhite : true,
         isDuck : "sad",
