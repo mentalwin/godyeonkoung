@@ -39,7 +39,7 @@
 .share-button {
   line-height : 64px;
   font-size: 30px;
-  background: #737070;
+  background: #d8d8d8
   -webkit-transform: scale(0.95, 0.95);
   transform: scale(0.95, 0.95);
   color: #222;
@@ -56,8 +56,8 @@ a.share-button:focus {
 
 .share-toggle-button {
   z-index: 9;
-  background: #d8d8d8;
-  color : #3D4444;
+  background: #3ad2c0;
+  color : white;
   font-size: 20px;
   cursor : pointer;
 }

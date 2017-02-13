@@ -20,4 +20,7 @@ router.get('/tofu2', function(req, res, next){
 router.get('/tofu3', function(req, res, next){
     res.render('tofu3');
 });
+router.get('/testcolor', function(req, res, next){
+    res.render('threecolor.ejs')  ;
+});
 module.exports = router;

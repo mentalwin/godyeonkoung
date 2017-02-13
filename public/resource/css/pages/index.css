@@ -606,4 +606,12 @@ input {
     -ms-transform : translateX(-50%);
     -o-transform : translateX(-50%);
     }
+    #totimeline{
+        cursor : pointer;
+        position : absolute;
+        animation : right 2s infinite;
+        right : 3%;
+        bottom : 45%;
+        width : 15%;
+    }
 }

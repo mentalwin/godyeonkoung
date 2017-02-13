@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style>
+            #light { 
+                position : absolute;
+                width : 200px;
+                height : 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="testApp">
+            <form @submit.prevent="updateColor(ambient, light)" id="light">
+
+                <input v-model="ambient" type="text">
+                <input v-model="light" type="text">
+                <button type="submit">바꾸기</button>
+            </form>
+            
+        </div>
+        <div class="threeD"></div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/threee/three.min.js"></script>
+    <script src="vendor/threee/ColladaLoader.js"></script>
+    <script src="vendor/threee/ColladaLoader2.js"></script>
+    <script src='js/threed.js'></script>
+    <script src="js/three_vue.js"></script>
+    </body>
+</html>

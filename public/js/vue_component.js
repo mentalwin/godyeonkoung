@@ -53,7 +53,7 @@ var objList = [
             type : 'text'
         },
         {
-            text : '이게 뭐가 대단한 건가 <br/>싶은 배알못들을 위해...<br/> 내가 왔다!!',
+            text : '이게 뭐가 대단한 건가 <br/>싶은 배알못들을 위해...<br/> 내가 왔다!!( ͡° ͜ʖ ͡°)',
             from : 'duck',
             type : 'text'
         }],
@@ -67,7 +67,7 @@ var objList = [
     // 4번째 페이지
     {
         texts : [
-            {text:"그래서 배구를 그만둘까 <br/> 생각하기도 했다능...", from:"duck"}
+            {text:"배구를 그만둘까 <br/> 생각하기도 했다능ㅠㅠ from:"duck"}
         ],
         isWhite : true,
         isDuck : "sad",
@@ -86,7 +86,7 @@ var objList = [
     {
         texts : [
             {text:"190cm의 큰 키에 강하게 <br/>찍어내리는 스파이크", from:'duck'},
-            {text: "지금의 베스트스파이커 <br/>김연경은 바로 이때 탄생했다.", from: 'duck'}
+            {text: "지금의 베스트스파이커 <br/>김연경은 바로 이때 탄생했다규!", from: 'duck'}
             ],
         isWhite : true,
         isDuck : "happy",
@@ -163,7 +163,7 @@ var objList = [
             from : 'duck'
         },
         {
-            text : '도대체 뭘 어떻게 하길래 <br/>이렇게 잘하냐고?' ,
+            text : '도대체 뭘 어떻게 하길래 <br/>이렇게 잘하냐고?!' ,
             from : 'duck'
         }],
         isDuck : 'happy'
@@ -189,7 +189,7 @@ var objList = [
     // 15
     {
         texts : [
-            { text : "핡.. 김연경 대체 뭐야 ㅠㅠ", from : "duck"}
+            { text : "핡.. 김연경 대체 뭐야<br/> ㅠㅠ 비결이 뭐냐능", from : "duck"}
         ],
         isDuck : 'happy',
         hasVideo : true,
@@ -214,7 +214,8 @@ var objList = [
     {
         isDuck : 'happy',
         texts : [
-            { text : '이분 최소 우승컵 컬렉터.. <br> 터키뿐만 아니라 온갖지역 상 휩쓸고 다님', from : 'duck'} 
+            { text : '이분 최소 우승컵 컬렉터.. <br> 터키뿐만 아니라 온갖지역 상 휩쓸고 다님', from : 'duck'} ,
+            { text : '하루아침 쌓은 실력으로는 <br/> 불가능하지 않겠어?', from : 'duck'} 
         ]
     },
     // 18 

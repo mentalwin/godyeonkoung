@@ -14,10 +14,8 @@ function init() {
 
     light1 = new THREE.AmbientLight(0x2e2e2e);
     light2 = new THREE.DirectionalLight(0xe8e8e8);
-    light3 = new THREE.DirectionalLight(0xdedede);
-    //scene.add(light1);
+    scene.add(light1);
     scene.add(light2);
-    scene.add(light3);
     camera = new THREE.PerspectiveCamera(75, 
                                     window.innerWidth/window.innerHeight, 
                                     0.1,
@@ -96,4 +94,9 @@ function spike() {
 $(".btnBlueGreen").click(function(){
     spike();
 });
+function updateColor(ambient, light) {
+    light1.color.setHex(ambient);
+    light2.color.setHex(light);
+
+}
 init();
