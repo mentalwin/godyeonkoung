@@ -222,8 +222,7 @@ var objList = [
     {
         isDuck : 'sad',
         texts : [
-            { text : '알고 보니 더 멋있지 ㅠㅠ', from : 'duck'} ,
-            { text : '진짜 이러고도 입덕이 안됐다고..?', from : 'duck'}
+            { text : '넌 얼마나 너 자신을 믿고 있니?', from : 'duck'} 
         ],
         hasVideo : true,
         soundSrc : ["sound/airplane_ceremony.mp3"],
