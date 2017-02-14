@@ -91,7 +91,7 @@ function spike() {
     v = initV.clone(); // v THREE
     v.divide(divider); // v divide 60 its 60fps
 }
-$(".btnBlueGreen").click(function(){
+$(".spike-button").click(function(){
     spike();
 });
 function updateColor(ambient, light) {

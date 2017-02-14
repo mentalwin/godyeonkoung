@@ -4,7 +4,7 @@ function checktopbar() {
         topbar.css("background", "transparent");
     }
     else{
-        topbar.css("background", "#dedede");
+        topbar.css("background", "#ff9767");
     }
 
 }

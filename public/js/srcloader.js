@@ -35,7 +35,9 @@ function loadVideo() {
         var src;
         if (el.properties.hasVideo) {
             var t= $(el.$el).find("video");
-                t.on("loadeddata", function(){
+            t.on("ended", function(){
+                console.log(1);
+                curSlideElement.next_step();
             });
             t.attr("data-src", "video/" + el.properties.videoSrc + ratio + ext);
             t.attr("poster", "images/poster/" + el.properties.videoSrc + "_poster" + ratio + ".png" );
