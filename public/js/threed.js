@@ -1,5 +1,8 @@
 var scene, camera, loader, dae, renderer, light, controls;
 var ball, court, v, initV, divider; // v for velocity vector
+var vsound = new Howl({
+    src : ['sound/pang.mp3']  
+});
 var keyboard = {};
 var three_container;
 function init() {
@@ -91,12 +94,15 @@ function spike() {
     v = initV.clone(); // v THREE
     v.divide(divider); // v divide 60 its 60fps
 }
-$(".spike-button").click(function(){
+var sp = $(".spike-button");
+sp.click(function(){
+    vsound.stop();
+    sp.prev().css("display", "none");
     spike();
+    if(!app.muted) vsound.play();
 });
 function updateColor(ambient, light) {
     light1.color.setHex(ambient);
     light2.color.setHex(light);
-
 }
 init();

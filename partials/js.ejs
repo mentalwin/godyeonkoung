@@ -9,10 +9,10 @@
 <script src="vendor/velocity/velocity.min.js"></script>
 <script src="vendor/velocity/velocity.ui.min.js"></script>
 <script src="vendor/blast/jquery.blast.js"></script>
+<script src="vendor/howler/howler.js"></script>
 <script src='js/vue_component.js'></script>
 <script src='js/threed.js'></script>
 <script src="js/topbar.js"></script>
-<script src="vendor/howler/howler.js"></script>
 <script src="js/srcloader.js"></script>
 <script>
     var video; // previous html5
@@ -100,9 +100,6 @@
 <script>
 </script>
 <script>
-    var test = new Howl({
-        src : ['sound/dingdong.mp3']  
-    });
     $('.speaker-button').on('click', function(){
         app.muted = !app.muted;
         if (sound) {
