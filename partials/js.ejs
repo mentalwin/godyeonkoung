@@ -6,6 +6,9 @@
 <script src="vendor/threee/ColladaLoader2.js"></script>
 <script src="vendor/letter_textillate/jquery.lettering.js"></script>
 <script src="vendor/letter_textillate/jquery.textillate.js"></script>
+<script src="vendor/velocity/velocity.min.js"></script>
+<script src="vendor/velocity/velocity.ui.min.js"></script>
+<script src="vendor/blast/jquery.blast.js"></script>
 <script src='js/vue_component.js'></script>
 <script src='js/threed.js'></script>
 <script src="js/topbar.js"></script>
@@ -18,6 +21,18 @@
                         playsinline : true};
     var sound, soundId;
     var curSlideElement;
+    function textAnimation(el) {
+        el.blast({delimiter : 'word'})
+          .velocity('transition.fadeIn', {
+                display : null,
+                duration : 1000,
+                stagger : 100,
+                delay : 400,
+                begin : function() {
+                    el.css('opacity', 1);
+                }
+          });
+    }
     var mySwiper = new Swiper('.swiper-container', {
         direction : 'vertical',
         pagination: '.swiper-pagination',
@@ -50,7 +65,7 @@
             if (curSlideElement.properties.main_text) {
                 var el = $(curSlideElement.$el);
                 var inn = el.find('.inner');
-                inn.textillate();
+                textAnimation(inn);
             }
         },
         onSlideChangeStart : function() {
@@ -81,11 +96,6 @@
         galleryTop.slideTo($(this).index(), 500);
     });
 
-</script>
-<script>
-    $("img")
-        .on('load', function(){
-        });
 </script>
 <script>
 </script>
