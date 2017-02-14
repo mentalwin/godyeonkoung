@@ -528,6 +528,8 @@ section {
   .page-10-m .etc:nth-child(2) {
     background-image: url("../images/graph_2_m.png");
     height: 361px; }
+  .page-10-m .etc-container {
+    top: -17px; }
 
 /* 11th page : 주팅, 김연경
  */
