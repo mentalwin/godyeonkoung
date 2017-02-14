@@ -373,9 +373,11 @@ section
   .swiper-slide
     .gif-container
       text-align : center
-      margin : 5% auto 0px
+      margin : 6% auto 0px
       img
-        height : 95% 
+        height : 88% 
+      @media (max-width : 730px)
+        margin : 24% auto 0px
   .gallery-top
     height : 80%
     width : 100%
@@ -386,13 +388,14 @@ section
     .gallery-thumb
       position : absolute
       left : 50%
+      width : 617px
       transform : translateX(-50%)
       -webkit-transform : translateX(-50%)
       -moz-transform : translateX(-50%)
       -ms-transform : translateX(-50%)
       -o-transform : translateX(-50%)
-      @media (max-width : 420px)
-        width : 100%
+      @media (max-width : 730px)
+        display : none
     .thumb
       cursor : pointer
       width : 151px

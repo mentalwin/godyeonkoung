@@ -403,9 +403,12 @@ section {
 
 .sixth-page .swiper-slide .gif-container {
   text-align: center;
-  margin: 5% auto 0px; }
+  margin: 6% auto 0px; }
   .sixth-page .swiper-slide .gif-container img {
-    height: 95%; }
+    height: 88%; }
+  @media (max-width: 730px) {
+    .sixth-page .swiper-slide .gif-container {
+      margin: 24% auto 0px; } }
 .sixth-page .gallery-top {
   height: 80%;
   width: 100%; }
@@ -415,14 +418,15 @@ section {
   .sixth-page .gallery-thumbs .gallery-thumb {
     position: absolute;
     left: 50%;
+    width: 617px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%); }
-    @media (max-width: 420px) {
+    @media (max-width: 730px) {
       .sixth-page .gallery-thumbs .gallery-thumb {
-        width: 100%; } }
+        display: none; } }
   .sixth-page .gallery-thumbs .thumb {
     cursor: pointer;
     width: 151px;

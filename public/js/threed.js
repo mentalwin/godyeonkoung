@@ -1,7 +1,10 @@
 var scene, camera, loader, dae, renderer, light, controls;
 var ball, court, v, initV, divider; // v for velocity vector
-var vsound = new Howl({
-    src : ['sound/pang.mp3']  
+var vbounce = new Howl({
+    src : ['sound/volleyball_bounce.mp3']  
+});
+var vspike = new Howl({
+    src : ['sound/volleyball_spike.mp3']  
 });
 var keyboard = {};
 var three_container;
@@ -96,10 +99,10 @@ function spike() {
 }
 var sp = $(".spike-button");
 sp.click(function(){
-    vsound.stop();
+    vspike.stop();
     sp.prev().css("display", "none");
     spike();
-    if(!app.muted) vsound.play();
+    if(!app.muted) vspike.play();
 });
 function updateColor(ambient, light) {
     light1.color.setHex(ambient);

@@ -119,7 +119,7 @@
 .swiper-button-next {
   position: absolute;
   top: 50%;
-  width: 76px;
+  width: 55px;
   height: 76px;
   margin-top: -22px;
   z-index: 10;
@@ -139,7 +139,7 @@
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
   background-image: url("../../../../images/carousel_left.png");
-  background-size: cover;
+  background-size: contain;
   left: 10px;
   right: auto;
 }
@@ -154,7 +154,7 @@
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
   background-image: url("../../../../images/carousel_right.png");
-  background-size: cover;
+  background-size: contain;
   animation-name : active;
   animation-duration : 4s;
   animation-iteration-count : infinite;

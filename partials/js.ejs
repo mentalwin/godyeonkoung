@@ -100,7 +100,11 @@
 <script>
 </script>
 <script>
+    var toggleSound = new Howl({
+        src : ['sound/soundon.wav']  
+    });
     $('.speaker-button').on('click', function(){
+        if (app.muted) toggleSound.play();
         app.muted = !app.muted;
         if (sound) {
             if (app.muted) sound.mute(true);
