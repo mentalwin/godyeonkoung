@@ -77,10 +77,10 @@ var objList = [
     //5번째 페이지
     {
         texts : [
-            {text:"나 같으면 포기 했을 <br/>텐데...", from: 'duck'}],
+            {text:"나 같으면 포기했을 텐데...", from: 'duck'}],
         isWhite : true,
         isDuck : "happy",
-        main_text : "그러나 김연경은 포기하지 않았다. 세터든 리베로든 자신을 불러주는 포지션이면 가리지 않았다."
+        main_text : "그러나 김연경은 포기하지 않았다. 세터든 리베로든 다양한 포지션을 가리지 않고 뛰었다."
     },
     //5
     {
@@ -90,7 +90,7 @@ var objList = [
             ],
         isWhite : true,
         isDuck : "happy",
-        main_text : "키가 크지 않을 거란 우려와 달리 기적적으로 20CM 넘게 키가 자라면서 찾아온 기회! 공격수 포지션인 레프트로 시합에 뛰기 시작했다."
+        main_text : "키가 크지 않을 거란 우려와 달리 기적적으로 20cm 넘게 키가 자라면서 찾아온 기회! 공격수 포지션인 레프트로 시합에 뛰기 시작했다."
     },
     //6
     {
@@ -123,7 +123,7 @@ var objList = [
         videoSrc : "YK_limit",
         isDuck : 'sad',
         videoId : "video2",
-        main_text : "신체조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요..",
+        main_text : "신체 조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요..",
         soundSrc : ["sound/YK_limit.mp3"]
     },
     //9
@@ -139,7 +139,7 @@ var objList = [
         soundSrc : ["sound/YK_special.mp3"],
         videoSrc : "YK_special",
         videoId : "video3",
-        main_text : "공격수 김연경에게는 특별한 것이 있었다. 그것은 다양한 포지션에서 겪으며 익힌 기본기 였다."
+        main_text : "공격수 김연경에게는 더욱 특별한 것이 있었다. 다양한 포지션을 겪으며 익힌 기본기가 바로 그것."
     },
     //10 coach
     {
@@ -208,13 +208,13 @@ var objList = [
         soundSrc : ["sound/YK_believe.mp3"],
         videoSrc : "YK_believe",
         videoId : "video6",
-        main_text : "제 자신을 제가 믿는 게 중요한 것 같아요."
+        main_text : "제 자신을 제가 믿는 게 가장 중요한 것 같아요."
     },
     //17
     {
         isDuck : 'happy',
         texts : [
-            { text : '이분 최소 우승컵 컬렉터.. <br> 터키뿐만 아니라 온갖지역 상 휩쓸고 다님', from : 'duck'} ,
+            { text : '이분 최소 우승컵 컬렉터.. <br> 터키뿐만 아니라 온갖 지역 상 휩쓸고 다님', from : 'duck'} ,
             { text : '하루아침 쌓은 실력으로는 <br/> 불가능하지 않겠어?', from : 'duck'} 
         ]
     },
@@ -222,7 +222,7 @@ var objList = [
     {
         isDuck : 'sad',
         texts : [
-            { text : '알고보니 더 멋있지 ㅠㅠ', from : 'duck'} ,
+            { text : '알고 보니 더 멋있지 ㅠㅠ', from : 'duck'} ,
             { text : '진짜 이러고도 입덕이 안됐다고..?', from : 'duck'}
         ],
         hasVideo : true,

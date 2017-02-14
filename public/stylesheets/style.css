@@ -340,6 +340,8 @@ section {
  */
 .win_map {
   background: #f7bba8; }
+  .win_map .bubble:last-child:after {
+    z-index: -1; }
   .win_map .map {
     position: absolute;
     width: 767px;
@@ -488,21 +490,17 @@ section {
 
 /* 9 page
  */
-.page-9 .over {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 48px;
-  text-align: center;
+.page-9 .video_container {
+  width: 90%;
+  height: 95%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  width: 69.8%;
-  height: 240px;
-  opacity: 0.8;
-  color: #ffffff; }
+  position: absolute;
+  top: 50%;
+  left: 50%; }
 
 /* 10 page
  */
@@ -592,6 +590,8 @@ section {
  */
 .page-14 {
   background-image: url("../images/bg2_w.png"); }
+  .page-14 .bubble:last-child:after {
+    left: 72%; }
   @media (max-aspect-ratio: 1 / 1) {
     .page-14 {
       background-image: url("../images/bg2_m.png"); } }

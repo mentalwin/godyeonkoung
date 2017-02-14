@@ -306,6 +306,8 @@ section
  */
 .win_map
   background : #f7bba8
+  .bubble:last-child:after
+    z-index : -1
   .map
     position : absolute
     width : 767px
@@ -464,21 +466,17 @@ section
  */
 
 .page-9
-  .over
-    position : absolute
-    top : 50%
-    left : 50%
-    font-size : 48px
-    text-align : center
+  .video_container
+    width : 90%
+    height : 95%
     transform : translate(-50%, -50%)
     -webkit-transform : translate(-50%, -50%)
     -moz-transform : translate(-50%, -50%)
     -ms-transform : translate(-50%, -50%)
     -o-transform : translate(-50%, -50%)
-    width : 69.8%
-    height : 240px
-    opacity : 0.8
-    color : #ffffff
+    position : absolute
+    top : 50%
+    left : 50%
 
 /*
  * 10 page
@@ -569,6 +567,8 @@ section
  * page 14
  */
 .page-14
+  .bubble:last-child:after
+    left : 72%
   background-image : url('../images/bg2_w.png')
   @media (max-aspect-ratio : 1/1)
     background-image : url('../images/bg2_m.png')
