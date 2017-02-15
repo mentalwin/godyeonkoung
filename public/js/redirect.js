@@ -1,8 +1,8 @@
 var useragent_redirect = window.navigator.userAgent;
 
 function checkUA() {
-    var ch = useragent_redirect.match(/Chrome/i);
-    var sa = useragent_redirect.match(/Safari/i);
-
+    var ch = /Chrome/i.test(useragent_redirect);
+    var sa = /Safari/i.test(useragent_redirect);
     if (!ch && !sa) window.location = "redirect";
 }
+checkUA();
