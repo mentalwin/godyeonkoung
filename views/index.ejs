@@ -6,9 +6,12 @@
         <div id="mw-app" class="swiper-container">
             <div id="progressbar" class="swiper-pagination"></div>
             <div class="topbar">
+                <a href="/">
+                    <img src="images/DDD2.png" alt="logo" class="clogo">
+                </a>
                 <img class="speaker-button" 
                     v-on:click = "toggle"
-                    :src="sound" alt="speaker">
+                    :src="sound">
             </div>
             <div class="swiper-wrapper">
                 <!-- First Page -->
@@ -16,9 +19,15 @@
                            :properties="obj1"
                            class='swiper-slide first-page'>
                     <div slot="main">
+                        <div class="soundbar">
+                            <h1>본 콘텐츠는 음향을 포함하고 있습니다.<br/>최적의 감상을 위하여 이어폰/헤드폰을 착용하시면 더 좋습니다.</h1>
+                            <div id="bars">
+                                <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div>
+                            </div>
+                        </div>
                         <nav class="nav">
                             <div class="nav-wrapper">
-                                <a href="#" class="logo">
+                                <a href="/" class="logo">
                                     <img src="images/DDD2.png" alt="logo" class="logo">
                                 </a>
                             </div>
@@ -273,7 +282,7 @@
                             </div>
                         </div>
                         <div class="rightone float_left">
-                            <div class="inner" v-html="obj16.main_text"></div>
+                            <div class="inner interview" v-html="obj16.main_text"></div>
                         </div>
 
                     </div>
@@ -292,6 +301,25 @@
                         </div>
                     </div>
                 </slide-element>   
+                <slide-element
+                    class='swiper-slide page-15'>
+                    <div slot='main'>
+                        <div class="footer-container">
+                            <div class="linkToForm">
+                                <a href="#">
+                                    여러분의 한마디가 덕덕덕을 힘내게 합니다. 
+                                    <b>당신의 생각을 알려주세요.</b>
+                                </a>
+                            </div>
+                            <div class="logoDDD">
+                                <img src="images/DDD2.png" alt="">
+                            </div>
+                            <div class="producedBy">
+                                김신효, 박상연, 박지우, 표준희 
+                            </div>
+                        </div>  
+                    </div>
+                </slide-element>
             </div>
         </div>
         <% include ../partials/js.ejs %>

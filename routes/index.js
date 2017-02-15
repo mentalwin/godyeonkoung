@@ -23,4 +23,7 @@ router.get('/tofu3', function(req, res, next){
 router.get('/testcolor', function(req, res, next){
     res.render('threecolor.ejs')  ;
 });
+router.get('/redirect', function(req, res, next){
+    res.render('redirect.ejs');
+});
 module.exports = router;
