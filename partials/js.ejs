@@ -50,9 +50,11 @@
                 var vc = el.find(".video_container");
                 var vspin = el.find(".v-spin");
                 video = el.find(".video_container video");
-                sound = new Howl({
-                    src : curSlideElement.properties.soundSrc
-                });
+                if(curSlideElement.properties.soundSrc) {
+                    sound = new Howl({
+                        src : curSlideElement.properties.soundSrc
+                    });
+                }
                 video.on('loadeddata', function(){
                     this.play();
                     vspin.css("display", "none");
@@ -103,7 +105,7 @@
         src : ['sound/bgm.mp3']  ,
         loop : true,
         autoplay : true,
-        volume : 0.5
+        volume : 1
     });
     var toggleSound = new Howl({
         src : ['sound/soundon.wav']  

@@ -30,7 +30,6 @@ function loadVideo() {
         if (el.properties.hasVideo) {
             var t= $(el.$el).find("video");
             t.on("ended", function(){
-                console.log(1);
                 curSlideElement.next_step();
             });
             t.attr("data-src", "video/" + el.properties.videoSrc + ratio + ext);

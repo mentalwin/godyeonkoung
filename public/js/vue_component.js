@@ -225,7 +225,6 @@ var objList = [
             { text : '넌 얼마나 너 자신을 믿고 있니?', from : 'duck'} 
         ],
         hasVideo : true,
-        soundSrc : ["sound/airplane_ceremony.mp3"],
         videoSrc : "airplane_ceremony",
     },
     // 19
