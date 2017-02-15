@@ -50,18 +50,14 @@
                 var vc = el.find(".video_container");
                 var vspin = el.find(".v-spin");
                 video = el.find(".video_container video");
+                sound = new Howl({
+                    src : curSlideElement.properties.soundSrc
+                });
                 video.on('loadeddata', function(){
                     this.play();
                     vspin.css("display", "none");
-                    // video가 있으면 sound도 있으니깐 이건 필요 없을 듯
-                    if (!sound) {
-                        sound = new Howl({
-                            src : curSlideElement.properties.soundSrc
-                        });
-                        soundId = sound.play();
-                    }
-                    if (app.muted) sound.mute(true);
-                    else sound.mute(false);
+                    soundId = sound.play();
+                    app.muted ? sound.mute(true) : sound.mute(false);
                 });
             }
             if (curSlideElement.properties.main_text) {
@@ -78,6 +74,7 @@
                     video[0].currentTime = 0;
                 }
             }
+            console.log(sound);
             if (sound) { 
                 sound.unload(); 
             }

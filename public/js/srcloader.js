@@ -19,15 +19,9 @@ function detectmob() {
         }
 }
 var gifs = $(".gif");
-var sound;
 function loadVideo() {
     for(var i = 0; i < comps.length; i++) {
         var el = comps[i];
-        if (el.properties.hasSound) {
-            sound = new Howl({
-                src : el.properties.soundSrc
-            });
-        }
         
         var useWebm = !/Android/i.test(ua) && /Chrome/i.test(ua); 
         var ext = useWebm ? '.webm' : '.mp4';
