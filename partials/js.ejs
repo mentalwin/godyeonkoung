@@ -74,7 +74,6 @@
                     video[0].currentTime = 0;
                 }
             }
-            console.log(sound);
             if (sound) { 
                 sound.unload(); 
             }
@@ -104,7 +103,7 @@
         src : ['sound/bgm.mp3']  ,
         loop : true,
         autoplay : true,
-        volume : 0.5
+        volume : 0
     });
     var toggleSound = new Howl({
         src : ['sound/soundon.wav']  
