@@ -54,10 +54,12 @@
                     this.play();
                     vspin.css("display", "none");
                     // video가 있으면 sound도 있으니깐 이건 필요 없을 듯
-                    sound = new Howl({
-                        src : curSlideElement.properties.soundSrc
-                    });
-                    soundId = sound.play();
+                    if (!sound) {
+                        sound = new Howl({
+                            src : curSlideElement.properties.soundSrc
+                        });
+                        soundId = sound.play();
+                    }
                     if (app.muted) sound.mute(true);
                     else sound.mute(false);
                 });
