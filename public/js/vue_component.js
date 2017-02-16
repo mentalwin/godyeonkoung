@@ -249,6 +249,16 @@ var objList = [
         }],
         isDuck : 'happy'
     },
+    //20
+    {
+        isDuck : 'happy',
+        texts : [
+            {
+                text : "여러분의 한마디가 덕덕덕을 힘 나게 합니다. <br/><a href='https://docs.google.com/forms/d/e/1FAIpQLSfd6dsmZl810iS7-XVfI5fYEYdN9G8DdX-EBCNWJq0sNyC5qw/viewform' id='linkForm'>당신의 생각을 알려주세요.</a>" ,
+                from : 'duck'
+            },
+        ]
+    }
 
 
 ];

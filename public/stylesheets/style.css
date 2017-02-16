@@ -622,18 +622,13 @@ section {
 
 /* page 15 - produced by
  */
-.page-15 .footer-container {
-  max-width: 800px;
+.page-15 .img-container {
+  width: 275px;
   margin: 80px auto; }
-  .page-15 .footer-container .linkToForm {
-    border: 1px solid white;
-    text-align: center;
-    margin-bottom: 30px;
-    padding-top: 58px;
-    height: 74px; }
-  .page-15 .footer-container .logoDDD {
-    text-align: center; }
-  .page-15 .footer-container .producedBy {
-    text-align: center; }
+.page-15 .bubble {
+  line-height: 1.4; }
+.page-15 #linkForm {
+  color: blue;
+  text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

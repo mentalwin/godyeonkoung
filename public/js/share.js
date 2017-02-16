@@ -96,3 +96,13 @@ $(document).ready(function(){
 	})
 	
 })
+Kakao.init('7018baee7cc475fe5d5331b0672f765f');
+
+Kakao.Link.createTalkLinkButton({
+    container : '#kakao-link-btn',
+    label : '김연경이랑 키 재볼래?',
+    webButton : {
+    text : '테스트 텍스트',
+    url : 'mentalwin.newslabfellows.com/tofu2'
+    }
+})
