@@ -272,7 +272,8 @@ section {
   .topbar img {
     height: 68%;
     margin-top: 10px;
-    margin-right: 20px; }
+    margin-right: 20px;
+    z-index: 30000000; }
   .topbar .share-toggle-button {
     position: absolute;
     right: 65px;
