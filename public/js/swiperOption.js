@@ -22,9 +22,14 @@ var mySwiper = new Swiper('.swiper-container', {
     paginationType : 'progress',
     simulateTouch : false,
     onSlideChangeEnd : function() {
+        
         // callback function that slide change end
         //  2. text preload
         curSlideElement = app.$children[mySwiper.activeIndex];
+        if(curSlideElement.properties.type == 'gif') {
+            console.log("gifs are loaded");
+            lazyLoadGifs();
+        }
         //  1. has video
         if (app && curSlideElement.properties.hasVideo) {
             
@@ -68,14 +73,17 @@ var mySwiper = new Swiper('.swiper-container', {
     lazyLoading: true
 });
 mySwiper.disableTouchControl();
-var galleryTop = new Swiper('.swiper-container-h', {
-    direction : 'horizontal'  ,
-    paginationClickable : true,
-    nextButton : '.swiper-button-next',
-    prevButton : '.swiper-button-prev',
-    preloadImages : false,
-    lazyLoading : true
-});
-$(".gallery-thumb").on('click', '.thumb', function(){
-    galleryTop.slideTo($(this).index(), 500);
-});
+var galleryTop;
+function lazyLoadGifs(){
+    galleryTop = new Swiper('.swiper-container-h', {
+        direction : 'horizontal'  ,
+        paginationClickable : true,
+        nextButton : '.swiper-button-next',
+        prevButton : '.swiper-button-prev',
+        preloadImages : false,
+        lazyLoading : true
+    });
+    $(".gallery-thumb").on('click', '.thumb', function(){
+        galleryTop.slideTo($(this).index(), 500);
+    });
+}

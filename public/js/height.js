@@ -106,19 +106,11 @@ var showResult = function(idx) {
         resultMessage = "에이... 어플에 거짓말을 하면 쓰나..."
     }
     $user_result.html(resultMessage);
-    // facebook metatag 추가
-    addMetaFacebook(resultMessage);
     var img = getImage(idx);
     $img.attr("src", img);
     // 김연경 타임라인으로...
 }
 
-function addMetaFacebook(metaMessage) {
-    var meta = $("<meta>");
-    meta.attr("property", "og:description");
-    meta.attr("content", metaMessage);
-    $("head").append(meta);
-}
 
 // 타임라인
 var showTimeLine = function() {

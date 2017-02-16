@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <% include ../partials/tofu_head.ejs %>
+  </head>
+  <body>
+        <section class="analyzed">
+            <div class="margin-top padding">
+                <p id="user_value" class="white"></p>
+                <p id="user_result" class="HANNA"></p>
+            </div>
+            <a class="right-text" href="timeline.html">
+                <img id="totimeline" src="resource/project/carousel_right.png" alt="right_arrow">
+            </a>
+            <div id="img-container">
+                <img src="resource/project/KYK0.png" alt="koung">
+            </div>
+        </section>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="js/TweenMax.min.js"></script>
+      <script src="js/share.js"></script>
+      <script>
+            var idx;
+            $(document).ready(function(){
+                 idx = window.location.pathname.split('/') 
+            });
+      </script>
+    </body>
+</html>

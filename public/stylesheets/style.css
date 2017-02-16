@@ -92,7 +92,8 @@ p {
     -o-transform: translate(-50%, -50%); }
     @media (max-width: 420px) {
       .rightone .inner {
-        padding-top: 21%; } }
+        padding-top: 21%;
+        font-size: 15px; } }
   .rightone .interview::before {
     content: "";
     position: absolute;

@@ -46,6 +46,7 @@ function loadGif() {
         var el = $(gifs[i]);
         var m = el.attr("name");
         el.attr("data-src", "gifs/" + m + ratio + ".gif");
+        el.addClass("swiper-lazy");
     }
 }
 function loadMap() {

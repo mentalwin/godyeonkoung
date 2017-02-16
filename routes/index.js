@@ -27,6 +27,7 @@ router.get('/redirect', function(req, res, next){
     res.render('redirect.ejs');
 });
 router.get('/tofu/:idx', function(req, res, next){
-    res.render('tofu/result' + req.param('idx') + '.ejs');
+    console.log('helo');
+    res.render('result1.ejs');
 });
 module.exports = router;
