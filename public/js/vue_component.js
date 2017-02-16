@@ -258,10 +258,6 @@ var objList = [
                 from : 'duck'
             },
         ]
-    },
-    //21
-    {
-        type : 'gif'    
     }
 
 

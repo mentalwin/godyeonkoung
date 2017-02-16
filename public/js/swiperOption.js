@@ -26,10 +26,7 @@ var mySwiper = new Swiper('.swiper-container', {
         // callback function that slide change end
         //  2. text preload
         curSlideElement = app.$children[mySwiper.activeIndex];
-        if(curSlideElement.properties.type == 'gif') {
-            console.log("gifs are loaded");
-            lazyLoadGifs();
-        }
+        
         //  1. has video
         if (app && curSlideElement.properties.hasVideo) {
             
@@ -73,9 +70,7 @@ var mySwiper = new Swiper('.swiper-container', {
     lazyLoading: true
 });
 mySwiper.disableTouchControl();
-var galleryTop;
-function lazyLoadGifs(){
-    galleryTop = new Swiper('.swiper-container-h', {
+var galleryTop = new Swiper('.swiper-container-h', {
         direction : 'horizontal'  ,
         paginationClickable : true,
         nextButton : '.swiper-button-next',
@@ -86,4 +81,3 @@ function lazyLoadGifs(){
     $(".gallery-thumb").on('click', '.thumb', function(){
         galleryTop.slideTo($(this).index(), 500);
     });
-}
