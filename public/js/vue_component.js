@@ -123,7 +123,7 @@ var objList = [
         videoSrc : "YK_limit",
         isDuck : 'sad',
         videoId : "video2",
-        main_text : "신체 조건도 안좋았던거 같고.. 그래서 경기를 제대로 뛰질 못했어요..",
+        main_text : "신체 조건도 좀 안 좋았고.. 그래서 경기를 제대로 뛰질 못했어요..",
         soundSrc : ["sound/YK_limit.mp3"]
     },
     //9

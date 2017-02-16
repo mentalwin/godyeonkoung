@@ -266,17 +266,19 @@ section {
   height: 5%;
   z-index: 10000; }
   .topbar .clogo {
+    height: 32px;
+    margin-top: 4px;
     opacity: 0; }
   .topbar img {
     height: 68%;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-right: 20px; }
   .topbar .share-toggle-button {
     position: absolute;
     right: 65px;
-    opacity: 0.7;
+    color: #333333;
     cursor: pointer;
-    top: 15px;
+    top: 16.9px;
     font-size: 25px; }
   .topbar .share-list {
     display: none;
@@ -442,7 +444,7 @@ section {
   .sixth-page .gallery-thumbs .gallery-thumb {
     position: absolute;
     left: 50%;
-    width: 617px;
+    width: 624px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
