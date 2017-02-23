@@ -4,8 +4,8 @@ function checkUA() {
     var ch = /Chrome/i.test(useragent_redirect);
     var sa = /Safari/i.test(useragent_redirect);
     var ed = /Edge/i.test(useragent_redirect);
-
-    if (!ch && !sa) window.location = "redirect";
+    var fb = /FBAN/i.test(useragent_redirect); // not facebook redirect
+    if (!fb && !ch && !sa) window.location = "redirect";
     if (ed) window.location = "redirect";
 }
 checkUA();
