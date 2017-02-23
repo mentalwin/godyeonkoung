@@ -5,7 +5,8 @@ function checkUA() {
     var sa = /Safari/i.test(useragent_redirect);
     var ed = /Edge/i.test(useragent_redirect);
     var fb = /FBAN/i.test(useragent_redirect); // not facebook redirect
-    if (!fb && !ch && !sa) window.location = "redirect";
+    var kt = /KAKAOTALK/i.test(useragent_redirect); // not kakao redirect
+    if (!kt && !fb && !ch && !sa) window.location = "redirect";
     if (ed) window.location = "redirect";
 }
 checkUA();
