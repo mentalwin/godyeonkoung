@@ -102,7 +102,7 @@ Kakao.Link.createTalkLinkButton({
     container : '#kakao-link-btn',
     label : '김연경이랑 키 재볼래?',
     webButton : {
-    text : '테스트 텍스트',
+    text : '내 키는 김연경 몇 살때 키??',
     url : 'mentalwin.newslabfellows.com/tofu2'
     }
 })
