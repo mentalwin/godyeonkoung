@@ -50,6 +50,7 @@ var getNameHeight = function (){
     // loading 하는 척하기
     var idx = getParam();
     var query = getQuery().split('=')[1];
+    if (!query) window.location = "/tofu3";
     var obj = JSON.parse(decodeURIComponent(query));
     height = obj.height;
     name = obj.name;

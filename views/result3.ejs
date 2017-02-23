@@ -71,15 +71,6 @@
       <script src="js/TweenMax.min.js"></script>
       <script src="js/result.js"></script>
       <script src="js/share.js"></script>
-      <script>
-            var idx;
-            $(document).ready(function(){
-                 idx = window.location.pathname.split('/')[2]; 
-                getHeightData().done(function(item){
-                    heightData = item.heightData;
-                    showResult(idx);
-                });
-            });
-      </script>
+      <script src="js/share_result.js"> </script>
     </body>
 </html>
