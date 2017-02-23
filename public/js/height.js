@@ -54,7 +54,6 @@ function fakeloading(idx) {
     setTimeout(function(){
         spinner.css("display", "none");
         // 끝나고 결과 보여주기
-        console.log();
         var qstr = JSON.stringify({height: height, name: name});
         window.location = "tofu/" + idx + "?obj=" + qstr;
     }, fakeloadingTime);
