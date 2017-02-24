@@ -1,4 +1,7 @@
 
-i.share-icon:not:first-child {
+i.share-icon:first-child {
     padding-top : 14px;
+}
+.fa-share-alt{
+    padding-top : 0px !important;
 }
